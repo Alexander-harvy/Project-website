@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Attributes Tutorial</title>
+  <link rel="stylesheet" href="website.css">
+  <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active">HOME</a></li>
+      <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+      <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+      <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+      <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+  </ul>
+</div>
+
+  <div class="main-content">
+    <div class="header">
+        <h1>WELCOME TO HTML TUTORIAL</h1>
+        <div class="header-underline"></div>
+    </div>
+    
+    <div class="tutorial-nav">
+        <a href="HTML-HOME.html">Home</a>
+        <a href="HTML-INTRO.html">Introduction</a>
+        <a href="HTML-EDITORS.html">Editors</a>
+        <a href="HTML.BASICS.html">Basics</a>
+        <a href="HTML-ELEMENTS.html">Elements</a>
+        <a href="HTML-ATTRIBUTES.html" class="active">Attributes</a>
+        <a href="HTML-HEADINGS.html">Headings</a>
+        <a href="HTML-COMMENTS.html">Comments</a>
+        <a href="HTML-COLORS.html">Colors</a>
+        <a href="HTML-LINKS.html">Links</a>
+        <a href="HTML-IMAGES.html">Images</a>
+        <a href="HTML-FAVICON.html">Favicon</a>
+        <a href="HTML-PAGE-TITLE.html">Page Title</a>
+        <a href="HTML-TABLES.html">Tables</a>
+        <a href="HTML-LISTS.html">Lists</a>
+        <a href="HTML-DIV.html">Div</a>
+        <a href="HTML-CLASSES.html">Classes</a>
+        <a href="HTML-ID.html">Id</a>
+    </div>
+    
+    <div class="content">
+      <h2>HTML Attributes - Adding Information to Elements</h2>
+      <p>HTML attributes provide additional information about HTML elements. They are always specified in the start tag and usually come in name/value pairs like: name="value". Let's explore how attributes enhance HTML elements.</p>
+      
+      <div class="topic-section">
+        <div class="topic">
+          <h2>Attribute Syntax</h2>
+          <div class="topic-content">
+            <p>HTML attributes have a simple syntax:</p>
+            <pre><code>&lt;tagname attribute="value"&gt;Content&lt;/tagname&gt;</code></pre>
+            <p>Key points about attributes:</p>
+            <ul class="tips-list">
+              <li>Specified in the start tag</li>
+              <li>Come in name/value pairs</li>
+              <li>Values are enclosed in quotes</li>
+              <li>Some attributes can be used without values</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>Common Attributes</h2>
+          <div class="topic-content">
+            <p>Some attributes can be used with most HTML elements:</p>
+            <ul class="tips-list">
+              <li><strong>id</strong> - Unique identifier</li>
+              <li><strong>class</strong> - Group identifier</li>
+              <li><strong>style</strong> - Inline CSS styling</li>
+              <li><strong>title</strong> - Additional information</li>
+              <li><strong>lang</strong> - Language specification</li>
+            </ul>
+            <p>These global attributes can be used on any HTML element.</p>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>Element-Specific Attributes</h2>
+          <div class="topic-content">
+            <p>Some attributes are specific to certain elements:</p>
+            <ul class="tips-list">
+              <li><strong>href</strong> - for &lt;a&gt; (links)</li>
+              <li><strong>src</strong> - for &lt;img&gt; (images)</li>
+              <li><strong>alt</strong> - for &lt;img&gt; (alternative text)</li>
+              <li><strong>width/height</strong> - for various elements</li>
+              <li><strong>type</strong> - for &lt;input&gt; elements</li>
+            </ul>
+            <p>These attributes provide essential functionality for their respective elements.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="image-container">
+        <div class="Images">
+          <h3>HTML Attribute Structure</h3>
+          <img src="pictures/attribute-example.jpg" alt="HTML Attribute Structure Diagram">
+        </div>
+      </div>
+
+      <h3>Examples of HTML Attributes</h3>
+      <table class="table">
+        <tr>
+          <th>Example</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>&lt;a href="https://example.com"&gt;Link&lt;/a&gt;</td>
+          <td>The href attribute specifies the URL of the page the link goes to</td>
+        </tr>
+        <tr>
+          <td>&lt;img src="image.jpg" alt="Description"&gt;</td>
+          <td>src specifies the image path, alt provides alternative text</td>
+        </tr>
+        <tr>
+          <td>&lt;p style="color:blue;"&gt;Blue text&lt;/p&gt;</td>
+          <td>style attribute adds inline CSS styling</td>
+        </tr>
+        <tr>
+          <td>&lt;div class="container"&gt;Content&lt;/div&gt;</td>
+          <td>class attribute groups elements for CSS styling</td>
+        </tr>
+        <tr>
+          <td>&lt;button disabled&gt;Click me&lt;/button&gt;</td>
+          <td>disabled is a boolean attribute with no value</td>
+        </tr>
+      </table>
+      
+      <h3>Boolean Attributes</h3>
+      <p>Some attributes don't need a value. These are called boolean attributes and their presence indicates "true":</p>
+      <pre><code>&lt;input type="text" disabled&gt;
+&lt;button disabled&gt;Click me&lt;/button&gt;
+&lt;input type="checkbox" checked&gt;</code></pre>
+      
+      <div class="buttons">
+        <a href="https://www.w3schools.com/tags/ref_standardattributes.asp" class="btn">Global Attributes</a>
+        <a href="https://www.w3schools.com/tags/ref_eventattributes.asp" class="btn">Event Attributes</a>
+      </div>
+      
+      <h3>Tips for Using Attributes</h3>
+      <ul class="tips-list">
+        <li>Always use lowercase attribute names</li>
+        <li>Always quote attribute values</li>
+        <li>Never leave spaces around the equals sign</li>
+        <li>For boolean attributes, just the attribute name is enough</li>
+        <li>Use data-* attributes for custom data</li>
+      </ul>
+    </div>
+    
+    <div class="previous-page">
+      <a href="HTML-ELEMENTS.html">&#8592; Previous</a>
+    </div>
+    <div class="next-page">
+      <a href="HTML-HEADINGS.html">Next &#8594;</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Front-End Tutorial © 2025 | Building the Web, One Tag at a Time</p>
+</footer>
+
+</body>
+</html>

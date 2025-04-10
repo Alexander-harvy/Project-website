@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Tutorial - Forms</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>WELCOME TO PHP TUTORIAL</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="PHP-HOME.html">Home</a>
+            <a href="PHP-INTRO.html">Introduction</a>
+            <a href="PHP-SYNTAX.html">Syntax</a>
+            <a href="PHP-VARIABLES.html">Variables</a>
+            <a href="PHP-ECHO.html">Echo/Print</a>
+            <a href="PHP-DATATYPES.html">Data Types</a>
+            <a href="PHP-STRINGS.html">Strings</a>
+            <a href="PHP-NUMBERS.html">Numbers</a>
+            <a href="PHP-MATH.html">Math</a>
+            <a href="PHP-CONSTANTS.html">Constants</a>
+            <a href="PHP-OPERATORS.html">Operators</a>
+            <a href="PHP-CONDITIONALS.html">If...Else</a>
+            <a href="PHP-SWITCH.html">Switch</a>
+            <a href="PHP-LOOPS.html">Loops</a>
+            <a href="PHP-FUNCTIONS.html">Functions</a>
+            <a href="PHP-ARRAYS.html">Arrays</a>
+            <a href="PHP-FORMS.html" class="active">Forms</a>
+            <a href="PHP-DATABASE.html">Database</a>
+        </div>
+        
+        <div class="content">
+            <h2>PHP Forms</h2>
+            
+            <div class="intro-section">
+                <p>Forms are an essential part of web applications, allowing users to input data that can be processed by the server. PHP provides powerful tools for handling form submissions, validating user inputs, and processing form data securely.</p>
+                
+                <h3>Creating HTML Forms for PHP Processing</h3>
+                <p>An HTML form creates the interface for users to input data. When submitted, the form data is sent to a PHP script for processing.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;PHP Form Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form action="process.php" method="post"&gt;
+        &lt;label for="name"&gt;Name:&lt;/label&gt;
+        &lt;input type="text" id="name" name="name"&gt;&lt;br&gt;&lt;br&gt;
+        
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email" name="email"&gt;&lt;br&gt;&lt;br&gt;
+        
+        &lt;label for="message"&gt;Message:&lt;/label&gt;&lt;br&gt;
+        &lt;textarea id="message" name="message" rows="5" cols="40"&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+        
+        &lt;input type="submit" value="Submit"&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Form Handling Methods: GET vs POST</h3>
+                <p>PHP can handle form data using two HTTP methods:</p>
+                <ul>
+                    <li><strong>GET</strong> - Form data is appended to the URL as query parameters</li>
+                    <li><strong>POST</strong> - Form data is sent in the HTTP request body</li>
+                </ul>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;!-- GET method example --&gt;
+&lt;form action="process.php" method="get"&gt;
+    &lt;input type="text" name="username"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+
+&lt;!-- POST method example --&gt;
+&lt;form action="process.php" method="post"&gt;
+    &lt;input type="text" name="username"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+                    </code></pre>
+                </div>
+                
+                <p><strong>When to use GET vs POST:</strong></p>
+                <ul class="tips-list">
+                    <li>Use GET for simple data retrieval, bookmarkable URLs, or non-sensitive data.</li>
+                    <li>Use POST for form submissions, sensitive data, larger amounts of data, or when changing data on the server.</li>
+                </ul>
+                
+                <h3>Accessing Form Data in PHP</h3>
+                <p>PHP provides superglobal arrays to access form data:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// For GET requests
+$username = $_GET["username"] ?? "";
+
+// For POST requests
+$username = $_POST["username"] ?? "";
+
+// For both GET and POST (not recommended for most cases)
+$username = $_REQUEST["username"] ?? "";
+
+// Checking if form was submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Process form data for POST requests
+    $name = $_POST["name"] ?? "";
+    echo "Form submitted by: $name";
+}
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Form Validation</h3>
+                <p>Validating user input is crucial for maintaining application security and ensuring data integrity.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Define variables and set to empty values
+$nameErr = $emailErr = $messageErr = "";
+$name = $email = $message = "";
+
+// Check if the form was submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Validate name
+    if (empty($_POST["name"])) {
+        $nameErr = "Name is required";
+    } else {
+        $name = test_input($_POST["name"]);
+        // Check if name only contains letters and whitespace
+        if (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
+            $nameErr = "Only letters and white space allowed";
+        }
+    }
+    
+    // Validate email
+    if (empty($_POST["email"])) {
+        $emailErr = "Email is required";
+    } else {
+        $email = test_input($_POST["email"]);
+        // Check if email address is valid
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $emailErr = "Invalid email format";
+        }
+    }
+    
+    // Validate message
+    if (empty($_POST["message"])) {
+        $messageErr = "Message is required";
+    } else {
+        $message = test_input($_POST["message"]);
+    }
+}
+
+// Function to sanitize input data
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Display Form with Error Messages</h3>
+                <p>Displaying validation errors helps users correct their input.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;PHP Form Validation&lt;/title&gt;
+    &lt;style&gt;
+        .error {color: #FF0000;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;PHP Form Validation Example&lt;/h2&gt;
+    &lt;p&gt;&lt;span class="error"&gt;* required field&lt;/span&gt;&lt;/p&gt;
+    
+    &lt;form method="post" action="&lt;?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?&gt;"&gt;
+        Name: &lt;input type="text" name="name" value="&lt;?php echo $name;?&gt;"&gt;
+        &lt;span class="error"&gt;* &lt;?php echo $nameErr;?&gt;&lt;/span&gt;
+        &lt;br&gt;&lt;br&gt;
+        
+        Email: &lt;input type="text" name="email" value="&lt;?php echo $email;?&gt;"&gt;
+        &lt;span class="error"&gt;* &lt;?php echo $emailErr;?&gt;&lt;/span&gt;
+        &lt;br&gt;&lt;br&gt;
+        
+        Message: &lt;textarea name="message" rows="5" cols="40"&gt;&lt;?php echo $message;?&gt;&lt;/textarea&gt;
+        &lt;span class="error"&gt;* &lt;?php echo $messageErr;?&gt;&lt;/span&gt;
+        &lt;br&gt;&lt;br&gt;
+        
+        &lt;input type="submit" name="submit" value="Submit"&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Working with Different Form Elements</h3>
+                <p>PHP can handle various form elements like text fields, checkboxes, radio buttons, and select lists.</p>
+                
+                <h4>Handling Checkboxes</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;!-- HTML Form with checkboxes --&gt;
+&lt;form action="process.php" method="post"&gt;
+    &lt;p&gt;Select your programming languages:&lt;/p&gt;
+    &lt;input type="checkbox" id="php" name="languages[]" value="PHP"&gt;
+    &lt;label for="php"&gt;PHP&lt;/label&gt;&lt;br&gt;
+    
+    &lt;input type="checkbox" id="js" name="languages[]" value="JavaScript"&gt;
+    &lt;label for="js"&gt;JavaScript&lt;/label&gt;&lt;br&gt;
+    
+    &lt;input type="checkbox" id="python" name="languages[]" value="Python"&gt;
+    &lt;label for="python"&gt;Python&lt;/label&gt;&lt;br&gt;
+    
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+
+&lt;?php
+// PHP code to process checkboxes
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST["languages"])) {
+        echo "You selected: ";
+        foreach ($_POST["languages"] as $language) {
+            echo $language . ", ";
+        }
+    } else {
+        echo "You didn't select any language.";
+    }
+}
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>Handling Radio Buttons</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;!-- HTML Form with radio buttons --&gt;
+&lt;form action="process.php" method="post"&gt;
+    &lt;p&gt;Select your gender:&lt;/p&gt;
+    &lt;input type="radio" id="male" name="gender" value="male"&gt;
+    &lt;label for="male"&gt;Male&lt;/label&gt;&lt;br&gt;
+    
+    &lt;input type="radio" id="female" name="gender" value="female"&gt;
+    &lt;label for="female"&gt;Female&lt;/label&gt;&lt;br&gt;
+    
+    &lt;input type="radio" id="other" name="gender" value="other"&gt;
+    &lt;label for="other"&gt;Other&lt;/label&gt;&lt;br&gt;
+    
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+
+&lt;?php
+// PHP code to process radio buttons
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST["gender"])) {
+        echo "You selected: " . $_POST["gender"];
+    } else {
+        echo "You didn't select any gender.";
+    }
+}
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>Handling Select Lists</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;!-- HTML Form with select list --&gt;
+&lt;form action="process.php" method="post"&gt;
+    &lt;label for="country"&gt;Select your country:&lt;/label&gt;
+    &lt;select id="country" name="country"&gt;
+        &lt;option value=""&gt;--Select a country--&lt;/option&gt;
+        &lt;option value="usa"&gt;USA&lt;/option&gt;
+        &lt;option value="canada"&gt;Canada&lt;/option&gt;
+        &lt;option value="uk"&gt;United Kingdom&lt;/option&gt;
+        &lt;option value="australia"&gt;Australia&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+
+&lt;?php
+// PHP code to process select list
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (!empty($_POST["country"])) {
+        echo "You selected: " . $_POST["country"];
+    } else {
+        echo "You didn't select any country.";
+    }
+}
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>File Uploads with PHP</h3>
+                <p>PHP can handle file uploads, making it possible to upload images, documents, and other files.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;!-- HTML form for file uploads --&gt;
+&lt;form action="upload.php" method="post" enctype="multipart/form-data"&gt;
+    &lt;label for="fileToUpload"&gt;Select file to upload:&lt;/label&gt;
+    &lt;input type="file" name="fileToUpload" id="fileToUpload"&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;input type="submit" value="Upload File" name="submit"&gt;
+&lt;/form&gt;
+
+&lt;?php
+// PHP script to handle file upload (upload.php)
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["fileToUpload"])) {
+    $targetDir = "uploads/";
+    $targetFile = $targetDir . basename($_FILES["fileToUpload"]["name"]);
+    $uploadOk = 1;
+    $fileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+    
+    // Check if file already exists
+    if (file_exists($targetFile)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+    }
+    
+    // Check file size (limit to 2MB)
+    if ($_FILES["fileToUpload"]["size"] > 2000000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+    }
+    
+    // Allow certain file formats
+    if ($fileType != "jpg" && $fileType != "png" && $fileType != "jpeg" && $fileType != "gif" && $fileType != "pdf") {
+        echo "Sorry, only JPG, JPEG, PNG, GIF, & PDF files are allowed.";
+        $uploadOk = 0;
+    }
+    
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+    } else {
+        // Try to upload file
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $targetFile)) {
+            echo "The file ". basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+        }
+    }
+}
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Redirecting After Form Submission</h3>
+                <p>After processing form data, you often want to redirect the user to another page to prevent form resubmission.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Process form data
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Validate and process form data
+    $name = $_POST["name"] ?? "";
+    
+    if (!empty($name)) {
+        // Save data to database or perform other actions
+        
+        // Redirect to thank you page
+        header("Location: thank_you.php");
+        exit;
+    }
+}
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Creating a Complete Contact Form Example</h3>
+                <p>Here's a complete example of a contact form with validation and processing:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Define variables and set to empty values
+$nameErr = $emailErr = $subjectErr = $messageErr = "";
+$name = $email = $subject = $message = "";
+$formSubmitted = false;
+
+// Check if the form was submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Validate name
+    if (empty($_POST["name"])) {
+        $nameErr = "Name is required";
+    } else {
+        $name = test_input($_POST["name"]);
+        if (!preg_match("/^[a-zA-Z-' ]*$/", $name)) {
+            $nameErr = "Only letters and white space allowed";
+        }
+    }
+    
+    // Validate email
+    if (empty($_POST["email"])) {
+        $emailErr = "Email is required";
+    } else {
+        $email = test_input($_POST["email"]);
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $emailErr = "Invalid email format";
+        }
+    }
+    
+    // Validate subject
+    if (empty($_POST["subject"])) {
+        $subjectErr = "Subject is required";
+    } else {
+        $subject = test_input($_POST["subject"]);
+    }
+    
+    // Validate message
+    if (empty($_POST["message"])) {
+        $messageErr = "Message is required";
+    } else {
+        $message = test_input($_POST["message"]);
+    }
+    
+    // If no errors, process the form
+    if (empty($nameErr) && empty($emailErr) && empty($subjectErr) && empty($messageErr)) {
+        // Process the form data (e.g., send email, save to database)
+        // For demonstration, we'll just mark the form as submitted
+        $formSubmitted = true;
+        
+        // In a real application, you might send an email:
+        /*
+        $to = "admin@example.com";
+        $headers = "From: $email";
+        mail($to, $subject, $message, $headers);
+        */
+        
+        // Clear form fields after successful submission
+        $name = $email = $subject = $message = "";
+    }
+}
+
+// Function to sanitize input data
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+?&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Contact Form&lt;/title&gt;
+    &lt;style&gt;
+        .error {color: #FF0000;}
+        .success {color: #00AA00; font-weight: bold;}
+        form {
+            width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type=text], input[type=email], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 150px;
+        }
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;Contact Us&lt;/h2&gt;
+    
+    &lt;?php if ($formSubmitted): ?&gt;
+        &lt;p class="success"&gt;Thank you for your message! We'll get back to you soon.&lt;/p&gt;
+    &lt;?php endif; ?&gt;
+    
+    &lt;form method="post" action="&lt;?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?&gt;"&gt;
+        &lt;label for="name"&gt;Name:&lt;/label&gt;
+        &lt;input type="text" id="name" name="name" value="&lt;?php echo $name;?&gt;"&gt;
+        &lt;span class="error"&gt;&lt;?php echo $nameErr;?&gt;&lt;/span&gt;
+        
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email" name="email" value="&lt;?php echo $email;?&gt;"&gt;
+        &lt;span class="error"&gt;&lt;?php echo $emailErr;?&gt;&lt;/span&gt;
+        
+        &lt;label for="subject"&gt;Subject:&lt;/label&gt;
+        &lt;input type="text" id="subject" name="subject" value="&lt;?php echo $subject;?&gt;"&gt;
+        &lt;span class="error"&gt;&lt;?php echo $subjectErr;?&gt;&lt;/span&gt;
+        
+        &lt;label for="message"&gt;Message:&lt;/label&gt;
+        &lt;textarea id="message" name="message"&gt;&lt;?php echo $message;?&gt;&lt;/textarea&gt;
+        &lt;span class="error"&gt;&lt;?php echo $messageErr;?&gt;&lt;/span&gt;
+        
+        &lt;input type="submit" value="Submit"&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Security Considerations</h3>
+                <p>When working with forms, security should be a top priority. Here are some important security considerations:</p>
+                
+                <ul class="tips-list">
+                    <li>Always validate and sanitize input data to prevent SQL injection, XSS attacks, and other security vulnerabilities.</li>
+                    <li>Use HTTPS for forms that collect sensitive information to protect data in transit.</li>
+                    <li>Implement CSRF (Cross-Site Request Forgery) protection using tokens.</li>
+                    <li>Use prepared statements with PDO or mysqli when interacting with databases.</li>
+                    <li>Limit file upload sizes and validate file types to prevent malicious file uploads.</li>
+                    <li>Never trust user input, even if you've implemented client-side validation.</li>
+                    <li>Use password hashing functions like password_hash() when storing user passwords.</li>
+                    <li>Consider using a CAPTCHA for forms accessible to the public to prevent spam submissions.</li>
+                </ul>
+                
+                <h4>CSRF Protection Example</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+session_start();
+
+// Generate CSRF token
+function generateCSRFToken() {
+    if (!isset($_SESSION['csrf_token'])) {
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    }
+    return $_SESSION['csrf_token'];
+}
+
+// Verify CSRF token
+function verifyCSRFToken($token) {
+    if (!isset($_SESSION['csrf_token']) || $token !== $_SESSION['csrf_token']) {
+        return false;
+    }
+    return true;
+}
+
+// Generate a token for the form
+$csrf_token = generateCSRFToken();
+
+// Process form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Verify CSRF token
+    if (!verifyCSRFToken($_POST['csrf_token'])) {
+        die("CSRF token validation failed");
+    }
+    
+    // Process the form data
+    // ...
+}
+?&gt;
+
+&lt;!-- HTML form with CSRF token --&gt;
+&lt;form method="post" action="&lt;?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?&gt;"&gt;
+    &lt;input type="hidden" name="csrf_token" value="&lt;?php echo $csrf_token; ?&gt;"&gt;
+    
+    &lt;label for="username"&gt;Username:&lt;/label&gt;
+    &lt;input type="text" id="username" name="username"&gt;
+    &lt;br&gt;&lt;br&gt;
+    
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+                    </code></pre>
+                </div>
+            </div>
+            
+            <div class="navigation-buttons">
+                <div class="previous-page">
+                    <a href="PHP-ARRAYS.html">Previous: Arrays</a>
+                </div>
+                <div class="next-page">
+                    <a href="PHP-DATABASE.html">Next: Database</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Front-End Tutorial © 2025 | Programming the Web, One Line at a Time</p>
+    </footer>
+</body>
+</html>

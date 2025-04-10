@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>CSS BOX MODEL</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="CSS-HOME.html">Home</a>
+            <a href="CSS-INTRO.html">Introduction</a>
+            <a href="CSS-SELECTORS.html">Selectors</a>
+            <a href="CSS-COLORS.html">Colors</a>
+            <a href="CSS-BACKGROUNDS.html">Backgrounds</a>
+            <a href="CSS-BORDERS.html">Borders</a>
+            <a href="CSS-MARGINS.html">Margins</a>
+            <a href="CSS-PADDING.html">Padding</a>
+            <a href="CSS-HEIGHT-WIDTH.html">Height/Width</a>
+            <a href="CSS-BOX-MODEL.html" class="active">Box Model</a>
+            <a href="CSS-TEXT.html">Text</a>
+            <a href="CSS-FONTS.html">Fonts</a>
+            <a href="CSS-DISPLAY.html">Display</a>
+            <a href="CSS-POSITION.html">Position</a>
+            <a href="CSS-FLOAT.html">Float</a>
+            <a href="CSS-FLEXBOX.html">Flexbox</a>
+            <a href="CSS-GRID.html">Grid</a>
+            <a href="CSS-RESPONSIVE.html">Responsive</a>
+        </div>
+        
+        <div class="content">
+            <h2>CSS Box Model</h2>
+            <p>The CSS box model is essentially a box that wraps around every HTML element. It consists of content, padding, borders, and margins. Understanding the box model is crucial for layout and design in CSS.</p>
+           
+            <div class="image-container">
+              <div id="css-image1" class="Images">
+                <img src="pictures/box-model.png" alt="CSS Box Model">
+              </div>
+            </div>
+
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Box Model Component</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>Content</td>
+                        <td>The actual content of the box where text and images appear</td>
+                    </tr>
+                    <tr>
+                        <td>Padding</td>
+                        <td>Space between the content and the border</td>
+                    </tr>
+                    <tr>
+                        <td>Border</td>
+                        <td>A border that goes around the padding and content</td>
+                    </tr>
+                    <tr>
+                        <td>Margin</td>
+                        <td>Space outside the border; clears an area outside the border</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h3>Total Element Width Calculation</h3>
+            <p>By default, the total width of an element is calculated as:</p>
+            <pre>
+Total element width = width + left padding + right padding + left border + right border + left margin + right margin
+            </pre>
+            
+            <h3>Example Calculation</h3>
+            <p>Let's calculate the total width of an element with these properties:</p>
+            <pre>
+div {
+    width: 300px;
+    padding: 10px;
+    border: 5px solid black;
+    margin: 10px;
+}
+
+Total width = 300px + 10px + 10px + 5px + 5px + 10px + 10px = 350px
+            </pre>
+            
+            <h3>Box-Sizing Property</h3>
+            <p>The box-sizing property changes how the width and height of elements are calculated:</p>
+            <pre>
+/* Default box model (content-box) */
+.content-box {
+    box-sizing: content-box;
+    width: 300px; /* The content will be 300px wide */
+    padding: 10px;
+    border: 5px solid black;
+    /* Total width: 300px + 20px + 10px = 330px */
+}
+
+/* Alternative box model (border-box) */
+.border-box {
+    box-sizing: border-box;
+    width: 300px; /* The total width including padding and border will be 300px */
+    padding: 10px;
+    border: 5px solid black;
+    /* Content width: 300px - 20px - 10px = 270px */
+}
+            </pre>
+            
+            <h3>Browser Developer Tools</h3>
+            <p>Most modern browsers include developer tools that can help you visualize and understand the box model of elements on a webpage. You can inspect elements to see their dimensions, padding, border, and margin values.</p>
+            
+            <h3>Box Model and Layout</h3>
+            <p>Understanding the box model is essential for creating layouts because:</p>
+            <ul>
+                <li>It helps predict how elements will interact with each other</li>
+                <li>It's crucial for responsive design</li>
+                <li>It allows for precise control of spacing between elements</li>
+                <li>Understanding it helps debug layout issues</li>
+            </ul>
+            
+            <div class="previous-page">
+                <a href="CSS-HEIGHT-WIDTH.html"> &#8592; Previous </a>
+            </div>
+            <div class="next-page">
+                <a href="CSS-TEXT.html">Next &#8594;</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Styling the Web, One Rule at a Time</p>
+    </footer>
+</body>
+</html>

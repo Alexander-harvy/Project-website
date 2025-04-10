@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Basics Tutorial</title>
+  <link rel="stylesheet" href="website.css">
+  <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active">HOME</a></li>
+      <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+      <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+      <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+      <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+  </ul>
+</div>
+
+  <div class="main-content">
+    <div class="header">
+        <h1>WELCOME TO HTML TUTORIAL</h1>
+        <div class="header-underline"></div>
+    </div>
+    
+    <div class="tutorial-nav">
+        <a href="HTML-HOME.html">Home</a>
+        <a href="HTML-INTRO.html">Introduction</a>
+        <a href="HTML-EDITORS.html">Editors</a>
+        <a href="HTML.BASICS.html" class="active">Basics</a>
+        <a href="HTML-ELEMENTS.html">Elements</a>
+        <a href="HTML-ATTRIBUTES.html">Attributes</a>
+        <a href="HTML-HEADINGS.html">Headings</a>
+        <a href="HTML-COMMENTS.html">Comments</a>
+        <a href="HTML-COLORS.html">Colors</a>
+        <a href="HTML-LINKS.html">Links</a>
+        <a href="HTML-IMAGES.html">Images</a>
+        <a href="HTML-FAVICON.html">Favicon</a>
+        <a href="HTML-PAGE-TITLE.html">Page Title</a>
+        <a href="HTML-TABLES.html">Tables</a>
+        <a href="HTML-LISTS.html">Lists</a>
+        <a href="HTML-DIV.html">Div</a>
+        <a href="HTML-CLASSES.html">Classes</a>
+        <a href="HTML-ID.html">Id</a>
+    </div>
+    
+    <div class="content">
+      <h2>HTML Basics - Getting Started with HTML</h2>
+      <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages. Understanding the basics is the foundation for web development. Let's explore the fundamental concepts of HTML.</p>
+      
+      <div class="topic-section">
+        <div class="topic">
+          <h2>Document Structure</h2>
+          <div class="topic-content">
+            <p>Every HTML document has a basic structure:</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  Content goes here...
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p>This structure includes the document type declaration, html, head, and body elements that form the foundation of every HTML page.</p>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>HTML Syntax</h2>
+          <div class="topic-content">
+            <p>HTML uses tags to define elements:</p>
+            <ul class="tips-list">
+              <li>Tags are enclosed in angle brackets: &lt;tagname&gt;</li>
+              <li>Most tags come in pairs: &lt;tagname&gt;content&lt;/tagname&gt;</li>
+              <li>The closing tag has a forward slash: &lt;/tagname&gt;</li>
+              <li>Some tags are self-closing: &lt;tagname /&gt;</li>
+            </ul>
+            <p>Understanding this syntax is essential for writing valid HTML code.</p>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>HTML Elements</h2>
+          <div class="topic-content">
+            <p>Basic elements you'll use frequently:</p>
+            <ul class="tips-list">
+              <li>&lt;h1&gt; to &lt;h6&gt; - headings</li>
+              <li>&lt;p&gt; - paragraphs</li>
+              <li>&lt;a&gt; - links</li>
+              <li>&lt;img&gt; - images</li>
+              <li>&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt; - lists</li>
+              <li>&lt;div&gt; - container</li>
+            </ul>
+            <p>These elements form the building blocks of your web pages.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="image-container">
+      <div id="img4" class="Images">
+        <h3>HTML Document Structure Visualization</h3>
+        <img src="pictures/html-diagram.png" alt="HTML Document Structure Diagram">
+      </div>
+    </div>
+      
+      <h3>HTML Elements Explained</h3>
+      <table class="table">
+        <tr>
+          <th>Element</th>
+          <th>Purpose</th>
+        </tr>
+        <tr>
+          <td>&lt;!DOCTYPE html&gt;</td>
+          <td>Defines document type</td>
+        </tr>
+        <tr>
+          <td>&lt;html&gt;</td>
+          <td>Root element of page</td>
+        </tr>
+        <tr>
+          <td>&lt;head&gt;</td>
+          <td>Contains meta-information</td>
+        </tr>
+        <tr>
+          <td>&lt;title&gt;</td>
+          <td>Sets page title in browser tab</td>
+        </tr>
+        <tr>
+          <td>&lt;body&gt;</td>
+          <td>Contains visible page content</td>
+        </tr>
+      </table>
+      
+      <h3>Your First HTML Page</h3>
+      <ul class="topic-content">
+        <li>Create a new file in your text editor</li>
+        <li>Copy the basic HTML structure shown above</li>
+        <li>Add some content inside the body tags:
+          <pre><code>&lt;body&gt;
+  &lt;h1&gt;My First Heading&lt;/h1&gt;
+  &lt;p&gt;My first paragraph.&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+        </li>
+        <li>Save the file with a .html extension (e.g., "index.html")</li>
+        <li>Open the file in a web browser to see your first webpage</li>
+      </ul>
+      
+      <div class="buttons">
+        <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_basic_headings" class="btn">Try it Yourself</a>
+        <a href="#" class="btn">Example Code</a>
+      </div>
+      
+      <h3>Tips for HTML Beginners</h3>
+      <ul class="tips-list">
+        <li>Always use proper indentation to make your code readable</li>
+        <li>Make sure all your tags are properly closed</li>
+        <li>Use lowercase for tag names for better compatibility</li>
+        <li>Validate your HTML using online validators</li>
+        <li>Start simple and gradually add more complex elements</li>
+      </ul>
+    </div>
+    
+    <div class="previous-page">
+      <a href="HTML-EDITORS.html">&#8592; Previous</a>
+    </div>
+    <div class="next-page">
+      <a href="HTML-ELEMENTS.html">Next &#8594;</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Front-End Tutorial © 2025 | Building the Web, One Tag at a Time</p>
+  </footer>
+  
+</body>
+</html>

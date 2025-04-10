@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Tutorial - Strings</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>WELCOME TO PHP TUTORIAL</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="PHP-HOME.html">Home</a>
+            <a href="PHP-INTRO.html">Introduction</a>
+            <a href="PHP-SYNTAX.html">Syntax</a>
+            <a href="PHP-VARIABLES.html">Variables</a>
+            <a href="PHP-ECHO.html">Echo/Print</a>
+            <a href="PHP-DATATYPES.html">Data Types</a>
+            <a href="PHP-STRINGS.html" class="active">Strings</a>
+            <a href="PHP-NUMBERS.html">Numbers</a>
+            <a href="PHP-MATH.html">Math</a>
+            <a href="PHP-CONSTANTS.html">Constants</a>
+            <a href="PHP-OPERATORS.html">Operators</a>
+            <a href="PHP-CONDITIONALS.html">If...Else</a>
+            <a href="PHP-SWITCH.html">Switch</a>
+            <a href="PHP-LOOPS.html">Loops</a>
+            <a href="PHP-FUNCTIONS.html">Functions</a>
+            <a href="PHP-ARRAYS.html">Arrays</a>
+            <a href="PHP-FORMS.html">Forms</a>
+            <a href="PHP-DATABASE.html">Database</a>
+        </div>
+        
+        <div class="content">
+            <h2>PHP Strings</h2>
+            
+            <div class="intro-section">
+                <p>A string is a sequence of characters, like "Hello world!". Strings in PHP can be created using single quotes ('), double quotes ("), or heredoc syntax.</p>
+                
+                <h3>Creating Strings</h3>
+                <p>PHP strings can be created in different ways:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Single quoted strings
+$str1 = 'Hello world!';
+
+// Double quoted strings
+$str2 = "Hello world!";
+
+// Heredoc syntax (for multi-line strings)
+$str3 = &lt;&lt;&lt;EOD
+This is a heredoc string
+spanning multiple lines
+EOD;
+
+echo $str1 . "&lt;br&gt;";
+echo $str2 . "&lt;br&gt;";
+echo $str3;
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>String Concatenation</h3>
+                <p>In PHP, strings can be concatenated (joined together) using the dot (.) operator:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$txt1 = "Hello";
+$txt2 = "world!";
+echo $txt1 . " " . $txt2;
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>String Length</h3>
+                <p>The strlen() function returns the length of a string:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo strlen("Hello world!"); // outputs 12
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>String Word Count</h3>
+                <p>The str_word_count() function counts the number of words in a string:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo str_word_count("Hello world!"); // outputs 2
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>String Position</h3>
+                <p>The strpos() function searches for a specific text within a string. If a match is found, it returns the character position of the first match. If no match is found, it returns FALSE.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo strpos("Hello world!", "world"); // outputs 6
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>String Modification</h3>
+                <p>PHP has many built-in functions to modify strings:</p>
+                
+                <h4>strtoupper() - Uppercase</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo strtoupper("Hello World!"); // outputs "HELLO WORLD!"
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>strtolower() - Lowercase</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo strtolower("Hello World!"); // outputs "hello world!"
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>ucfirst() - First character uppercase</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo ucfirst("hello world!"); // outputs "Hello world!"
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>ucwords() - Uppercase the first character of each word</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo ucwords("hello world!"); // outputs "Hello World!"
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>str_replace() - Replace text within a string</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo str_replace("world", "Dolly", "Hello world!"); // outputs "Hello Dolly!"
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>substr() - Return part of a string</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo substr("Hello world!", 6); // outputs "world!"
+echo "&lt;br&gt;";
+echo substr("Hello world!", 0, 5); // outputs "Hello"
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>trim() - Remove whitespace from both sides</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo trim(" Hello World! "); // outputs "Hello World!"
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>String Comparison</h3>
+                <p>PHP provides several functions to compare strings:</p>
+                
+                <h4>strcmp() - Binary safe string comparison</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo strcmp("Hello world!","Hello world!"); // outputs 0 (equal)
+echo "&lt;br&gt;";
+echo strcmp("Hello world!","Hello"); // outputs > 0 (first is greater)
+echo "&lt;br&gt;";
+echo strcmp("Hello","Hello world!"); // outputs < 0 (first is less)
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>strcasecmp() - Case-insensitive string comparison</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo strcasecmp("Hello world!","HELLO WORLD!"); // outputs 0 (equal)
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>String Functions Summary</h3>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>Function</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>strlen()</td>
+                            <td>Returns the length of a string</td>
+                            <td>strlen("Hello") → 5</td>
+                        </tr>
+                        <tr>
+                            <td>str_word_count()</td>
+                            <td>Counts the number of words in a string</td>
+                            <td>str_word_count("Hi there") → 2</td>
+                        </tr>
+                        <tr>
+                            <td>strrev()</td>
+                            <td>Reverses a string</td>
+                            <td>strrev("Hello") → "olleH"</td>
+                        </tr>
+                        <tr>
+                            <td>strpos()</td>
+                            <td>Searches for a text within a string</td>
+                            <td>strpos("Hello","e") → 1</td>
+                        </tr>
+                        <tr>
+                            <td>str_replace()</td>
+                            <td>Replaces some characters in a string</td>
+                            <td>str_replace("world","John","Hello world") → "Hello John"</td>
+                        </tr>
+                        <tr>
+                            <td>substr()</td>
+                            <td>Returns a part of a string</td>
+                            <td>substr("Hello world",6) → "world"</td>
+                        </tr>
+                        <tr>
+                            <td>trim()</td>
+                            <td>Removes whitespace from both sides</td>
+                            <td>trim(" Hello ") → "Hello"</td>
+                        </tr>
+                        <tr>
+                            <td>explode()</td>
+                            <td>Splits a string into an array</td>
+                            <td>explode(" ","Hello world") → array("Hello","world")</td>
+                        </tr>
+                        <tr>
+                            <td>implode()</td>
+                            <td>Joins array elements into a string</td>
+                            <td>implode(" ",array("Hello","world")) → "Hello world"</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <h3>Escape Characters</h3>
+                <p>Special characters can be escaped in strings using a backslash (\):</p>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo "This is a \"quote\" inside a string."; // Double quotes inside double quotes
+echo 'It\'s a string with a single quote.';  // Single quote inside single quotes
+echo "Line 1\nLine 2";                      // New line
+echo "Tab\tseparated";                       // Tab
+echo "Backslash: \\";                        // Backslash
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Practical Example: Form Validation</h3>
+                <p>Here's an example of how string functions can be used for form validation:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Form Validation&lt;/title&gt;
+    &lt;style&gt;
+        .error { color: red; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;?php
+    // Define variables and set to empty values
+    $name = $email = $password = "";
+    $nameErr = $emailErr = $passwordErr = "";
+    
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Validate name
+        if (empty($_POST["name"])) {
+            $nameErr = "Name is required";
+        } else {
+            $name = test_input($_POST["name"]);
+            // Check if name only contains letters and whitespace
+            if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+                $nameErr = "Only letters and white space allowed";
+            }
+        }
+        
+        // Validate email
+        if (empty($_POST["email"])) {
+            $emailErr = "Email is required";
+        } else {
+            $email = test_input($_POST["email"]);
+            // Check if email is valid
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $emailErr = "Invalid email format";
+            }
+        }
+        
+        // Validate password
+        if (empty($_POST["password"])) {
+            $passwordErr = "Password is required";
+        } else {
+            $password = test_input($_POST["password"]);
+            // Check if password is at least 8 characters
+            if (strlen($password) < 8) {
+                $passwordErr = "Password must be at least 8 characters";
+            }
+        }
+    }
+    
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+    ?&gt;
+
+    &lt;h2&gt;Registration Form&lt;/h2&gt;
+    &lt;form method="post" action="&lt;?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?&gt;"&gt;
+        Name: &lt;input type="text" name="name" value="&lt;?php echo $name;?&gt;"&gt;
+        &lt;span class="error"&gt;* &lt;?php echo $nameErr;?&gt;&lt;/span&gt;
+        &lt;br&gt;&lt;br&gt;
+        Email: &lt;input type="text" name="email" value="&lt;?php echo $email;?&gt;"&gt;
+        &lt;span class="error"&gt;* &lt;?php echo $emailErr;?&gt;&lt;/span&gt;
+        &lt;br&gt;&lt;br&gt;
+        Password: &lt;input type="password" name="password"&gt;
+        &lt;span class="error"&gt;* &lt;?php echo $passwordErr;?&gt;&lt;/span&gt;
+        &lt;br&gt;&lt;br&gt;
+        &lt;input type="submit" name="submit" value="Submit"&gt;
+    &lt;/form&gt;
+
+    &lt;?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && empty($nameErr) && empty($emailErr) && empty($passwordErr)) {
+        echo "&lt;h3&gt;Your Input:&lt;/h3&gt;";
+        echo "Name: " . htmlspecialchars($name) . "&lt;br&gt;";
+        echo "Email: " . htmlspecialchars($email) . "&lt;br&gt;";
+        echo "Password: " . str_repeat("*", strlen($password)) . "&lt;br&gt;";
+    }
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                </div>
+            </div>
+            
+            <div class="navigation-buttons">
+                <div class="previous-page">
+                    <a href="PHP-DATATYPES.html">Previous: Data Types</a>
+                </div>
+                <div class="next-page">
+                    <a href="PHP-NUMBERS.html">Next: Numbers</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Programming the Web, One Line at a Time</p>
+    </footer>
+
+</body>
+</html>

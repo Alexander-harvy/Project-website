@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Tutorial - Introduction</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>WELCOME TO PHP TUTORIAL</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="PHP-HOME.html">Home</a>
+            <a href="PHP-INTRO.html" class="active">Introduction</a>
+            <a href="PHP-SYNTAX.html">Syntax</a>
+            <a href="PHP-VARIABLES.html">Variables</a>
+            <a href="PHP-ECHO.html">Echo/Print</a>
+            <a href="PHP-DATATYPES.html">Data Types</a>
+            <a href="PHP-STRINGS.html">Strings</a>
+            <a href="PHP-NUMBERS.html">Numbers</a>
+            <a href="PHP-MATH.html">Math</a>
+            <a href="PHP-CONSTANTS.html">Constants</a>
+            <a href="PHP-OPERATORS.html">Operators</a>
+            <a href="PHP-CONDITIONALS.html">If...Else</a>
+            <a href="PHP-SWITCH.html">Switch</a>
+            <a href="PHP-LOOPS.html">Loops</a>
+            <a href="PHP-FUNCTIONS.html">Functions</a>
+            <a href="PHP-ARRAYS.html">Arrays</a>
+            <a href="PHP-FORMS.html">Forms</a>
+            <a href="PHP-DATABASE.html">Database</a>
+        </div>
+        
+        <div class="content">
+            <h2>Introduction to PHP</h2>
+            
+            <div class="intro-section">
+                <h3>What is PHP?</h3>
+                <p>PHP (PHP: Hypertext Preprocessor) is a widely-used open source general-purpose scripting language that is especially suited for web development and can be embedded into HTML.</p>
+                
+                <p>Unlike client-side languages like JavaScript that run in the browser, PHP code is executed on the server, generating HTML which is then sent to the client. The client receives the results of running that script, but has no knowledge of the underlying code.</p>
+                
+                <div class="image-container"> 
+                <div class="Images">
+                    <img src="pictures/introphp.png" alt="PHP Server-Client Model">
+                </div>
+              </div>
+
+                <h3>What Can PHP Do?</h3>
+                <ul>
+                    <li>Generate dynamic page content</li>
+                    <li>Create, open, read, write, delete, and close files on the server</li>
+                    <li>Collect form data</li>
+                    <li>Send and receive cookies</li>
+                    <li>Add, delete, modify data in your database</li>
+                    <li>Control user-access</li>
+                    <li>Encrypt data</li>
+                </ul>
+                
+                <h3>Why PHP?</h3>
+                <ul>
+                    <li>PHP runs on various platforms (Windows, Linux, Unix, Mac OS X, etc.)</li>
+                    <li>PHP is compatible with almost all servers used today (Apache, IIS, etc.)</li>
+                    <li>PHP supports a wide range of databases</li>
+                    <li>PHP is free to download and use</li>
+                    <li>PHP is easy to learn and runs efficiently on the server side</li>
+                </ul>
+                
+                <h3>PHP File Extension</h3>
+                <p>PHP files have the extension ".php"</p>
+                <p>A PHP file normally contains HTML tags, and some PHP scripting code. Below is an example of a simple PHP file, with a PHP script that outputs "Hello World!":</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1&gt;My First PHP Page&lt;/h1&gt;
+
+&lt;?php
+echo "Hello World!";
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>How PHP Works</h3>
+                <p>When a visitor opens a page containing PHP code, the server processes the PHP commands and sends the resulting HTML to the browser. This processing flow is what makes PHP a server-side language.</p>
+                
+                <div class="image-container">
+                <div class="Images">
+                    <img src="pictures/PHPFLOW.png" alt="PHP Processing Flow">
+                </div>
+            </div>
+                <h3>PHP Development Environment</h3>
+                <p>To develop with PHP, you'll need:</p>
+                <ol>
+                    <li>A web server (like Apache)</li>
+                    <li>PHP installed on your server</li>
+                    <li>A database system (like MySQL) if you plan to work with databases</li>
+                    <li>A text editor (like VSCode, Sublime Text, etc.) for writing code</li>
+                </ol>
+                
+                <p>You can install these individually or use an all-in-one package like:</p>
+                <ul>
+                    <li>XAMPP (for Windows, Mac, Linux)</li>
+                    <li>WAMP (for Windows)</li>
+                    <li>MAMP (for Mac)</li>
+                    <li>LAMP (for Linux)</li>
+                </ul>
+            </div>
+            
+            <div class="php-example">
+                <h3>Your First PHP Script</h3>
+                <p>Let's create a basic "Hello World" script in PHP:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+    // This is a PHP comment
+    echo "Hello, World!"; // This prints text to the screen
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <p>Save this code in a file named "hello.php" and place it in your web server's document root directory. Then access it via your browser by visiting "http://localhost/hello.php".</p>
+            </div>
+            
+            <div class="navigation-buttons">
+                <div class="previous-page">
+                    <a href="PHP-HOME.html">Previous: Home</a>
+                </div>
+                <div class="next-page">
+                    <a href="PHP-SYNTAX.html">Next: PHP Syntax</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Programming the Web, One Line at a Time</p>
+    </footer>
+
+</body>
+</html>

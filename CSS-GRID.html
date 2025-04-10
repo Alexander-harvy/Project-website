@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>CSS GRID</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="CSS-HOME.html">Home</a>
+            <a href="CSS-INTRO.html">Introduction</a>
+            <a href="CSS-SELECTORS.html">Selectors</a>
+            <a href="CSS-COLORS.html">Colors</a>
+            <a href="CSS-BACKGROUNDS.html">Backgrounds</a>
+            <a href="CSS-BORDERS.html">Borders</a>
+            <a href="CSS-MARGINS.html">Margins</a>
+            <a href="CSS-PADDING.html">Padding</a>
+            <a href="CSS-HEIGHT-WIDTH.html">Height/Width</a>
+            <a href="CSS-BOX-MODEL.html">Box Model</a>
+            <a href="CSS-TEXT.html">Text</a>
+            <a href="CSS-FONTS.html">Fonts</a>
+            <a href="CSS-DISPLAY.html">Display</a>
+            <a href="CSS-POSITION.html">Position</a>
+            <a href="CSS-FLOAT.html">Float</a>
+            <a href="CSS-FLEXBOX.html">Flexbox</a>
+            <a href="CSS-GRID.html" class="active">Grid</a>
+            <a href="CSS-RESPONSIVE.html">Responsive</a>
+        </div>
+        
+        <div class="content">
+            <h2>CSS Grid Layout</h2>
+            <p>CSS Grid Layout is a two-dimensional layout system designed specifically for web user interfaces. Grid allows you to create complex layouts with rows and columns, making it easier to design web pages without having to rely on floats and positioning.</p>
+           
+            <div class="image-container">
+              <div id="css-image1" class="Images">
+                <img src="pictures/grid.png" alt="CSS Grid">
+              </div>
+            </div>
+
+            <h3>Creating a Grid Container</h3>
+            <p>To create a grid container, you need to set the display property to grid or inline-grid:</p>
+            <pre>
+.container {
+    display: grid; /* or inline-grid */
+}
+            </pre>
+            
+            <h3>Grid Container Properties</h3>
+            <p>These properties are applied to the grid container:</p>
+            
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Property</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>grid-template-columns</td>
+                        <td>Defines the columns of the grid with a space-separated list of values</td>
+                    </tr>
+                    <tr>
+                        <td>grid-template-rows</td>
+                        <td>Defines the rows of the grid with a space-separated list of values</td>
+                    </tr>
+                    <tr>
+                        <td>grid-template-areas</td>
+                        <td>Defines named grid areas</td>
+                    </tr>
+                    <tr>
+                        <td>grid-column-gap</td>
+                        <td>Sets the gap between columns</td>
+                    </tr>
+                    <tr>
+                        <td>grid-row-gap</td>
+                        <td>Sets the gap between rows</td>
+                    </tr>
+                    <tr>
+                        <td>grid-gap</td>
+                        <td>Shorthand for grid-row-gap and grid-column-gap</td>
+                    </tr>
+                    <tr>
+                        <td>justify-items</td>
+                        <td>Aligns grid items along the row axis</td>
+                    </tr>
+                    <tr>
+                        <td>align-items</td>
+                        <td>Aligns grid items along the column axis</td>
+                    </tr>
+                    <tr>
+                        <td>justify-content</td>
+                        <td>Aligns the grid within the container along the row axis</td>
+                    </tr>
+                    <tr>
+                        <td>align-content</td>
+                        <td>Aligns the grid within the container along the column axis</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h3>Grid Item Properties</h3>
+            <p>These properties are applied to the grid items (children of the grid container):</p>
+            
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Property</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>grid-column-start</td>
+                        <td>Specifies the start position of an item on the column axis</td>
+                    </tr>
+                    <tr>
+                        <td>grid-column-end</td>
+                        <td>Specifies the end position of an item on the column axis</td>
+                    </tr>
+                    <tr>
+                        <td>grid-row-start</td>
+                        <td>Specifies the start position of an item on the row axis</td>
+                    </tr>
+                    <tr>
+                        <td>grid-row-end</td>
+                        <td>Specifies the end position of an item on the row axis</td>
+                    </tr>
+                    <tr>
+                        <td>grid-column</td>
+                        <td>Shorthand for grid-column-start and grid-column-end</td>
+                    </tr>
+                    <tr>
+                        <td>grid-row</td>
+                        <td>Shorthand for grid-row-start and grid-row-end</td>
+                    </tr>
+                    <tr>
+                        <td>grid-area</td>
+                        <td>Specifies a grid item's location in a named grid area, or shorthand for grid-row-start, grid-column-start, grid-row-end, grid-column-end</td>
+                    </tr>
+                    <tr>
+                        <td>justify-self</td>
+                        <td>Aligns an individual grid item in the inline direction</td>
+                    </tr>
+                    <tr>
+                        <td>align-self</td>
+                        <td>Aligns an individual grid item in the block direction</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h3>The fr Unit</h3>
+            <p>The fr unit represents a fraction of the available space in the grid container. This unit makes it easy to create flexible grid layouts:</p>
+            <pre>
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* First column takes 1/4, second 2/4, third 1/4 of available space */
+    grid-gap: 20px;
+}
+            </pre>
+            
+            <h3>Common Grid Layouts</h3>
+            <h4>Basic Grid</h4>
+            <pre>
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+    grid-gap: 20px;
+}
+            </pre>
+            
+            <h4>Holy Grail Layout</h4>
+            <pre>
+.container {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "nav content sidebar"
+        "footer footer footer";
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+.header { grid-area: header; }
+.nav { grid-area: nav; }
+.content { grid-area: content; }
+.sidebar { grid-area: sidebar; }
+.footer { grid-area: footer; }
+            </pre>
+            
+            <h4>Grid with Auto-Fit</h4>
+            <pre>
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+            </pre>
+            
+            <h3>Grid vs. Flexbox</h3>
+            <p>While both CSS Grid and Flexbox are powerful layout tools, they serve different purposes:</p>
+            <ul>
+                <li><strong>Dimensions:</strong> Grid is two-dimensional (rows and columns), while Flexbox is one-dimensional (row or column)</li>
+                <li><strong>Layout approach:</strong> Grid is layout-first (define the grid, then place items), while Flexbox is content-first (items define their own layout)</li>
+                <li><strong>Alignment:</strong> Grid excels at aligning items in both dimensions, while Flexbox focuses on one dimension</li>
+                <li><strong>Use cases:</strong> Grid is ideal for overall page layout, while Flexbox works best for components and small-scale layouts</li>
+            </ul>
+            
+            <h3>Browser Support</h3>
+            <p>CSS Grid is supported in all modern browsers, including:</p>
+            <ul>
+                <li>Chrome 57+</li>
+                <li>Firefox 52+</li>
+                <li>Safari 10.1+</li>
+                <li>Edge 16+</li>
+                <li>Opera 44+</li>
+                <li>iOS Safari 10.3+</li>
+                <li>Android Browser 81+</li>
+            </ul>
+            
+            <div class="previous-page">
+                <a href="CSS-FLEXBOX.html"> &#8592; Previous </a>
+            </div>
+            <div class="next-page">
+                <a href="CSS-RESPONSIVE.html">Next &#8594;</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Styling the Web, One Rule at a Time</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Responsive Design</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>CSS RESPONSIVE DESIGN</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="CSS-HOME.html">Home</a>
+            <a href="CSS-INTRO.html">Introduction</a>
+            <a href="CSS-SELECTORS.html">Selectors</a>
+            <a href="CSS-COLORS.html">Colors</a>
+            <a href="CSS-BACKGROUNDS.html">Backgrounds</a>
+            <a href="CSS-BORDERS.html">Borders</a>
+            <a href="CSS-MARGINS.html">Margins</a>
+            <a href="CSS-PADDING.html">Padding</a>
+            <a href="CSS-HEIGHT-WIDTH.html">Height/Width</a>
+            <a href="CSS-BOX-MODEL.html">Box Model</a>
+            <a href="CSS-TEXT.html">Text</a>
+            <a href="CSS-FONTS.html">Fonts</a>
+            <a href="CSS-DISPLAY.html">Display</a>
+            <a href="CSS-POSITION.html">Position</a>
+            <a href="CSS-FLOAT.html">Float</a>
+            <a href="CSS-FLEXBOX.html">Flexbox</a>
+            <a href="CSS-GRID.html">Grid</a>
+            <a href="CSS-RESPONSIVE.html" class="active">Responsive</a>
+        </div>
+        
+        <div class="content">
+            <h2>CSS Responsive Web Design</h2>
+            <p>Responsive web design is an approach to web design that makes web pages render well on a variety of devices and window or screen sizes. It ensures that your website looks good and functions well whether viewed on a desktop computer, tablet, or smartphone.</p>
+           
+            <div class="image-container">
+              <div id="css-image1" class="Images">
+                <img src="pictures/responsive.jpg" alt="CSS Responsive Design">
+              </div>
+            </div>
+
+            <h3>Key Components of Responsive Design</h3>
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Component</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>Responsive Layout</td>
+                        <td>Layout that adjusts based on screen size (using Flexbox, Grid, etc.)</td>
+                    </tr>
+                    <tr>
+                        <td>Fluid Images</td>
+                        <td>Images that scale properly within their containers</td>
+                    </tr>
+                    <tr>
+                        <td>Media Queries</td>
+                        <td>CSS rules that apply styling based on device characteristics</td>
+                    </tr>
+                    <tr>
+                        <td>Viewport Meta Tag</td>
+                        <td>HTML tag that controls how a page is displayed on mobile devices</td>
+                    </tr>
+                    <tr>
+                        <td>Relative Units</td>
+                        <td>Units like percentages, em, rem, vh, vw that scale based on context</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h3>Viewport Meta Tag</h3>
+            <p>The viewport meta tag is essential for responsive design. It should be included in the head section of your HTML document:</p>
+            <pre>
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            </pre>
+            <p>This tag tells the browser to set the width of the page to match the screen width of the device, and sets the initial zoom level to 1.</p>
+            
+            <h3>Media Queries</h3>
+            <p>Media queries allow you to apply different CSS styles depending on the characteristics of the device. They are a fundamental part of responsive design:</p>
+            <pre>
+/* For mobile phones: */
+@media only screen and (max-width: 600px) {
+    .content {
+        padding: 10px;
+    }
+    .sidebar {
+        display: none;
+    }
+}
+
+/* For tablets: */
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+    .content {
+        padding: 15px;
+    }
+    .container {
+        width: 90%;
+    }
+}
+
+/* For desktops: */
+@media only screen and (min-width: 993px) {
+    .container {
+        width: 80%;
+        max-width: 1200px;
+    }
+}
+            </pre>
+            
+            <h3>Common Breakpoints</h3>
+            <p>While breakpoints should be based on your content, these are commonly used screen size breakpoints:</p>
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Device</th>
+                        <th>Breakpoint</th>
+                    </tr>
+                    <tr>
+                        <td>Extra small devices (phones)</td>
+                        <td>max-width: 600px</td>
+                    </tr>
+                    <tr>
+                        <td>Small devices (portrait tablets)</td>
+                        <td>min-width: 600px</td>
+                    </tr>
+                    <tr>
+                        <td>Medium devices (landscape tablets)</td>
+                        <td>min-width: 768px</td>
+                    </tr>
+                    <tr>
+                        <td>Large devices (laptops/desktops)</td>
+                        <td>min-width: 992px</td>
+                    </tr>
+                    <tr>
+                        <td>Extra large devices (large desktops)</td>
+                        <td>min-width: 1200px</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h3>Fluid Images</h3>
+            <p>To make images responsive, you can use the following CSS:</p>
+            <pre>
+img {
+    max-width: 100%;
+    height: auto;
+}
+            </pre>
+            <p>This ensures that images never exceed the width of their container and maintain their aspect ratio.</p>
+            
+            <h3>Responsive Typography</h3>
+            <p>Using relative units for font sizes makes typography more responsive:</p>
+            <pre>
+body {
+    font-size: 16px; /* Base font size */
+}
+
+h1 {
+    font-size: 2rem; /* 2 times the root element font size */
+}
+
+p {
+    font-size: 1rem; /* Same as the root element font size */
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 14px; /* Smaller base font size on small screens */
+    }
+}
+            </pre>
+            
+            <h3>Mobile-First Approach</h3>
+            <p>In a mobile-first approach, you design for mobile devices first, then progressively enhance for larger screens:</p>
+            <pre>
+/* Base styles for mobile */
+.container {
+    padding: 10px;
+}
+
+/* Enhance for larger screens */
+@media only screen and (min-width: 768px) {
+    .container {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+            </pre>
+            
+            <h3>Flexbox and Grid for Responsive Layouts</h3>
+            <p>Modern layout methods like Flexbox and Grid make creating responsive designs much easier:</p>
+            <pre>
+/* Responsive grid layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+/* Responsive flexbox layout */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-item {
+    flex: 1 0 250px; /* Grow, don't shrink, base width */
+    margin: 10px;
+}
+            </pre>
+            
+            <h3>Testing Responsive Designs</h3>
+            <p>When developing responsive websites, it's important to test on various devices and screen sizes. You can use:</p>
+            <ul>
+                <li>Browser developer tools (which have device emulation)</li>
+                <li>Actual physical devices</li>
+                <li>Online responsive testing tools</li>
+                <li>Resizing your browser window</li>
+            </ul>
+            
+            <div class="previous-page">
+                <a href="CSS-GRID.html"> &#8592; Previous </a>
+            </div>
+            <div class="next-page">
+                <a href="CSS-HOME.html">Back to Home &#8594;</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Styling the Web, One Rule at a Time</p>
+    </footer>
+</body>
+</html>

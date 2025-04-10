@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Padding</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>CSS PADDING</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="CSS-HOME.html">Home</a>
+            <a href="CSS-INTRO.html">Introduction</a>
+            <a href="CSS-SELECTORS.html">Selectors</a>
+            <a href="CSS-COLORS.html">Colors</a>
+            <a href="CSS-BACKGROUNDS.html">Backgrounds</a>
+            <a href="CSS-BORDERS.html">Borders</a>
+            <a href="CSS-MARGINS.html">Margins</a>
+            <a href="CSS-PADDING.html" class="active">Padding</a>
+            <a href="CSS-HEIGHT-WIDTH.html">Height/Width</a>
+            <a href="CSS-BOX-MODEL.html">Box Model</a>
+            <a href="CSS-TEXT.html">Text</a>
+            <a href="CSS-FONTS.html">Fonts</a>
+            <a href="CSS-DISPLAY.html">Display</a>
+            <a href="CSS-POSITION.html">Position</a>
+            <a href="CSS-FLOAT.html">Float</a>
+            <a href="CSS-FLEXBOX.html">Flexbox</a>
+            <a href="CSS-GRID.html">Grid</a>
+            <a href="CSS-RESPONSIVE.html">Responsive</a>
+        </div>
+        
+        <div class="content">
+            <h2>CSS Padding Properties</h2>
+            <p>Padding creates space inside an element, between the content and its border. It can be used to create spacing within elements.</p>
+           
+            <div class="image-container">
+              <div id="css-image1" class="Images">
+                <img src="pictures/padding.jpg" alt="CSS Padding">
+              </div>
+            </div>
+
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Property</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>padding-top</td>
+                        <td>Sets the top padding of an element</td>
+                    </tr>
+                    <tr>
+                        <td>padding-right</td>
+                        <td>Sets the right padding of an element</td>
+                    </tr>
+                    <tr>
+                        <td>padding-bottom</td>
+                        <td>Sets the bottom padding of an element</td>
+                    </tr>
+                    <tr>
+                        <td>padding-left</td>
+                        <td>Sets the left padding of an element</td>
+                    </tr>
+                    <tr>
+                        <td>padding</td>
+                        <td>Shorthand property for setting all paddings in one declaration</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h3>Individual Padding</h3>
+            <p>You can set padding for each side individually:</p>
+            <pre>
+div {
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+}
+            </pre>
+            
+            <h3>Padding Shorthand</h3>
+            <p>The padding property is a shorthand property for setting all paddings at once:</p>
+            <pre>
+/* When all four paddings are the same */
+div {
+    padding: 25px; /* All four paddings: 25px */
+}
+
+/* When top/bottom and right/left paddings differ */
+div {
+    padding: 25px 50px; /* top and bottom 25px, right and left 50px */
+}
+
+/* When top, right/left, and bottom paddings differ */
+div {
+    padding: 25px 50px 75px; /* top 25px, right and left 50px, bottom 75px */
+}
+
+/* When all four paddings differ */
+div {
+    padding: 25px 50px 75px 100px; /* top, right, bottom, left (clockwise) */
+}
+            </pre>
+            
+            <h3>Padding and Element Width</h3>
+            <p>By default, padding is added to the element's specified width. This means that the total width of an element becomes its specified width plus the padding:</p>
+            <pre>
+div {
+    width: 300px;
+    padding: 25px;
+    /* Total width: 300px + 25px + 25px = 350px */
+}
+            </pre>
+            
+            <h3>Box-Sizing Property</h3>
+            <p>If you want the padding to be included in the element's width, you can use the box-sizing property:</p>
+            <pre>
+div {
+    width: 300px;
+    padding: 25px;
+    box-sizing: border-box;
+    /* Total width remains 300px */
+}
+            </pre>
+            
+            <h3>Padding and Inline Elements</h3>
+            <p>For inline elements, padding can be applied, but it won't affect line breaks:</p>
+            <pre>
+span {
+    padding: 10px; /* Adds space around the text, but doesn't create line breaks */
+}
+            </pre>
+            
+            <div class="previous-page">
+                <a href="CSS-MARGINS.html"> &#8592; Previous </a>
+            </div>
+            <div class="next-page">
+                <a href="CSS-HEIGHT-WIDTH.html">Next &#8594;</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Styling the Web, One Rule at a Time</p>
+    </footer>
+</body>
+</html>

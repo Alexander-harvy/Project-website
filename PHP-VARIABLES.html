@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Tutorial - Variables</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>WELCOME TO PHP TUTORIAL</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="PHP-HOME.html">Home</a>
+            <a href="PHP-INTRO.html">Introduction</a>
+            <a href="PHP-SYNTAX.html">Syntax</a>
+            <a href="PHP-VARIABLES.html" class="active">Variables</a>
+            <a href="PHP-ECHO.html">Echo/Print</a>
+            <a href="PHP-DATATYPES.html">Data Types</a>
+            <a href="PHP-STRINGS.html">Strings</a>
+            <a href="PHP-NUMBERS.html">Numbers</a>
+            <a href="PHP-MATH.html">Math</a>
+            <a href="PHP-CONSTANTS.html">Constants</a>
+            <a href="PHP-OPERATORS.html">Operators</a>
+            <a href="PHP-CONDITIONALS.html">If...Else</a>
+            <a href="PHP-SWITCH.html">Switch</a>
+            <a href="PHP-LOOPS.html">Loops</a>
+            <a href="PHP-FUNCTIONS.html">Functions</a>
+            <a href="PHP-ARRAYS.html">Arrays</a>
+            <a href="PHP-FORMS.html">Forms</a>
+            <a href="PHP-DATABASE.html">Database</a>
+        </div>
+        
+        <div class="content">
+            <h2>PHP Variables</h2>
+            
+            <div class="intro-section">
+                <h3>What are Variables?</h3>
+                <p>Variables are "containers" for storing information. In PHP, a variable starts with the $ sign, followed by the name of the variable:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$txt = "Hello World!";
+$x = 5;
+$y = 10.5;
+echo $txt;
+echo "&lt;br&gt;";
+echo $x;
+echo "&lt;br&gt;";
+echo $y;
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <div class="image-container">
+                <div class="Images">
+                    <img src="pictures/variable.jpg" alt="PHP Variables Example">
+                </div>
+                </div>
+                <h3>PHP Variable Rules</h3>
+                <ul>
+                    <li>A variable starts with the $ sign, followed by the name of the variable</li>
+                    <li>A variable name must start with a letter or the underscore character</li>
+                    <li>A variable name cannot start with a number</li>
+                    <li>A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )</li>
+                    <li>Variable names are case-sensitive ($age and $AGE are two different variables)</li>
+                </ul>
+                
+                <h3>Creating (Declaring) PHP Variables</h3>
+                <p>In PHP, variables are declared automatically when you assign a value to it:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$txt = "Hello World!";
+$x = 5;
+$y = 10.5;
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <p>After the execution of the statements above, the variable <code>$txt</code> will hold the value <code>Hello World!</code>, the variable <code>$x</code> will hold the value <code>5</code>, and the variable <code>$y</code> will hold the value <code>10.5</code>.</p>
+                
+                <h3>PHP Variables Scope</h3>
+                <p>In PHP, variables can be declared anywhere in the script. The scope of a variable is the part of the script where the variable can be referenced/used.</p>
+                <p>PHP has three different variable scopes:</p>
+                <ul>
+                    <li><strong>local</strong> - A variable declared within a function has a LOCAL SCOPE and can only be accessed within that function</li>
+                    <li><strong>global</strong> - A variable declared outside a function has a GLOBAL SCOPE and can only be accessed outside functions</li>
+                    <li><strong>static</strong> - Normally, when a function is completed/executed, all of its variables are deleted. However, sometimes we want a local variable NOT to be deleted. To do this, use the <code>static</code> keyword when you first declare the variable</li>
+                </ul>
+                
+                <h3>Global and Local Scope</h3>
+                <p>A variable declared outside a function has a GLOBAL SCOPE and can only be accessed outside functions:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$x = 5; // global scope
+
+function myTest() {
+    // using x inside this function will generate an error
+    echo "&lt;p&gt;Variable x inside function is: $x&lt;/p&gt;";
+}
+myTest();
+
+echo "&lt;p&gt;Variable x outside function is: $x&lt;/p&gt;";
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <p>A variable declared within a function has a LOCAL SCOPE and can only be accessed within that function:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+function myTest() {
+    $x = 5; // local scope
+    echo "&lt;p&gt;Variable x inside function is: $x&lt;/p&gt;";
+}
+myTest();
+
+// using x outside the function will generate an error
+echo "&lt;p&gt;Variable x outside function is: $x&lt;/p&gt;";
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>The global Keyword</h3>
+                <p>The <code>global</code> keyword is used to access a global variable from within a function:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$x = 5;
+$y = 10;
+
+function myTest() {
+    global $x, $y;
+    $y = $x + $y;
+}
+
+myTest();
+echo $y; // outputs 15
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>The static Keyword</h3>
+                <p>Normally, when a function is completed/executed, all of its variables are deleted. However, sometimes we want a local variable NOT to be deleted. We need it for a further job.</p>
+                <p>To do this, use the <code>static</code> keyword when you first declare the variable:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+function myTest() {
+    static $x = 0;
+    echo $x;
+    $x++;
+}
+
+myTest(); // outputs 0
+myTest(); // outputs 1
+myTest(); // outputs 2
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <p>Then, each time the function is called, that variable will still have the information it contained from the last time the function was called.</p>
+                <p>Note: The variable is still local to the function.</p>
+            </div>
+            
+            <div class="php-example">
+                <h3>Practical Example: Using Variables</h3>
+                <p>Here's an example that demonstrates how to use variables to calculate and display the area of a rectangle:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Rectangle Area Calculator&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Rectangle Area Calculator&lt;/h1&gt;
+    
+    &lt;?php
+    // Define variables for length and width
+    $length = 10;
+    $width = 5;
+    
+    // Calculate the area
+    $area = $length * $width;
+    
+    // Display the result
+    echo "&lt;p&gt;The length of the rectangle is: $length units&lt;/p&gt;";
+    echo "&lt;p&gt;The width of the rectangle is: $width units&lt;/p&gt;";
+    echo "&lt;p&gt;The area of the rectangle is: $area square units&lt;/p&gt;";
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                </div>
+                
+                <p>Save this code in a file named "rectangle.php" and place it in your web server's document root. When accessed via a browser, it will calculate and display the area of a rectangle with the specified dimensions.</p>
+            </div>
+            
+            <div class="navigation-buttons">
+                <div class="previous-page">
+                    <a href="PHP-SYNTAX.html">Previous: PHP Syntax</a>
+                </div>
+                <div class="next-page">
+                    <a href="PHP-ECHO.html">Next: Echo/Print</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Programming the Web, One Line at a Time</p>
+    </footer>
+
+</body>
+</html>

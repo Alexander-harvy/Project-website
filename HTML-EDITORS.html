@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Editors Tutorial</title>
+  <link rel="stylesheet" href="website.css">
+  <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active">HOME</a></li>
+      <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+      <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+      <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+      <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+  </ul>
+</div>
+
+  <div class="main-content">
+    <div class="header">
+        <h1>WELCOME TO HTML TUTORIAL</h1>
+        <div class="header-underline"></div>
+    </div>
+    
+    <div class="tutorial-nav">
+        <a href="HTML-HOME.html">Home</a>
+        <a href="HTML-INTRO.html">Introduction</a>
+        <a href="HTML-EDITORS.html" class="active">Editors</a>
+        <a href="HTML.BASICS.html">Basics</a>
+        <a href="HTML-ELEMENTS.html">Elements</a>
+        <a href="HTML-ATTRIBUTES.html">Attributes</a>
+        <a href="HTML-HEADINGS.html">Headings</a>
+        <a href="HTML-COMMENTS.html">Comments</a>
+        <a href="HTML-COLORS.html">Colors</a>
+        <a href="HTML-LINKS.html">Links</a>
+        <a href="HTML-IMAGES.html">Images</a>
+        <a href="HTML-FAVICON.html">Favicon</a>
+        <a href="HTML-PAGE-TITLE.html">Page Title</a>
+        <a href="HTML-TABLES.html">Tables</a>
+        <a href="HTML-LISTS.html">Lists</a>
+        <a href="HTML-DIV.html">Div</a>
+        <a href="HTML-CLASSES.html">Classes</a>
+        <a href="HTML-ID.html">Id</a>
+    </div>
+    
+    <div class="content">
+      <h2>HTML Editors - Writing HTML Code</h2>
+      <p>To write HTML code, you need a simple text editor. HTML files are just plain text files with a .html extension. However, using specialized HTML editors can make your coding experience more productive with features like syntax highlighting, code completion, and live preview.</p>
+      
+      <div class="topic-section">
+        <div class="topic">
+          <h2>Text Editors</h2>
+          <div class="topic-content">
+            <p>Simple text editors that are suitable for writing HTML:</p>
+            <ul class="tips-list">
+              <li>Notepad (Windows)</li>
+              <li>TextEdit (Mac)</li>
+              <li>Gedit (Linux)</li>
+            </ul>
+            <p>These basic editors are already installed on your computer and are sufficient for beginners to start learning HTML.</p>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>Code Editors</h2>
+          <div class="topic-content">
+            <p>Professional code editors with advanced features:</p>
+            <ul class="tips-list">
+              <li>Visual Studio Code (Free, multi-platform)</li>
+              <li>Sublime Text (Paid, multi-platform)</li>
+              <li>Atom (Free, multi-platform)</li>
+              <li>Brackets (Free, focused on web development)</li>
+            </ul>
+            <p>These editors offer syntax highlighting, code completion, and extensions that make HTML development easier.</p>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>Online Editors</h2>
+          <div class="topic-content">
+            <p>Web-based editors that require no installation:</p>
+            <ul class="tips-list">
+              <li>CodePen (online editor and social development environment)</li>
+              <li>JSFiddle (test your JavaScript, CSS, HTML online)</li>
+              <li>Replit (collaborative browser IDE)</li>
+              <li>W3Schools Editor (practice while learning)</li>
+            </ul>
+            <p>These platforms allow you to write, test, and share your code directly in your browser.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="image-container">
+        <div class="Images">
+          <h3>Visual Studio Code - Popular HTML Editor</h3>
+          <img src="pictures/vscode.png" alt="VS Code">
+        </div>
+      
+        <div class="Images">
+          <h3>Sublime Text - Popular HTML Editor</h3>
+          <img src="pictures/sublime.png" alt="Sublime">
+        </div>
+      
+        <div class="Images">
+          <h3>Atom - Popular HTML Editor</h3>
+          <img src="pictures/atom.png" alt="Atom">
+        </div>
+      </div>
+       
+      <h3>Key Features of a Good HTML Editor</h3>
+      
+      <table class="table">
+        <tr>
+          <th>Feature</th>
+          <th>Benefit</th>
+        </tr>
+        <tr>
+          <td>Syntax Highlighting</td>
+          <td>Makes code more readable</td>
+        </tr>
+        <tr>
+          <td>Code Completion</td>
+          <td>Speeds up coding and reduces errors</td>
+        </tr>
+        <tr>
+          <td>Live Preview</td>
+          <td>See changes in real-time</td>
+        </tr>
+        <tr>
+          <td>Error Checking</td>
+          <td>Identifies syntax errors</td>
+        </tr>
+        <tr>
+          <td>File Management</td>
+          <td>Organize project files easily</td>
+        </tr>
+      </table>
+      
+      <h3>Setting Up Your First HTML File</h3>
+      <ul>
+        <li>Open your chosen editor</li>
+        <li>Create a new file</li>
+        <li>Add basic HTML structure:
+          <pre><code><span style="color: blue;">&lt;!DOCTYPE html&gt;</span>
+<span style="color: red;"> &lt;html&gt; </span>
+<span style="color: red;">&lt;head&gt;</span>
+  <span style="color: blue;">&lt;title&gt;</span>My First HTML Page&lt;<span style="color: blue;">/title&gt;</span>
+<span style="color: red;">&lt;/head&gt;</span>
+<span style="color: red;">&lt;body&gt;</span>
+  <span style="color: blue;">&lt;h1&gt;</span>Hello, World! <span style="color: blue;">&lt;/h1&gt; </span>
+  <span style="color: blue;">&lt;p&gt;</span>This is my first HTML page. <span style="color: blue;">&lt;/p&gt;</span>
+<span style="color: red;">&lt;/body&gt;</span>
+<span style="color: red;">&lt;/html&gt;</span></code></pre>
+        </li>
+        <li>Save the file with a .html extension (e.g., "mypage.html")</li>
+        <li>Open the file in a web browser to see the result</li>
+      </ul>
+      
+      <div class="buttons">
+        <a href="https://code.visualstudio.com/download" target="_blank" class="btn">Download VS Code</a>
+        <a href="https://www.programiz.com/html/online-compiler/" target="_blank" class="btn">Try Online Editor</a>
+      </div>
+      
+      <h3>Tips for Beginners</h3>
+      <ul class="tips-list">
+        <li>Start with a simple editor and upgrade as you learn more</li>
+        <li>Use proper indentation to keep your code readable</li>
+        <li>Save your work frequently</li>
+        <li>Always test your pages in different browsers</li>
+        <li>Learn keyboard shortcuts to increase productivity</li>
+      </ul>
+    </div>
+    
+    <div class="previous-page">
+      <a href="HTML-INTRO.html">&#8592; Previous</a>
+    </div>
+    <div class="next-page">
+      <a href="HTML.BASICS.html">Next &#8594;</a>
+    </div>
+  </div>
+
+  
+  <footer>
+    <p>Front-End Tutorial © 2025 | Building the Web, One Tag at a Time</p>
+</footer>
+
+</body>
+</html>

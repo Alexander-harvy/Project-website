@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Tutorial - Numbers</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>WELCOME TO PHP TUTORIAL</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="PHP-HOME.html">Home</a>
+            <a href="PHP-INTRO.html">Introduction</a>
+            <a href="PHP-SYNTAX.html">Syntax</a>
+            <a href="PHP-VARIABLES.html">Variables</a>
+            <a href="PHP-ECHO.html">Echo/Print</a>
+            <a href="PHP-DATATYPES.html">Data Types</a>
+            <a href="PHP-STRINGS.html">Strings</a>
+            <a href="PHP-NUMBERS.html" class="active">Numbers</a>
+            <a href="PHP-MATH.html">Math</a>
+            <a href="PHP-CONSTANTS.html">Constants</a>
+            <a href="PHP-OPERATORS.html">Operators</a>
+            <a href="PHP-CONDITIONALS.html">If...Else</a>
+            <a href="PHP-SWITCH.html">Switch</a>
+            <a href="PHP-LOOPS.html">Loops</a>
+            <a href="PHP-FUNCTIONS.html">Functions</a>
+            <a href="PHP-ARRAYS.html">Arrays</a>
+            <a href="PHP-FORMS.html">Forms</a>
+            <a href="PHP-DATABASE.html">Database</a>
+        </div>
+        
+        <div class="content">
+            <h2>PHP Numbers</h2>
+            
+            <div class="intro-section">
+                <p>In PHP, numbers can be represented as integers or floating-point numbers (floats). PHP has several functions and features for working with numbers.</p>
+                
+                <h3>PHP Integers</h3>
+                <p>An integer is a whole number (without decimals) that can be either positive or negative.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$x = 5985;      // positive integer
+$y = -345;      // negative integer
+$z = 0x8C;      // hexadecimal number
+$a = 047;       // octal number
+$b = 0b1010;    // binary number
+
+var_dump($x);
+var_dump($y);
+var_dump($z);
+var_dump($a);
+var_dump($b);
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>PHP Floats</h3>
+                <p>A float (floating point number) is a number with a decimal point or a number in exponential form.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$x = 10.365;
+$y = 2.4e3;
+$z = 8E-5;
+
+var_dump($x);
+var_dump($y);
+var_dump($z);
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Number Functions</h3>
+                <p>PHP has several useful functions for working with numbers:</p>
+                
+                <h4>is_int() - Check if variable is integer</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$x = 5985;
+var_dump(is_int($x)); // bool(true)
+
+$y = 59.85;
+var_dump(is_int($y)); // bool(false)
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>is_float() - Check if variable is float</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$x = 10.365;
+var_dump(is_float($x)); // bool(true)
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>is_numeric() - Check if variable is numeric</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$x = 5985;
+var_dump(is_numeric($x)); // bool(true)
+
+$y = "5985";
+var_dump(is_numeric($y)); // bool(true)
+
+$z = "59.85" + 100;
+var_dump(is_numeric($z)); // bool(true)
+
+$a = "Hello";
+var_dump(is_numeric($a)); // bool(false)
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>Type Casting</h4>
+                <p>You can cast strings and floats to integers:</p>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Cast float to int
+$x = 23465.768;
+$int_cast = (int)$x;
+echo $int_cast; // 23465
+
+// Cast string to int
+$y = "23465.768";
+$int_cast = (int)$y;
+echo $int_cast; // 23465
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Number Formatting</h3>
+                <p>The number_format() function formats a number with grouped thousands:</p>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo number_format("1000000")."&lt;br&gt;";          // 1,000,000
+echo number_format("1000000",2)."&lt;br&gt;";       // 1,000,000.00
+echo number_format("1000000",2,",",".");      // 1.000.000,00
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Random Numbers</h3>
+                <p>The rand() function generates a random number:</p>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo rand();           // random number between 0 and getrandmax()
+echo rand(10, 100);    // random number between 10 and 100
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Practical Example: Shopping Cart</h3>
+                <p>Here's an example of how numbers are used in a shopping cart calculation:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Shopping Cart&lt;/title&gt;
+    &lt;style&gt;
+        table { border-collapse: collapse; width: 50%; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;?php
+    // Define products with prices
+    $products = array(
+        array("name" => "Laptop", "price" => 999.99, "quantity" => 2),
+        array("name" => "Mouse", "price" => 19.99, "quantity" => 3),
+        array("name" => "Keyboard", "price" => 49.99, "quantity" => 1)
+    );
+    
+    // Calculate subtotal, tax, and total
+    $subtotal = 0;
+    foreach ($products as $product) {
+        $subtotal += $product["price"] * $product["quantity"];
+    }
+    $tax = $subtotal * 0.08; // 8% tax
+    $total = $subtotal + $tax;
+    ?&gt;
+    
+    &lt;h2&gt;Shopping Cart&lt;/h2&gt;
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Product&lt;/th&gt;
+            &lt;th&gt;Price&lt;/th&gt;
+            &lt;th&gt;Quantity&lt;/th&gt;
+            &lt;th&gt;Total&lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;?php foreach ($products as $product): ?&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;?php echo $product["name"]; ?&gt;&lt;/td&gt;
+            &lt;td&gt;$&lt;?php echo number_format($product["price"], 2); ?&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;?php echo $product["quantity"]; ?&gt;&lt;/td&gt;
+            &lt;td&gt;$&lt;?php echo number_format($product["price"] * $product["quantity"], 2); ?&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;?php endforeach; ?&gt;
+        &lt;tr&gt;
+            &lt;td colspan="3"&gt;Subtotal&lt;/td&gt;
+            &lt;td&gt;$&lt;?php echo number_format($subtotal, 2); ?&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td colspan="3"&gt;Tax (8%)&lt;/td&gt;
+            &lt;td&gt;$&lt;?php echo number_format($tax, 2); ?&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td colspan="3"&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;strong&gt;$&lt;?php echo number_format($total, 2); ?&gt;&lt;/strong&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                </div>
+            </div>
+            
+            <div class="navigation-buttons">
+                <div class="previous-page">
+                    <a href="PHP-STRINGS.html">Previous: Strings</a>
+                </div>
+                <div class="next-page">
+                    <a href="PHP-MATH.html">Next: Math</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Programming the Web, One Line at a Time</p>
+    </footer>
+
+</body>
+</html>

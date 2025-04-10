@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Tutorial - Switch</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>WELCOME TO PHP TUTORIAL</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="PHP-HOME.html">Home</a>
+            <a href="PHP-INTRO.html">Introduction</a>
+            <a href="PHP-SYNTAX.html">Syntax</a>
+            <a href="PHP-VARIABLES.html">Variables</a>
+            <a href="PHP-ECHO.html">Echo/Print</a>
+            <a href="PHP-DATATYPES.html">Data Types</a>
+            <a href="PHP-STRINGS.html">Strings</a>
+            <a href="PHP-NUMBERS.html">Numbers</a>
+            <a href="PHP-MATH.html">Math</a>
+            <a href="PHP-CONSTANTS.html">Constants</a>
+            <a href="PHP-OPERATORS.html">Operators</a>
+            <a href="PHP-CONDITIONALS.html">If...Else</a>
+            <a href="PHP-SWITCH.html" class="active">Switch</a>
+            <a href="PHP-LOOPS.html">Loops</a>
+            <a href="PHP-FUNCTIONS.html">Functions</a>
+            <a href="PHP-ARRAYS.html">Arrays</a>
+            <a href="PHP-FORMS.html">Forms</a>
+            <a href="PHP-DATABASE.html">Database</a>
+        </div>
+        
+        <div class="content">
+            <h2>PHP Switch Statement</h2>
+            
+            <div class="intro-section">
+                <p>The switch statement is used to perform different actions based on different conditions. It is similar to a series of if statements on the same expression, but it can be more efficient and readable, especially when you need to test an expression against many different values.</p>
+                
+                <h3>Basic Syntax</h3>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+switch (expression) {
+    case value1:
+        // code to be executed if expression = value1
+        break;
+    case value2:
+        // code to be executed if expression = value2
+        break;
+    ...
+    default:
+        // code to be executed if expression is different from all values
+}
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <p>How it works:</p>
+                <ul>
+                    <li>The switch expression is evaluated once</li>
+                    <li>The value of the expression is compared with the values of each case</li>
+                    <li>If there is a match, the associated code block is executed</li>
+                    <li>The break statement prevents the code from running into the next case automatically</li>
+                    <li>The default statement is used when no match is found</li>
+                </ul>
+                
+                <h3>Simple Switch Example</h3>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$favColor = "blue";
+
+switch ($favColor) {
+    case "red":
+        echo "Your favorite color is red!";
+        break;
+    case "blue":
+        echo "Your favorite color is blue!";
+        break;
+    case "green":
+        echo "Your favorite color is green!";
+        break;
+    default:
+        echo "Your favorite color is neither red, blue, nor green!";
+}
+// Outputs: "Your favorite color is blue!"
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Switch Without Break Statement</h3>
+                <p>If you omit the break statement, the code will continue to execute even if the expression matches a case. This is sometimes useful for specific logic where you want to run the same code for multiple cases.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$favColor = "blue";
+
+switch ($favColor) {
+    case "red":
+        echo "Your favorite color is red! ";
+    case "blue":
+        echo "Your favorite color is blue! ";
+    case "green":
+        echo "Your favorite color is green! ";
+    default:
+        echo "You have a favorite color!";
+}
+// Outputs: "Your favorite color is blue! Your favorite color is green! You have a favorite color!"
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Multiple Cases - Same Action</h3>
+                <p>You can have multiple case values for the same code block.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$day = 4;
+
+switch ($day) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+        echo "It's a weekday";
+        break;
+    case 6:
+    case 7:
+        echo "It's the weekend";
+        break;
+    default:
+        echo "Invalid day number";
+}
+// Outputs: "It's a weekday"
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Nested Switch Statements</h3>
+                <p>You can nest switch statements inside other switch statements.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$color = "blue";
+$shade = "dark";
+
+switch ($color) {
+    case "red":
+        echo "Color is red. ";
+        break;
+    case "blue":
+        echo "Color is blue. ";
+        
+        switch ($shade) {
+            case "light":
+                echo "Shade is light blue.";
+                break;
+            case "dark":
+                echo "Shade is dark blue.";
+                break;
+            default:
+                echo "Shade not specified.";
+                break;
+        }
+        break;
+    default:
+        echo "Color not recognized.";
+        break;
+}
+// Outputs: "Color is blue. Shade is dark blue."
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Switch vs. If-Else</h3>
+                <p>Both switch and if-else statements can be used to make decisions in your code. Here's a comparison of the same logic implemented with both approaches:</p>
+                
+                <h4>Using If-Else:</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$grade = "B";
+
+if ($grade == "A") {
+    echo "Excellent!";
+} elseif ($grade == "B") {
+    echo "Good job!";
+} elseif ($grade == "C") {
+    echo "Satisfactory";
+} elseif ($grade == "D") {
+    echo "You passed";
+} elseif ($grade == "F") {
+    echo "You failed";
+} else {
+    echo "Invalid grade";
+}
+// Outputs: "Good job!"
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>Using Switch:</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$grade = "B";
+
+switch ($grade) {
+    case "A":
+        echo "Excellent!";
+        break;
+    case "B":
+        echo "Good job!";
+        break;
+    case "C":
+        echo "Satisfactory";
+        break;
+    case "D":
+        echo "You passed";
+        break;
+    case "F":
+        echo "You failed";
+        break;
+    default:
+        echo "Invalid grade";
+}
+// Outputs: "Good job!"
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>When to Use Switch Instead of If-Else</h3>
+                <ul class="tips-list">
+                    <li>When you are comparing a single variable against many different values</li>
+                    <li>When you have many conditions to check against a single variable</li>
+                    <li>For better readability when you have 4+ conditions on the same variable</li>
+                    <li>When performance matters (switch can be faster in some programming languages)</li>
+                </ul>
+                
+                <h3>Limitations of Switch</h3>
+                <ul class="tips-list">
+                    <li>Switch only works with simple equality comparisons (==, not >, <, <=, >=, etc.)</li>
+                    <li>Each case value must be a simple type (integer, float, string) or a constant expression</li>
+                    <li>You cannot use complex conditions or multiple variables in the case statements</li>
+                </ul>
+                
+                <h3>Real-World Example: Day of the Week</h3>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Get the current day of the week (1 = Monday, 7 = Sunday)
+$dayOfWeek = date("N");
+
+switch ($dayOfWeek) {
+    case 1:
+        echo "Today is Monday. Start of the work week!";
+        break;
+    case 2:
+        echo "Today is Tuesday. Keep going!";
+        break;
+    case 3:
+        echo "Today is Wednesday. Halfway there!";
+        break;
+    case 4:
+        echo "Today is Thursday. Almost there!";
+        break;
+    case 5:
+        echo "Today is Friday. TGIF!";
+        break;
+    case 6:
+        echo "Today is Saturday. Enjoy your weekend!";
+        break;
+    case 7:
+        echo "Today is Sunday. Relax before the new week!";
+        break;
+    default:
+        echo "Invalid day!";
+        break;
+}
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Best Practices</h3>
+                <ul class="tips-list">
+                    <li>Always include the break statement unless you specifically want to fall through to the next case</li>
+                    <li>Always include a default case for handling unexpected values</li>
+                    <li>Keep the switch statement readable by using proper indentation</li>
+                    <li>Order your cases in a logical sequence (e.g., alphabetical, numerical, or most common cases first)</li>
+                    <li>Consider using if-else statements instead when comparing different variables or using complex conditions</li>
+                </ul>
+            </div>
+            
+            <div class="navigation-buttons">
+                <div class="previous-page">
+                    <a href="PHP-CONDITIONALS.html">Previous: If...Else</a>
+                </div>
+                <div class="next-page">
+                    <a href="PHP-LOOPS.html">Next: Loops</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Front-End Tutorial © 2025 | Programming the Web, One Line at a Time</p>
+    </footer>
+</body>
+</html>

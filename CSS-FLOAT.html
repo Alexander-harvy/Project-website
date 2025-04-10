@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Float</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>CSS FLOAT</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="CSS-HOME.html">Home</a>
+            <a href="CSS-INTRO.html">Introduction</a>
+            <a href="CSS-SELECTORS.html">Selectors</a>
+            <a href="CSS-COLORS.html">Colors</a>
+            <a href="CSS-BACKGROUNDS.html">Backgrounds</a>
+            <a href="CSS-BORDERS.html">Borders</a>
+            <a href="CSS-MARGINS.html">Margins</a>
+            <a href="CSS-PADDING.html">Padding</a>
+            <a href="CSS-HEIGHT-WIDTH.html">Height/Width</a>
+            <a href="CSS-BOX-MODEL.html">Box Model</a>
+            <a href="CSS-TEXT.html">Text</a>
+            <a href="CSS-FONTS.html">Fonts</a>
+            <a href="CSS-DISPLAY.html">Display</a>
+            <a href="CSS-POSITION.html">Position</a>
+            <a href="CSS-FLOAT.html" class="active">Float</a>
+            <a href="CSS-FLEXBOX.html">Flexbox</a>
+            <a href="CSS-GRID.html">Grid</a>
+            <a href="CSS-RESPONSIVE.html">Responsive</a>
+        </div>
+        
+        <div class="content">
+            <h2>CSS Float Property</h2>
+            <p>The float property is used to specify how an element should float in relation to other elements. Float is commonly used for wrapping text around images, creating multi-column layouts, and positioning elements side by side.</p>
+           
+            <div class="image-container">
+              <div id="css-image1" class="Images">
+                <img src="pictures/float.jpg" alt="CSS Float">
+              </div>
+            </div>
+
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Value</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>left</td>
+                        <td>The element floats to the left of its container</td>
+                    </tr>
+                    <tr>
+                        <td>right</td>
+                        <td>The element floats to the right of its container</td>
+                    </tr>
+                    <tr>
+                        <td>none</td>
+                        <td>Default value. The element does not float</td>
+                    </tr>
+                    <tr>
+                        <td>inherit</td>
+                        <td>The element inherits the float value of its parent</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h3>Basic Float Usage</h3>
+            <p>The most common use of float is to wrap text around images:</p>
+            <pre>
+img {
+    float: left;
+    margin-right: 15px; /* Space between the image and text */
+}
+
+.right-image {
+    float: right;
+    margin-left: 15px;
+}
+            </pre>
+            
+            <h3>Creating Multi-Column Layouts</h3>
+            <p>Float can be used to create basic multi-column layouts:</p>
+            <pre>
+.column {
+    float: left;
+    width: 33.33%; /* Creates three equal columns */
+    padding: 15px;
+    box-sizing: border-box;
+}
+            </pre>
+            
+            <h3>Clearing Floats</h3>
+            <p>When elements are floated, their container may collapse because floated elements are removed from the normal flow. The clear property is used to solve this problem:</p>
+            <pre>
+.clear {
+    clear: both; /* Clear both left and right floats */
+}
+
+/* Or clear specific directions */
+.clear-left {
+    clear: left;
+}
+
+.clear-right {
+    clear: right;
+}
+            </pre>
+            
+            <h3>Clearfix Hack</h3>
+            <p>The clearfix hack is a common technique used to contain floated elements:</p>
+            <pre>
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Usage */
+&lt;div class="clearfix"&gt;
+    &lt;div class="float-left"&gt;Floated Left&lt;/div&gt;
+    &lt;div class="float-right"&gt;Floated Right&lt;/div&gt;
+&lt;/div&gt;
+            </pre>
+            
+            <h3>Float vs. Modern Layout Techniques</h3>
+            <p>While float has been widely used for creating layouts, modern CSS offers better alternatives:</p>
+            <ul>
+                <li><strong>Flexbox</strong>: Better for one-dimensional layouts (rows or columns)</li>
+                <li><strong>Grid</strong>: Better for two-dimensional layouts (rows and columns)</li>
+            </ul>
+            <p>Float is still useful for specific purposes like wrapping text around images but is generally less recommended for full page layouts.</p>
+            
+            <h3>Common Float Issues</h3>
+            <p>Float can cause several issues if not handled properly:</p>
+            <ul>
+                <li><strong>Collapsed containers</strong>: Parent containers of floated elements may collapse</li>
+                <li><strong>Unexpected wrapping</strong>: Elements may wrap around floated items unexpectedly</li>
+                <li><strong>Overlapping content</strong>: Floated elements can overlap other content</li>
+            </ul>
+            <p>These issues can be addressed using clearing techniques or by using more modern layout methods.</p>
+            
+            <div class="previous-page">
+                <a href="CSS-POSITION.html"> &#8592; Previous </a>
+            </div>
+            <div class="next-page">
+                <a href="CSS-FLEXBOX.html">Next &#8594;</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Styling the Web, One Rule at a Time</p>
+    </footer>
+</body>
+</html>

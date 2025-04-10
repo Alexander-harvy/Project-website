@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Tutorial - Constants</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>WELCOME TO PHP TUTORIAL</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="PHP-HOME.html">Home</a>
+            <a href="PHP-INTRO.html">Introduction</a>
+            <a href="PHP-SYNTAX.html">Syntax</a>
+            <a href="PHP-VARIABLES.html">Variables</a>
+            <a href="PHP-ECHO.html">Echo/Print</a>
+            <a href="PHP-DATATYPES.html">Data Types</a>
+            <a href="PHP-STRINGS.html">Strings</a>
+            <a href="PHP-NUMBERS.html">Numbers</a>
+            <a href="PHP-MATH.html">Math</a>
+            <a href="PHP-CONSTANTS.html" class="active">Constants</a>
+            <a href="PHP-OPERATORS.html">Operators</a>
+            <a href="PHP-CONDITIONALS.html">If...Else</a>
+            <a href="PHP-SWITCH.html">Switch</a>
+            <a href="PHP-LOOPS.html">Loops</a>
+            <a href="PHP-FUNCTIONS.html">Functions</a>
+            <a href="PHP-ARRAYS.html">Arrays</a>
+            <a href="PHP-FORMS.html">Forms</a>
+            <a href="PHP-DATABASE.html">Database</a>
+        </div>
+        
+        <div class="content">
+            <h2>PHP Constants</h2>
+            
+            <div class="intro-section">
+                <p>Constants are like variables except that once they are defined they cannot be changed or undefined. A constant is an identifier (name) for a simple value.</p>
+                
+                <h3>Create a PHP Constant</h3>
+                <p>To create a constant, use the define() function:</p>
+                <p><strong>Syntax:</strong> define(name, value, case-insensitive)</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+define("GREETING", "Welcome to W3Schools.com!");
+echo GREETING;
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Case-Insensitive Constants</h3>
+                <p>By default, constants are case-sensitive. To make them case-insensitive, set the third parameter to true:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+define("GREETING", "Welcome to W3Schools.com!", true);
+echo greeting; // outputs "Welcome to W3Schools.com!"
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Constants are Global</h3>
+                <p>Constants are automatically global and can be used across the entire script.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+define("GREETING", "Welcome to W3Schools.com!");
+
+function myTest() {
+    echo GREETING;
+}
+ 
+myTest();
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>PHP const Keyword</h3>
+                <p>You can also create constants using the const keyword (since PHP 5.3):</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+const MYCAR = "Volvo";
+echo MYCAR;
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>const vs define()</h3>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>Feature</th>
+                            <th>const</th>
+                            <th>define()</th>
+                        </tr>
+                        <tr>
+                            <td>Case sensitivity</td>
+                            <td>Always case-sensitive</td>
+                            <td>Can be case-insensitive</td>
+                        </tr>
+                        <tr>
+                            <td>Global scope</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Can be used in class</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                        </tr>
+                        <tr>
+                            <td>Value type</td>
+                            <td>Scalar (int, float, string, bool)</td>
+                            <td>Any valid PHP expression</td>
+                        </tr>
+                        <tr>
+                            <td>Namespace support</td>
+                            <td>Yes</td>
+                            <td>Yes (PHP 5.3+)</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <h3>Magic Constants</h3>
+                <p>PHP has nine predefined constants that change depending on where they are used:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo __LINE__;      // Current line number of the file
+echo __FILE__;      // Full path and filename of the file
+echo __DIR__;       // Directory of the file
+echo __FUNCTION__;  // Function name
+echo __CLASS__;     // Class name
+echo __TRAIT__;     // Trait name
+echo __METHOD__;    // Class method name
+echo __NAMESPACE__; // Namespace name
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Practical Example: Configuration File</h3>
+                <p>Here's an example of using constants for application configuration:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// config.php - Configuration file with constants
+define("DB_HOST", "localhost");
+define("DB_USER", "root");
+define("DB_PASS", "password");
+define("DB_NAME", "my_database");
+define("SITE_TITLE", "My PHP Application");
+define("MAX_LOGIN_ATTEMPTS", 3);
+define("DEBUG_MODE", true);
+
+// main.php - Application file
+require_once 'config.php';
+
+function connectToDatabase() {
+    $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    return $conn;
+}
+
+echo "&lt;h1&gt;" . SITE_TITLE . "&lt;/h1&gt;";
+echo "&lt;p&gt;Connecting to database: " . DB_NAME . "&lt;/p&gt;";
+
+if (DEBUG_MODE) {
+    echo "&lt;div style='background:#eee;padding:10px;'&gt;";
+    echo "&lt;strong&gt;Debug Info:&lt;/strong&gt;&lt;br&gt;";
+    echo "File: " . __FILE__ . "&lt;br&gt;";
+    echo "Line: " . __LINE__ . "&lt;br&gt;";
+    echo "&lt;/div&gt;";
+}
+?&gt;
+                    </code></pre>
+                </div>
+            </div>
+            
+            <div class="navigation-buttons">
+                <div class="previous-page">
+                    <a href="PHP-MATH.html">Previous: Math</a>
+                </div>
+                <div class="next-page">
+                    <a href="PHP-OPERATORS.html">Next: Operators</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Programming the Web, One Line at a Time</p>
+    </footer>
+
+</body>
+</html>

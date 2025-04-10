@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Classes Tutorial</title>
+  <link rel="stylesheet" href="website.css">
+  <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active">HOME</a></li>
+      <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+      <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+      <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+      <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+  </ul>
+</div>
+
+  <div class="main-content">
+    <div class="header">
+        <h1>WELCOME TO HTML TUTORIAL</h1>
+        <div class="header-underline"></div>
+    </div>
+    
+    <div class="tutorial-nav">
+        <a href="HTML-HOME.html">Home</a>
+        <a href="HTML-INTRO.html">Introduction</a>
+        <a href="HTML-EDITORS.html">Editors</a>
+        <a href="HTML.BASICS.html">Basics</a>
+        <a href="HTML-ELEMENTS.html">Elements</a>
+        <a href="HTML-ATTRIBUTES.html">Attributes</a>
+        <a href="HTML-HEADINGS.html">Headings</a>
+        <a href="HTML-COMMENTS.html">Comments</a>
+        <a href="HTML-COLORS.html">Colors</a>
+        <a href="HTML-LINKS.html">Links</a>
+        <a href="HTML-IMAGES.html">Images</a>
+        <a href="HTML-FAVICON.html">Favicon</a>
+        <a href="HTML-PAGE-TITLE.html">Page Title</a>
+        <a href="HTML-TABLES.html">Tables</a>
+        <a href="HTML-LISTS.html">Lists</a>
+        <a href="HTML-DIV.html">Div</a>
+        <a href="HTML-CLASSES.html" class="active">Classes</a>
+        <a href="HTML-ID.html">Id</a>
+    </div>
+    
+    <div class="content">
+      <h2>HTML Classes - Adding Style and Structure to Your Web Pages</h2>
+      <p>HTML classes are essential attributes that allow you to identify and group HTML elements together for styling and manipulation. Classes help you apply the same styles to multiple elements and create a consistent look across your website. This tutorial covers everything you need to know about using classes effectively in your HTML documents.</p>
+      
+      <div class="topic-section">
+        <div class="topic">
+          <h2>What are HTML Classes?</h2>
+          <div class="topic-content">
+            <p>HTML classes are identifiers that you can assign to any HTML element. Key features include:</p>
+            <ul class="tips-list">
+              <li>Any HTML element can have one or more classes</li>
+              <li>Multiple elements can share the same class</li>
+              <li>Classes are case-sensitive</li>
+              <li>Classes don't affect HTML structure but enable styling and JavaScript selection</li>
+              <li>Element can have multiple classes (space-separated)</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>Basic Class Syntax</h2>
+          <div class="topic-content">
+            <p>Classes are added to HTML elements using the class attribute:</p>
+            <pre><code>&lt;div class="container"&gt;
+  Content goes here...
+&lt;/div&gt;</code></pre>
+            <p>To add multiple classes to an element, separate them with spaces:</p>
+            <pre><code>&lt;div class="container blue-bg rounded"&gt;
+  Content goes here...
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>Classes vs. IDs</h2>
+          <div class="topic-content">
+            <p>Classes and IDs are both HTML attributes, but they serve different purposes:</p>
+            <ul class="tips-list">
+              <li><strong>Classes</strong> - For grouping similar elements (reusable)</li>
+              <li><strong>IDs</strong> - For identifying unique elements (should be unique per page)</li>
+              <li><strong>Classes</strong> - Can be used multiple times on a page</li>
+              <li><strong>IDs</strong> - Should be used only once per page</li>
+              <li><strong>Classes</strong> - Selected with dot notation (.class-name) in CSS</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="image-container">
+        <div id="img13" class="Images">
+          <h3>HTML Classes Example</h3>
+          <img src="pictures/classesWW.png" alt="HTML Classes example">
+        </div>
+      </div>
+
+      <h3>Using Classes with CSS</h3>
+      <p>The real power of classes comes from their ability to be styled with CSS. Here's how to target elements with specific classes:</p>
+      <pre><code>/* CSS Selector for classes */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.blue-bg {
+  background-color: #e6f2ff;
+}
+
+.rounded {
+  border-radius: 10px;
+}
+
+/* You can also combine element selectors with class selectors */
+p.highlight {
+  background-color: yellow;
+  padding: 5px;
+}</code></pre>
+
+      <h3>Class Naming Conventions</h3>
+      <p>Using consistent class naming conventions makes your code more maintainable:</p>
+      <table class="table">
+        <tr>
+          <th>Convention</th>
+          <th>Example</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>Kebab Case</td>
+          <td>class="user-profile"</td>
+          <td>Words separated by hyphens (most common in CSS)</td>
+        </tr>
+        <tr>
+          <td>Camel Case</td>
+          <td>class="userProfile"</td>
+          <td>First word lowercase, subsequent words capitalized</td>
+        </tr>
+        <tr>
+          <td>BEM</td>
+          <td>class="card__title--large"</td>
+          <td>Block__Element--Modifier pattern</td>
+        </tr>
+        <tr>
+          <td>Semantic Names</td>
+          <td>class="alert-success"</td>
+          <td>Named based on purpose rather than appearance</td>
+        </tr>
+        <tr>
+          <td>Component-Based</td>
+          <td>class="nav-item"</td>
+          <td>Named based on component structure</td>
+        </tr>
+      </table>
+
+      <h3>Multiple Classes</h3>
+      <p>One of the most powerful features of classes is the ability to apply multiple classes to a single element:</p>
+      <pre><code>&lt;button class="btn primary large"&gt;Submit&lt;/button&gt;</code></pre>
+
+      <p>This approach allows for modular CSS where each class handles a specific aspect of styling:</p>
+      <pre><code>/* Base button styles */
+.btn {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+}
+
+/* Button types */
+.primary {
+  background-color: #0275d8;
+  color: white;
+}
+
+.secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* Button sizes */
+.small {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+.large {
+  font-size: 18px;
+  padding: 12px 20px;
+}</code></pre>
+
+      <h3>Using Classes with JavaScript</h3>
+      <p>Classes are also useful for selecting and manipulating elements with JavaScript:</p>
+      <pre><code>// Select all elements with the "highlight" class
+const highlightedElements = document.getElementsByClassName('highlight');
+
+// Using querySelector for more specific selection
+const primaryButtons = document.querySelectorAll('button.primary');
+
+// Adding a class
+element.classList.add('active');
+
+// Removing a class
+element.classList.remove('disabled');
+
+// Toggling a class
+element.classList.toggle('visible');
+
+// Checking if an element has a class
+if (element.classList.contains('hidden')) {
+  // Do something
+}</code></pre>
+
+      <h3>Common Use Cases for Classes</h3>
+      <ul class="tips-list">
+        <li><strong>Component-based design</strong> - Creating reusable interface components</li>
+        <li><strong>Layout systems</strong> - Grid systems, containers, rows, columns</li>
+        <li><strong>Typography</strong> - Text styles, sizes, alignments</li>
+        <li><strong>Color schemes</strong> - Theme colors, backgrounds, text colors</li>
+        <li><strong>State indicators</strong> - active, disabled, hidden, visible</li>
+        <li><strong>Utility classes</strong> - Margin, padding, alignment helpers</li>
+        <li><strong>Responsive design</strong> - Classes for different screen sizes</li>
+        <li><strong>Animation triggers</strong> - Defining elements that should animate</li>
+      </ul>
+      
+      <h3>Class-based CSS Frameworks</h3>
+      <p>Many popular CSS frameworks use class-based systems to style elements:</p>
+      <table class="table">
+        <tr>
+          <th>Framework</th>
+          <th>Example Classes</th>
+          <th>Approach</th>
+        </tr>
+        <tr>
+          <td>Bootstrap</td>
+          <td>btn, btn-primary, col-md-6</td>
+          <td>Component and grid-based classes</td>
+        </tr>
+        <tr>
+          <td>Tailwind CSS</td>
+          <td>text-lg, bg-blue-500, p-4</td>
+          <td>Utility-first approach</td>
+        </tr>
+        <tr>
+          <td>Bulma</td>
+          <td>button, is-primary, column</td>
+          <td>Readable, semantic classes</td>
+        </tr>
+        <tr>
+          <td>Foundation</td>
+          <td>button, callout, grid-x</td>
+          <td>Component-based with semantic naming</td>
+        </tr>
+      </table>
+
+      <h3>Example: Building a Card Component with Classes</h3>
+      <pre><code>&lt;div class="card"&gt;
+  &lt;div class="card-header"&gt;
+    &lt;h3 class="card-title"&gt;Product Name&lt;/h3&gt;
+  &lt;/div&gt;
+  &lt;div class="card-body"&gt;
+    &lt;img class="card-image" src="product.jpg" alt="Product"&gt;
+    &lt;p class="card-description"&gt;Product description goes here...&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="card-footer"&gt;
+    &lt;button class="btn primary"&gt;Buy Now&lt;/button&gt;
+    &lt;button class="btn secondary"&gt;Add to Cart&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+      <p>CSS for the card component:</p>
+      <pre><code>.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card-header {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-title {
+  margin: 0;
+  color: #333;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  color: #666;
+  line-height: 1.5;
+}
+
+.card-footer {
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+}</code></pre>
+
+      <h3>Best Practices for Using Classes</h3>
+      <ul class="tips-list">
+        <li>Use descriptive class names that reflect purpose or functionality</li>
+        <li>Follow a consistent naming convention throughout your project</li>
+        <li>Keep class names as short as possible while still being descriptive</li>
+        <li>Use multiple classes for more modular and reusable CSS</li>
+        <li>Avoid using classes that describe appearance (e.g., "blue-text"); use semantic names instead</li>
+        <li>Consider using a methodology like BEM (Block Element Modifier) for large projects</li>
+        <li>Avoid excessive nesting of selectors in CSS, which can lead to specificity issues</li>
+        <li>Document your class naming system for team projects</li>
+      </ul>
+      
+      <h3>Class vs. Inline Styles</h3>
+      <p>While you can style elements using inline styles, classes offer several advantages:</p>
+      <table class="table">
+        <tr>
+          <th>Feature</th>
+          <th>Classes</th>
+          <th>Inline Styles</th>
+        </tr>
+        <tr>
+          <td>Reusability</td>
+          <td>High - Can be reused across many elements</td>
+          <td>None - Styles apply only to that element</td>
+        </tr>
+        <tr>
+          <td>Maintenance</td>
+          <td>Easy - Change styles in one place</td>
+          <td>Difficult - Must change each element individually</td>
+        </tr>
+        <tr>
+          <td>Separation</td>
+          <td>Good - Separates content from presentation</td>
+          <td>Poor - Mixes content with presentation</td>
+        </tr>
+        <tr>
+          <td>Specificity</td>
+          <td>Medium - Can be overridden</td>
+          <td>High - Difficult to override</td>
+        </tr>
+        <tr>
+          <td>File Size</td>
+          <td>Smaller HTML, separate CSS</td>
+          <td>Larger HTML with repeated styles</td>
+        </tr>
+      </table>
+      
+      <h3>Class Tools & Resources</h3>
+      <div class="buttons">
+        <a href="https://getbootstrap.com/" target="_blank" class="btn">Bootstrap</a>
+        <a href="https://tailwindcss.com/" target="_blank" class="btn">Tailwind CSS</a>
+        <a href="https://css-tricks.com/bem-101/" target="_blank" class="btn">BEM Methodology</a>
+      </div>
+    </div>
+    
+    <div class="previous-page">
+      <a href="HTML-DIV.html">&#8592; Previous</a>
+    </div>
+    <div class="next-page">
+      <a href="HTML-ID.html">Next &#8594;</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Front-End Tutorial © 2025 | Building the Web, One Tag at a Time</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Introduction</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>CSS INTRODUCTION</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="CSS-HOME.html">Home</a>
+            <a href="CSS-INTRO.html" class="active">Introduction</a>
+            <a href="CSS-SELECTORS.html">Selectors</a>
+            <a href="CSS-COLORS.html">Colors</a>
+            <a href="CSS-BACKGROUNDS.html">Backgrounds</a>
+            <a href="CSS-BORDERS.html">Borders</a>
+            <a href="CSS-MARGINS.html">Margins</a>
+            <a href="CSS-PADDING.html">Padding</a>
+            <a href="CSS-HEIGHT-WIDTH.html">Height/Width</a>
+            <a href="CSS-BOX-MODEL.html">Box Model</a>
+            <a href="CSS-TEXT.html">Text</a>
+            <a href="CSS-FONTS.html">Fonts</a>
+            <a href="CSS-DISPLAY.html">Display</a>
+            <a href="CSS-POSITION.html">Position</a>
+            <a href="CSS-FLOAT.html">Float</a>
+            <a href="CSS-FLEXBOX.html">Flexbox</a>
+            <a href="CSS-GRID.html">Grid</a>
+            <a href="CSS-RESPONSIVE.html">Responsive</a>
+        </div>
+        
+        <div class="content">
+            <h2>What is CSS?</h2>
+            <p>CSS stands for <strong>Cascading Style Sheets</strong>. It is a style sheet language used for describing the presentation of a document written in HTML or XML. CSS is designed to enable the separation of presentation and content, including layout, colors, and fonts.</p>
+            
+
+            
+            <h2>How CSS Works</h2>
+            <p>CSS works by selecting HTML elements and applying styles to them. The browser reads the CSS file and applies the styles to the corresponding HTML elements.</p>
+            
+            <h3>Three Ways to Insert CSS:</h3>
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Method</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>External CSS</td>
+                        <td>With an external style sheet, you can change the look of an entire website by changing just one file. Each HTML page must include a reference to the external style sheet file inside the &lt;link&gt; element, inside the head section.</td>
+                    </tr>
+                    <tr>
+                        <td>Internal CSS</td>
+                        <td>An internal style sheet may be used if one single HTML page has a unique style. The internal style is defined inside the &lt;style&gt; element, inside the head section.</td>
+                    </tr>
+                    <tr>
+                        <td>Inline CSS</td>
+                        <td>An inline style may be used to apply a unique style for a single element. To use inline styles, add the style attribute to the relevant element. The style attribute can contain any CSS property.</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h2>CSS Syntax</h2>
+            <p>A CSS rule consists of a selector and a declaration block:</p>
+            
+                <div class="Images" id="img2">
+                    <img src="pictures/css syntax.png" alt="CSS Syntax">
+                </div>
+            
+
+            <p>The selector points to the HTML element you want to style. The declaration block contains one or more declarations separated by semicolons. Each declaration includes a CSS property name and a value, separated by a colon.</p>
+            
+            <h3>Example:</h3>
+            <pre>
+body {
+    color: blue;
+    font-family: Arial;
+    font-size: 16px;
+}
+            </pre>
+            
+            <div class="previous-page">
+                <a href="CSS-HOME.html">  &#8592; Previous</a>
+            </div>
+            <div class="next-page">
+                <a href="CSS-SELECTORS.html">Next &#8594;</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Styling the Web, One Rule at a Time</p>
+    </footer>
+</body>
+</html>

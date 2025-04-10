@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Tutorial - Echo/Print</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>WELCOME TO PHP TUTORIAL</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="PHP-HOME.html">Home</a>
+            <a href="PHP-INTRO.html">Introduction</a>
+            <a href="PHP-SYNTAX.html">Syntax</a>
+            <a href="PHP-VARIABLES.html">Variables</a>
+            <a href="PHP-ECHO.html" class="active">Echo/Print</a>
+            <a href="PHP-DATATYPES.html">Data Types</a>
+            <a href="PHP-STRINGS.html">Strings</a>
+            <a href="PHP-NUMBERS.html">Numbers</a>
+            <a href="PHP-MATH.html">Math</a>
+            <a href="PHP-CONSTANTS.html">Constants</a>
+            <a href="PHP-OPERATORS.html">Operators</a>
+            <a href="PHP-CONDITIONALS.html">If...Else</a>
+            <a href="PHP-SWITCH.html">Switch</a>
+            <a href="PHP-LOOPS.html">Loops</a>
+            <a href="PHP-FUNCTIONS.html">Functions</a>
+            <a href="PHP-ARRAYS.html">Arrays</a>
+            <a href="PHP-FORMS.html">Forms</a>
+            <a href="PHP-DATABASE.html">Database</a>
+        </div>
+        
+        <div class="content">
+            <h2>PHP Output - Echo and Print</h2>
+            
+            <div class="intro-section">
+                <h3>PHP Output</h3>
+                <p>PHP has several functions for outputting data to the browser. The two most common methods are <code>echo</code> and <code>print</code>.</p>
+                
+                <div class="image-container">
+                <div class="Images">
+                    <img src="pictures/php-echo.jpg" alt="PHP Echo and Print Example">
+                </div>
+                </div>
+
+                <h3>The Echo Statement</h3>
+                <p>The <code>echo</code> statement can be used with or without parentheses: <code>echo</code> or <code>echo()</code>.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo "&lt;h2&gt;PHP is Fun!&lt;/h2&gt;";
+echo "Hello world!&lt;br&gt;";
+echo "I'm about to learn PHP!&lt;br&gt;";
+echo "This ", "string ", "was ", "made ", "with multiple parameters.";
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Displaying Variables with Echo</h3>
+                <p>The following example shows how to output text and variables with the <code>echo</code> statement:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$txt1 = "Learn PHP";
+$txt2 = "W3Schools.com";
+$x = 5;
+$y = 4;
+
+echo "&lt;h2&gt;" . $txt1 . "&lt;/h2&gt;";
+echo "Study PHP at " . $txt2 . "&lt;br&gt;";
+echo $x + $y;
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>The Print Statement</h3>
+                <p>The <code>print</code> statement can be used with or without parentheses: <code>print</code> or <code>print()</code>.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+print "&lt;h2&gt;PHP is Fun!&lt;/h2&gt;";
+print "Hello world!&lt;br&gt;";
+print "I'm about to learn PHP!";
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Displaying Variables with Print</h3>
+                <p>The following example shows how to output text and variables with the <code>print</code> statement:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$txt1 = "Learn PHP";
+$txt2 = "W3Schools.com";
+$x = 5;
+$y = 4;
+
+print "&lt;h2&gt;" . $txt1 . "&lt;/h2&gt;";
+print "Study PHP at " . $txt2 . "&lt;br&gt;";
+print $x + $y;
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Echo vs Print</h3>
+                <p>The differences between <code>echo</code> and <code>print</code> are small:</p>
+                <ul>
+                    <li><code>echo</code> has no return value while <code>print</code> has a return value of 1 so it can be used in expressions</li>
+                    <li><code>echo</code> can take multiple parameters (although such usage is rare) while <code>print</code> can take one argument</li>
+                    <li><code>echo</code> is marginally faster than <code>print</code></li>
+                </ul>
+                
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>Feature</th>
+                            <th>echo</th>
+                            <th>print</th>
+                        </tr>
+                        <tr>
+                            <td>Return value</td>
+                            <td>None</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Parameters</td>
+                            <td>Multiple</td>
+                            <td>Single</td>
+                        </tr>
+                        <tr>
+                            <td>Speed</td>
+                            <td>Faster</td>
+                            <td>Slower</td>
+                        </tr>
+                        <tr>
+                            <td>Usage</td>
+                            <td>Statement</td>
+                            <td>Function-like</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <h3>Other Output Functions</h3>
+                <p>PHP provides other output functions that are useful for debugging and displaying information:</p>
+                
+                <h4>print_r()</h4>
+                <p>The <code>print_r()</code> function is used to display structured information about variables in a more human-readable form:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$fruits = array("apple", "banana", "orange");
+print_r($fruits);
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <p>Output:</p>
+                <div class="code-example">
+                    <pre><code>
+Array
+(
+    [0] => apple
+    [1] => banana
+    [2] => orange
+)
+                    </code></pre>
+                </div>
+                
+                <h4>var_dump()</h4>
+                <p>The <code>var_dump()</code> function displays structured information about variables that includes their type and value:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$x = 5;
+$y = "Hello";
+$z = true;
+$a = array("red", "green", "blue");
+
+var_dump($x);
+var_dump($y);
+var_dump($z);
+var_dump($a);
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <p>Output:</p>
+                <div class="code-example">
+                    <pre><code>
+int(5)
+string(5) "Hello"
+bool(true)
+array(3) {
+  [0]=>
+  string(3) "red"
+  [1]=>
+  string(5) "green"
+  [2]=>
+  string(4) "blue"
+}
+                    </code></pre>
+                </div>
+            </div>
+            
+            <div class="php-example">
+                <h3>Practical Example: Creating a Simple HTML Template</h3>
+                <p>In this example, we'll use echo statements to generate an HTML template with dynamic content:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My PHP Website&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;?php
+    // Define variables
+    $siteName = "My Dynamic PHP Site";
+    $userName = "John Doe";
+    $currentDate = date("F j, Y");
+    
+    // Output the header section
+    echo "&lt;div class='header'&gt;";
+    echo "&lt;h1&gt;$siteName&lt;/h1&gt;";
+    echo "&lt;p&gt;Welcome, $userName! Today is $currentDate&lt;/p&gt;";
+    echo "&lt;/div&gt;";
+    
+    // Output the content section
+    echo "&lt;div class='content'&gt;";
+    echo "&lt;h2&gt;About This Page&lt;/h2&gt;";
+    echo "&lt;p&gt;This is a simple example showing how to use PHP's echo statement to generate dynamic HTML content.&lt;/p&gt;";
+    
+    // Generate a list using a loop
+    echo "&lt;h3&gt;My Favorite Programming Languages:&lt;/h3&gt;";
+    echo "&lt;ul&gt;";
+    $languages = array("PHP", "JavaScript", "Python", "Java", "C++");
+    foreach ($languages as $language) {
+        echo "&lt;li&gt;$language&lt;/li&gt;";
+    }
+    echo "&lt;/ul&gt;";
+    
+    echo "&lt;/div&gt;";
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                </div>
+                
+                <p>Save this code in a file named "template.php" and place it in your web server's document root. When accessed via a browser, it will display a complete HTML page with dynamic content generated by PHP.</p>
+            </div>
+            
+            <div class="navigation-buttons">
+                <div class="previous-page">
+                    <a href="PHP-VARIABLES.html">Previous: Variables</a>
+                </div>
+                <div class="next-page">
+                    <a href="PHP-DATATYPES.html">Next: Data Types</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Programming the Web, One Line at a Time</p>
+    </footer>
+
+</body>
+</html>

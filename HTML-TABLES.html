@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Tables Tutorial</title>
+  <link rel="stylesheet" href="website.css">
+  <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active">HOME</a></li>
+      <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+      <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+      <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+      <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+  </ul>
+</div>
+
+  <div class="main-content">
+    <div class="header">
+        <h1>WELCOME TO HTML TUTORIAL</h1>
+        <div class="header-underline"></div>
+    </div>
+    
+    <div class="tutorial-nav">
+        <a href="HTML-HOME.html">Home</a>
+        <a href="HTML-INTRO.html">Introduction</a>
+        <a href="HTML-EDITORS.html">Editors</a>
+        <a href="HTML.BASICS.html">Basics</a>
+        <a href="HTML-ELEMENTS.html">Elements</a>
+        <a href="HTML-ATTRIBUTES.html">Attributes</a>
+        <a href="HTML-HEADINGS.html">Headings</a>
+        <a href="HTML-COMMENTS.html">Comments</a>
+        <a href="HTML-COLORS.html">Colors</a>
+        <a href="HTML-LINKS.html">Links</a>
+        <a href="HTML-IMAGES.html">Images</a>
+        <a href="HTML-FAVICON.html">Favicon</a>
+        <a href="HTML-PAGE-TITLE.html">Page Title</a>
+        <a href="HTML-TABLES.html" class="active">Tables</a>
+        <a href="HTML-LISTS.html">Lists</a>
+        <a href="HTML-DIV.html">Div</a>
+        <a href="HTML-CLASSES.html">Classes</a>
+        <a href="HTML-ID.html">Id</a>
+    </div>
+    
+    <div class="content">
+      <h2>HTML Tables - Organizing Data in Rows and Columns</h2>
+      <p>HTML tables are used to display data in a structured grid format consisting of rows and columns. They're perfect for presenting tabular data like schedules, product comparisons, financial statements, and other information that benefits from a clear, organized layout.</p>
+      
+      <div class="topic-section">
+        <div class="topic">
+          <h2>Basic Table Structure</h2>
+          <div class="topic-content">
+            <p>A basic HTML table is created using these elements:</p>
+            <ul class="tips-list">
+              <li>&lt;table&gt; - Container for the entire table</li>
+              <li>&lt;tr&gt; - Table row</li>
+              <li>&lt;th&gt; - Table header cell</li>
+              <li>&lt;td&gt; - Table data cell</li>
+            </ul>
+            <p>These elements work together to form the structure of your table with headers and data organized in rows and columns.</p>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>Table Headers and Data</h2>
+          <div class="topic-content">
+            <p>A typical table includes headers and data cells:</p>
+            <pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+    &lt;th&gt;Country&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;John Smith&lt;/td&gt;
+    &lt;td&gt;28&lt;/td&gt;
+    &lt;td&gt;USA&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+            <p>Headers (&lt;th&gt;) typically appear bold and centered by default, while data cells (&lt;td&gt;) are regular text aligned to the left.</p>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>Table Structure Elements</h2>
+          <div class="topic-content">
+            <p>For better organization, tables can include:</p>
+            <ul class="tips-list">
+              <li>&lt;thead&gt; - Groups header content</li>
+              <li>&lt;tbody&gt; - Groups body content</li>
+              <li>&lt;tfoot&gt; - Groups footer content</li>
+              <li>&lt;caption&gt; - Provides a title/description</li>
+            </ul>
+            <p>These elements improve accessibility and make styling more manageable, especially for larger tables.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="image-container">
+        <div id="img10" class="Images">
+          <h3>Table Structure Example</h3>
+          <img src="pictures/table.jpg" alt="Example of HTML table structure">
+        </div>
+      </div>
+
+      <h3>Table Attributes and Styling</h3>
+      <p>HTML tables can be customized with various attributes and CSS to improve appearance:</p>
+      <pre><code>&lt;table border="1" cellpadding="10" cellspacing="0" style="width: 80%;"&gt;
+  &lt;caption&gt;Monthly Sales Report&lt;/caption&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Product&lt;/th&gt;
+    &lt;th&gt;January&lt;/th&gt;
+    &lt;th&gt;February&lt;/th&gt;
+    &lt;th&gt;March&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Widgets&lt;/td&gt;
+    &lt;td&gt;250&lt;/td&gt;
+    &lt;td&gt;315&lt;/td&gt;
+    &lt;td&gt;290&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+      
+      <p>Note: While HTML attributes like border, cellpadding, and cellspacing are shown above, modern best practice is to use CSS for styling tables.</p>
+
+      <h3>Table CSS Styling Example</h3>
+      <pre><code>table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+caption {
+  caption-side: top;
+  font-weight: bold;
+  padding: 10px;
+}</code></pre>
+
+      <h3>Table Spanning Columns and Rows</h3>
+      <p>Tables can have cells that span multiple columns or rows using the colspan and rowspan attributes:</p>
+      <table class="table">
+        <tr>
+          <th>Attribute</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+        <tr>
+          <td>colspan</td>
+          <td>Specifies how many columns a cell should span</td>
+          <td>&lt;td colspan="2"&gt;Spans 2 columns&lt;/td&gt;</td>
+        </tr>
+        <tr>
+          <td>rowspan</td>
+          <td>Specifies how many rows a cell should span</td>
+          <td>&lt;td rowspan="3"&gt;Spans 3 rows&lt;/td&gt;</td>
+        </tr>
+      </table>
+      
+      <h3>Spanning Example</h3>
+      <pre><code>&lt;table border="1"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th colspan="2"&gt;Contact Info&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;John Smith&lt;/td&gt;
+    &lt;td&gt;Phone: 555-1234&lt;/td&gt;
+    &lt;td&gt;Email: john@example.com&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Jane Doe&lt;/td&gt;
+    &lt;td&gt;Phone: 555-5678&lt;/td&gt;
+    &lt;td&gt;Email: jane@example.com&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+      
+      <h3>Complex Table Structure</h3>
+      <p>For more complex tables, use table sections and additional attributes:</p>
+      <pre><code>&lt;table&gt;
+  &lt;caption&gt;Quarterly Sales Report&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th rowspan="2"&gt;Department&lt;/th&gt;
+      &lt;th colspan="4"&gt;2025 Quarters&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Q1&lt;/th&gt;
+      &lt;th&gt;Q2&lt;/th&gt;
+      &lt;th&gt;Q3&lt;/th&gt;
+      &lt;th&gt;Q4&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Electronics&lt;/td&gt;
+      &lt;td&gt;$10,000&lt;/td&gt;
+      &lt;td&gt;$12,500&lt;/td&gt;
+      &lt;td&gt;$15,000&lt;/td&gt;
+      &lt;td&gt;$18,000&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Clothing&lt;/td&gt;
+      &lt;td&gt;$8,000&lt;/td&gt;
+      &lt;td&gt;$9,500&lt;/td&gt;
+      &lt;td&gt;$11,000&lt;/td&gt;
+      &lt;td&gt;$15,500&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Total&lt;/th&gt;
+      &lt;td&gt;$18,000&lt;/td&gt;
+      &lt;td&gt;$22,000&lt;/td&gt;
+      &lt;td&gt;$26,000&lt;/td&gt;
+      &lt;td&gt;$33,500&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+      
+      <div class="buttons">
+        <a href="https://www.tablesgenerator.com/html_tables" target="_blank" class="btn">HTML Table Generator</a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table" target="_blank" class="btn">MDN Table Documentation</a>
+      </div>
+      
+      <h3>Table Accessibility</h3>
+      <p>Make your tables accessible to all users by following these best practices:</p>
+      <ul class="tips-list">
+        <li>Use proper table headers (&lt;th&gt;) for columns and rows</li>
+        <li>Add a descriptive &lt;caption&gt; to explain the table's purpose</li>
+        <li>Use scope attributes on headers: scope="col" for column headers, scope="row" for row headers</li>
+        <li>Use id and headers attributes for complex tables to associate data cells with headers</li>
+        <li>Avoid using tables for layout purposes (use CSS for page layout instead)</li>
+        <li>Keep tables simple or break complex data into multiple tables</li>
+        <li>Add a summary attribute or aria-describedby for screen readers</li>
+        <li>Ensure adequate color contrast for all table elements</li>
+      </ul>
+      
+      <h3>Tables vs. CSS Grid/Flexbox</h3>
+      <table class="table">
+        <tr>
+          <th>Use Tables For</th>
+          <th>Use CSS Grid/Flexbox For</th>
+        </tr>
+        <tr>
+          <td>Tabular data display</td>
+          <td>Page layouts</td>
+        </tr>
+        <tr>
+          <td>Data comparison</td>
+          <td>Navigation menus</td>
+        </tr>
+        <tr>
+          <td>Calendars</td>
+          <td>Card layouts</td>
+        </tr>
+        <tr>
+          <td>Price lists</td>
+          <td>Image galleries</td>
+        </tr>
+        <tr>
+          <td>Financial reports</td>
+          <td>Form layouts</td>
+        </tr>
+      </table>
+      
+      <h3>Responsive Tables</h3>
+      <p>Tables can be challenging on smaller screens. Here are some techniques for making responsive tables:</p>
+      <pre><code>/* Method 1: Horizontal scrolling */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Method 2: Collapse table on small screens */
+@media screen and (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  td {
+    position: relative;
+    padding-left: 50%;
+  }
+  
+  td:before {
+    position: absolute;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    content: attr(data-label);
+    font-weight: bold;
+  }
+}</code></pre>
+    </div>
+    
+    <div class="previous-page">
+      <a href="HTML-PAGE-TITLE.html">&#8592; Previous</a>
+    </div>
+    <div class="next-page">
+      <a href="HTML-LISTS.html">Next &#8594;</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Front-End Tutorial © 2025 | Building the Web, One Tag at a Time</p>
+  </footer>
+
+</body>
+</html>

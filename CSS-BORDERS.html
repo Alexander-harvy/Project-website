@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Borders</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>CSS BORDERS</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="CSS-HOME.html">Home</a>
+            <a href="CSS-INTRO.html">Introduction</a>
+            <a href="CSS-SELECTORS.html">Selectors</a>
+            <a href="CSS-COLORS.html">Colors</a>
+            <a href="CSS-BACKGROUNDS.html">Backgrounds</a>
+            <a href="CSS-BORDERS.html" class="active">Borders</a>
+            <a href="CSS-MARGINS.html">Margins</a>
+            <a href="CSS-PADDING.html">Padding</a>
+            <a href="CSS-HEIGHT-WIDTH.html">Height/Width</a>
+            <a href="CSS-BOX-MODEL.html">Box Model</a>
+            <a href="CSS-TEXT.html">Text</a>
+            <a href="CSS-FONTS.html">Fonts</a>
+            <a href="CSS-DISPLAY.html">Display</a>
+            <a href="CSS-POSITION.html">Position</a>
+            <a href="CSS-FLOAT.html">Float</a>
+            <a href="CSS-FLEXBOX.html">Flexbox</a>
+            <a href="CSS-GRID.html">Grid</a>
+            <a href="CSS-RESPONSIVE.html">Responsive</a>
+        </div>
+        
+        <div class="content">
+            <h2>CSS Border Properties</h2>
+            <p>CSS borders allow you to define the style, width, and color of an element's border. You can apply borders to any HTML element.</p>
+           
+            <div class="image-container">
+              <div id="css-image1" class="Images">
+                <img src="pictures/border.png" alt="CSS Borders">
+              </div>
+            </div>
+
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Property</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>border-width</td>
+                        <td>Sets the width of the border</td>
+                    </tr>
+                    <tr>
+                        <td>border-style</td>
+                        <td>Sets the style of the border</td>
+                    </tr>
+                    <tr>
+                        <td>border-color</td>
+                        <td>Sets the color of the border</td>
+                    </tr>
+                    <tr>
+                        <td>border</td>
+                        <td>Shorthand property for setting width, style, and color in one declaration</td>
+                    </tr>
+                    <tr>
+                        <td>border-radius</td>
+                        <td>Adds rounded corners to elements</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h3>Border Width</h3>
+            <p>The border-width property specifies the width of the border. You can use px, pt, cm, em, or keywords (thin, medium, thick):</p>
+            <pre>
+p {
+    border-style: solid;
+    border-width: 5px;
+}
+
+h1 {
+    border-style: solid;
+    border-width: thin; /* thin, medium, or thick */
+}
+            </pre>
+            
+            <h3>Border Style</h3>
+            <p>The border-style property specifies the type of border to display:</p>
+            <pre>
+/* Available styles */
+p.dotted {border-style: dotted;}
+p.dashed {border-style: dashed;}
+p.solid {border-style: solid;}
+p.double {border-style: double;}
+p.groove {border-style: groove;}
+p.ridge {border-style: ridge;}
+p.inset {border-style: inset;}
+p.outset {border-style: outset;}
+p.none {border-style: none;}
+p.hidden {border-style: hidden;}
+            </pre>
+            
+            <h3>Border Color</h3>
+            <p>The border-color property is used to set the color of the border:</p>
+            <pre>
+p {
+    border-style: solid;
+    border-color: red;
+}
+
+h1 {
+    border-style: solid;
+    border-color: #FF0000; /* HEX value */
+}
+
+div {
+    border-style: solid;
+    border-color: rgb(255, 0, 0); /* RGB value */
+}
+            </pre>
+            
+            <h3>Border Shorthand</h3>
+            <p>The border property is a shorthand property for setting all border properties at once:</p>
+            <pre>
+p {
+    border: 5px solid red;
+    /* Order: width style color */
+}
+            </pre>
+            
+            <h3>Individual Sides</h3>
+            <p>You can also specify borders for individual sides:</p>
+            <pre>
+p {
+    border-top: 5px solid red;
+    border-right: 3px dotted blue;
+    border-bottom: 2px dashed green;
+    border-left: 1px solid black;
+}
+            </pre>
+            
+            <h3>Border Radius</h3>
+            <p>The border-radius property adds rounded corners to elements:</p>
+            <pre>
+div {
+    border: 2px solid red;
+    border-radius: 10px; /* All corners equally rounded */
+}
+
+.custom-rounded {
+    border: 2px solid blue;
+    border-radius: 10px 20px 30px 40px; /* top-left, top-right, bottom-right, bottom-left */
+}
+            </pre>
+            
+            <div class="previous-page">
+                <a href="CSS-BACKGROUNDS.html"> &#8592; Previous </a>
+            </div>
+            <div class="next-page">
+                <a href="CSS-MARGINS.html">Next &#8594;</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Styling the Web, One Rule at a Time</p>
+    </footer>
+</body>
+</html>

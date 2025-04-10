@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Page Title Tutorial</title>
+  <link rel="stylesheet" href="website.css">
+  <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active">HOME</a></li>
+      <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+      <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+      <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+      <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+  </ul>
+</div>
+
+  <div class="main-content">
+    <div class="header">
+        <h1>WELCOME TO HTML TUTORIAL</h1>
+        <div class="header-underline"></div>
+    </div>
+    
+    <div class="tutorial-nav">
+        <a href="HTML-HOME.html">Home</a>
+        <a href="HTML-INTRO.html">Introduction</a>
+        <a href="HTML-EDITORS.html">Editors</a>
+        <a href="HTML.BASICS.html">Basics</a>
+        <a href="HTML-ELEMENTS.html">Elements</a>
+        <a href="HTML-ATTRIBUTES.html">Attributes</a>
+        <a href="HTML-HEADINGS.html">Headings</a>
+        <a href="HTML-COMMENTS.html">Comments</a>
+        <a href="HTML-COLORS.html">Colors</a>
+        <a href="HTML-LINKS.html">Links</a>
+        <a href="HTML-IMAGES.html">Images</a>
+        <a href="HTML-FAVICON.html">Favicon</a>
+        <a href="HTML-PAGE-TITLE.html" class="active">Page Title</a>
+        <a href="HTML-TABLES.html">Tables</a>
+        <a href="HTML-LISTS.html">Lists</a>
+        <a href="HTML-DIV.html">Div</a>
+        <a href="HTML-CLASSES.html">Classes</a>
+        <a href="HTML-ID.html">Id</a>
+    </div>
+    
+    <div class="content">
+      <h2>HTML Page Title - Setting Effective Titles for Your Web Pages</h2>
+      <p>The HTML page title is a crucial element for both users and search engines. It appears in browser tabs, bookmarks, search engine results, and social media sharing. A well-crafted page title improves user experience and contributes to better search engine optimization (SEO).</p>
+      
+      <div class="topic-section">
+        <div class="topic">
+          <h2>What is a Page Title?</h2>
+          <div class="topic-content">
+            <p>The page title is defined using the &lt;title&gt; element within the &lt;head&gt; section of an HTML document. It specifies the title of the document that appears in:</p>
+            <ul class="tips-list">
+              <li>Browser tabs</li>
+              <li>Bookmarks/Favorites lists</li>
+              <li>Search engine results</li>
+              <li>Social media sharing cards</li>
+              <li>Browser history</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>Basic Page Title Syntax</h2>
+          <div class="topic-content">
+            <p>To add a title to your web page, insert the &lt;title&gt; element in the &lt;head&gt; section:</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Your Page Title Here&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- Page content goes here --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p>The title element is required in all HTML documents and should be descriptive of the page's content.</p>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>Page Title vs. Headings</h2>
+          <div class="topic-content">
+            <p>Don't confuse page titles with headings:</p>
+            <ul class="tips-list">
+              <li>&lt;title&gt; - Appears in browser tabs, not on the page itself</li>
+              <li>&lt;h1&gt; - Main heading visible on the actual page</li>
+              <li>&lt;h2&gt; to &lt;h6&gt; - Subheadings visible on the page</li>
+            </ul>
+            <p>While they often contain similar text, they serve different purposes and appear in different locations.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="image-container">
+        <div id="img9" class="Images">
+          <h3>Page Title Example</h3>
+          <img src="pictures/page-title.png" alt="Page title appearing in browser tab">
+        </div>
+      </div>
+
+      <h3>Page Title Best Practices</h3>
+      <p>For maximum effectiveness and SEO benefits, follow these guidelines when creating page titles:</p>
+      <ul class="tips-list">
+        <li>Keep titles under 60-70 characters to avoid truncation in search results</li>
+        <li>Place important keywords near the beginning of the title</li>
+        <li>Make each page title unique across your website</li>
+        <li>Include your brand name, typically at the end of the title</li>
+        <li>Make titles descriptive and relevant to the page content</li>
+        <li>Avoid keyword stuffing or clickbait style titles</li>
+        <li>Use title case or sentence case consistently</li>
+        <li>Consider including location for local businesses</li>
+      </ul>
+
+      <h3>Page Title Patterns</h3>
+      <p>Common title patterns used across the web include:</p>
+      <table class="table">
+        <tr>
+          <th>Pattern</th>
+          <th>Example</th>
+          <th>Best Used For</th>
+        </tr>
+        <tr>
+          <td>Primary Keyword - Secondary Keyword | Brand</td>
+          <td>Web Design Tips - HTML Tutorials | TechSchool</td>
+          <td>Content/blog pages</td>
+        </tr>
+        <tr>
+          <td>Product Name - Category | Brand</td>
+          <td>HTML Handbook - Web Development | TechSchool</td>
+          <td>Product pages</td>
+        </tr>
+        <tr>
+          <td>Brand: Page Subject</td>
+          <td>TechSchool: About Our Web Development Courses</td>
+          <td>About/company pages</td>
+        </tr>
+        <tr>
+          <td>Question Format</td>
+          <td>How to Create HTML Page Titles? | TechSchool</td>
+          <td>FAQ/guide pages</td>
+        </tr>
+        <tr>
+          <td>Numbered List</td>
+          <td>10 Essential HTML Tips for Beginners | TechSchool</td>
+          <td>Listicle content</td>
+        </tr>
+      </table>
+      
+      <h3>Page Title Impact on SEO</h3>
+      <p>The page title is one of the most important on-page SEO elements because:</p>
+      <ul class="tips-list">
+        <li>Search engines give significant weight to the title when determining page relevance</li>
+        <li>Keywords in the title help search engines understand what the page is about</li>
+        <li>A compelling title improves click-through rates from search results</li>
+        <li>Titles are often used as the main text in social media shares</li>
+        <li>Well-optimized titles help both users and search engines understand the page content</li>
+      </ul>
+      
+      <h3>Implementation Examples</h3>
+      <div class="table">
+        <table>
+          <tr>
+            <th>Page Type</th>
+            <th>Sample Title</th>
+            <th>Notes</th>
+          </tr>
+          <tr>
+            <td>Homepage</td>
+            <td>TechSchool - Web Development Tutorials & Resources</td>
+            <td>Brand name first, followed by main keywords</td>
+          </tr>
+          <tr>
+            <td>Product Page</td>
+            <td>HTML Beginner Course (8 Hours) | TechSchool</td>
+            <td>Product name with key feature, then brand</td>
+          </tr>
+          <tr>
+            <td>Blog Article</td>
+            <td>10 HTML Best Practices for Web Developers | TechSchool</td>
+            <td>Specific, descriptive, includes numbers for better CTR</td>
+          </tr>
+          <tr>
+            <td>Contact Page</td>
+            <td>Contact TechSchool - Get Help With Web Development</td>
+            <td>Action-oriented, includes brand and purpose</td>
+          </tr>
+          <tr>
+            <td>Local Business</td>
+            <td>TechSchool Manila - Web Development Training Courses</td>
+            <td>Includes location for local SEO benefits</td>
+          </tr>
+        </table>
+      </div>
+      
+      <h3>Page Title Tools & Resources</h3>
+      <div class="buttons">
+        <a href="https://www.seoptimer.com/title-tag-checker" target="_blank" class="btn">Title Tag Checker</a>
+        <a href="https://moz.com/learn/seo/title-tag" target="_blank" class="btn">Moz Title Tag Guide</a>
+      </div>
+      
+      <h3>Dynamic Page Titles</h3>
+      <p>For more advanced websites, you can create dynamic page titles using JavaScript:</p>
+      <pre><code>// Change page title based on user actions
+function updatePageTitle(newTitle) {
+  document.title = newTitle + " | TechSchool";
+}
+
+// Example usage
+document.getElementById("course-selector").addEventListener("change", function() {
+  updatePageTitle(this.value);
+});</code></pre>
+      
+      <h3>Common Page Title Mistakes to Avoid</h3>
+      <ul class="tips-list">
+        <li>Using the same title for all pages</li>
+        <li>Creating extremely long titles that will be truncated</li>
+        <li>Using vague titles like "Home" or "Page 1"</li>
+        <li>Keyword stuffing (repeating keywords excessively)</li>
+        <li>Neglecting to include your brand name</li>
+        <li>Using misleading titles that don't match page content</li>
+        <li>Forgetting to update titles when page content changes</li>
+        <li>Using special characters that may not display properly</li>
+      </ul>
+    </div>
+    
+    <div class="previous-page">
+      <a href="HTML-FAVICON.html">&#8592; Previous</a>
+    </div>
+    <div class="next-page">
+      <a href="HTML-TABLES.html">Next &#8594;</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Front-End Tutorial © 2025 | Building the Web, One Tag at a Time</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Margins</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>CSS MARGINS</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="CSS-HOME.html">Home</a>
+            <a href="CSS-INTRO.html">Introduction</a>
+            <a href="CSS-SELECTORS.html">Selectors</a>
+            <a href="CSS-COLORS.html">Colors</a>
+            <a href="CSS-BACKGROUNDS.html">Backgrounds</a>
+            <a href="CSS-BORDERS.html">Borders</a>
+            <a href="CSS-MARGINS.html" class="active">Margins</a>
+            <a href="CSS-PADDING.html">Padding</a>
+            <a href="CSS-HEIGHT-WIDTH.html">Height/Width</a>
+            <a href="CSS-BOX-MODEL.html">Box Model</a>
+            <a href="CSS-TEXT.html">Text</a>
+            <a href="CSS-FONTS.html">Fonts</a>
+            <a href="CSS-DISPLAY.html">Display</a>
+            <a href="CSS-POSITION.html">Position</a>
+            <a href="CSS-FLOAT.html">Float</a>
+            <a href="CSS-FLEXBOX.html">Flexbox</a>
+            <a href="CSS-GRID.html">Grid</a>
+            <a href="CSS-RESPONSIVE.html">Responsive</a>
+        </div>
+        
+        <div class="content">
+            <h2>CSS Margin Properties</h2>
+            <p>Margins create space around elements, outside of any defined borders. They are used to create space between elements.</p>
+           
+            <div class="image-container">
+              <div id="css-image1" class="Images">
+                <img src="pictures/margin.jpg" alt="CSS Margins">
+              </div>
+            </div>
+
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Property</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>margin-top</td>
+                        <td>Sets the top margin of an element</td>
+                    </tr>
+                    <tr>
+                        <td>margin-right</td>
+                        <td>Sets the right margin of an element</td>
+                    </tr>
+                    <tr>
+                        <td>margin-bottom</td>
+                        <td>Sets the bottom margin of an element</td>
+                    </tr>
+                    <tr>
+                        <td>margin-left</td>
+                        <td>Sets the left margin of an element</td>
+                    </tr>
+                    <tr>
+                        <td>margin</td>
+                        <td>Shorthand property for setting all margins in one declaration</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h3>Individual Margins</h3>
+            <p>You can set margins for each side individually:</p>
+            <pre>
+p {
+    margin-top: 50px;
+    margin-right: 30px;
+    margin-bottom: 50px;
+    margin-left: 30px;
+}
+            </pre>
+            
+            <h3>Margin Shorthand</h3>
+            <p>The margin property is a shorthand property for setting all margins at once:</p>
+            <pre>
+/* When all four margins are the same */
+p {
+    margin: 25px; /* All four margins: 25px */
+}
+
+/* When top/bottom and right/left margins differ */
+p {
+    margin: 25px 50px; /* top and bottom 25px, right and left 50px */
+}
+
+/* When top, right/left, and bottom margins differ */
+p {
+    margin: 25px 50px 75px; /* top 25px, right and left 50px, bottom 75px */
+}
+
+/* When all four margins differ */
+p {
+    margin: 25px 50px 75px 100px; /* top, right, bottom, left (clockwise) */
+}
+            </pre>
+            
+            <h3>Auto Value</h3>
+            <p>You can use margin: auto to horizontally center an element within its container:</p>
+            <pre>
+div {
+    width: 300px;
+    margin: auto; /* Horizontally center this div */
+    border: 1px solid red;
+}
+            </pre>
+            
+            <h3>Margin Collapse</h3>
+            <p>Top and bottom margins of elements sometimes collapse into a single margin. This means that if you have two elements with adjacent margins, the margin between them will be the larger of the two margins, not the sum:</p>
+            <pre>
+h1 {
+    margin-bottom: 50px;
+}
+
+h2 {
+    margin-top: 20px; /* This will collapse with h1's margin */
+}
+
+/* The resulting margin between h1 and h2 will be 50px, not 70px */
+            </pre>
+            
+            <h3>Negative Margins</h3>
+            <p>Margins can also have negative values, which can be used to overlap elements:</p>
+            <pre>
+div {
+    margin-top: -20px; /* Pulls the element 20px up */
+}
+            </pre>
+            
+            <div class="previous-page">
+                <a href="CSS-BORDERS.html"> &#8594; Previous </a>
+            </div>
+            <div class="next-page">
+                <a href="CSS-PADDING.html">Next &#8594;</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Styling the Web, One Rule at a Time</p>
+    </footer>
+</body>
+</html>

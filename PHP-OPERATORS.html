@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Tutorial - Operators</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>WELCOME TO PHP TUTORIAL</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="PHP-HOME.html">Home</a>
+            <a href="PHP-INTRO.html">Introduction</a>
+            <a href="PHP-SYNTAX.html">Syntax</a>
+            <a href="PHP-VARIABLES.html">Variables</a>
+            <a href="PHP-ECHO.html">Echo/Print</a>
+            <a href="PHP-DATATYPES.html">Data Types</a>
+            <a href="PHP-STRINGS.html">Strings</a>
+            <a href="PHP-NUMBERS.html">Numbers</a>
+            <a href="PHP-MATH.html">Math</a>
+            <a href="PHP-CONSTANTS.html">Constants</a>
+            <a href="PHP-OPERATORS.html" class="active">Operators</a>
+            <a href="PHP-CONDITIONALS.html">If...Else</a>
+            <a href="PHP-SWITCH.html">Switch</a>
+            <a href="PHP-LOOPS.html">Loops</a>
+            <a href="PHP-FUNCTIONS.html">Functions</a>
+            <a href="PHP-ARRAYS.html">Arrays</a>
+            <a href="PHP-FORMS.html">Forms</a>
+            <a href="PHP-DATABASE.html">Database</a>
+        </div>
+        
+        <div class="content">
+            <h2>PHP Operators</h2>
+            
+            <div class="intro-section">
+                <p>Operators are used to perform operations on variables and values. PHP divides the operators into the following groups:</p>
+                <ul>
+                    <li>Arithmetic operators</li>
+                    <li>Assignment operators</li>
+                    <li>Comparison operators</li>
+                    <li>Increment/Decrement operators</li>
+                    <li>Logical operators</li>
+                    <li>String operators</li>
+                    <li>Array operators</li>
+                    <li>Conditional assignment operators</li>
+                </ul>
+                
+                <h3>Arithmetic Operators</h3>
+                <p>The PHP arithmetic operators are used with numeric values to perform common arithmetical operations.</p>
+                
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Name</th>
+                            <th>Example</th>
+                            <th>Result</th>
+                        </tr>
+                        <tr>
+                            <td>+</td>
+                            <td>Addition</td>
+                            <td>$x + $y</td>
+                            <td>Sum of $x and $y</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Subtraction</td>
+                            <td>$x - $y</td>
+                            <td>Difference of $x and $y</td>
+                        </tr>
+                        <tr>
+                            <td>*</td>
+                            <td>Multiplication</td>
+                            <td>$x * $y</td>
+                            <td>Product of $x and $y</td>
+                        </tr>
+                        <tr>
+                            <td>/</td>
+                            <td>Division</td>
+                            <td>$x / $y</td>
+                            <td>Quotient of $x and $y</td>
+                        </tr>
+                        <tr>
+                            <td>%</td>
+                            <td>Modulus</td>
+                            <td>$x % $y</td>
+                            <td>Remainder of $x divided by $y</td>
+                        </tr>
+                        <tr>
+                            <td>**</td>
+                            <td>Exponentiation</td>
+                            <td>$x ** $y</td>
+                            <td>Result of raising $x to the $y'th power</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$x = 10;
+$y = 3;
+
+echo $x + $y;  // Outputs: 13
+echo $x - $y;  // Outputs: 7
+echo $x * $y;  // Outputs: 30
+echo $x / $y;  // Outputs: 3.333...
+echo $x % $y;  // Outputs: 1
+echo $x ** $y; // Outputs: 1000
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Assignment Operators</h3>
+                <p>The PHP assignment operators are used to write values to variables.</p>
+                
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Example</th>
+                            <th>Same As</th>
+                        </tr>
+                        <tr>
+                            <td>=</td>
+                            <td>$x = $y</td>
+                            <td>$x = $y</td>
+                        </tr>
+                        <tr>
+                            <td>+=</td>
+                            <td>$x += $y</td>
+                            <td>$x = $x + $y</td>
+                        </tr>
+                        <tr>
+                            <td>-=</td>
+                            <td>$x -= $y</td>
+                            <td>$x = $x - $y</td>
+                        </tr>
+                        <tr>
+                            <td>*=</td>
+                            <td>$x *= $y</td>
+                            <td>$x = $x * $y</td>
+                        </tr>
+                        <tr>
+                            <td>/=</td>
+                            <td>$x /= $y</td>
+                            <td>$x = $x / $y</td>
+                        </tr>
+                        <tr>
+                            <td>%=</td>
+                            <td>$x %= $y</td>
+                            <td>$x = $x % $y</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$x = 10;
+echo $x; // Outputs: 10
+
+$x += 5;
+echo $x; // Outputs: 15
+
+$x -= 3;
+echo $x; // Outputs: 12
+
+$x *= 2;
+echo $x; // Outputs: 24
+
+$x /= 4;
+echo $x; // Outputs: 6
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Comparison Operators</h3>
+                <p>The PHP comparison operators are used to compare two values (number or string).</p>
+                
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Name</th>
+                            <th>Example</th>
+                            <th>Result</th>
+                        </tr>
+                        <tr>
+                            <td>==</td>
+                            <td>Equal</td>
+                            <td>$x == $y</td>
+                            <td>True if $x is equal to $y</td>
+                        </tr>
+                        <tr>
+                            <td>===</td>
+                            <td>Identical</td>
+                            <td>$x === $y</td>
+                            <td>True if $x is equal to $y, and they are of the same type</td>
+                        </tr>
+                        <tr>
+                            <td>!=</td>
+                            <td>Not equal</td>
+                            <td>$x != $y</td>
+                            <td>True if $x is not equal to $y</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;&gt;</td>
+                            <td>Not equal</td>
+                            <td>$x &lt;&gt; $y</td>
+                            <td>True if $x is not equal to $y</td>
+                        </tr>
+                        <tr>
+                            <td>!==</td>
+                            <td>Not identical</td>
+                            <td>$x !== $y</td>
+                            <td>True if $x is not equal to $y, or they are not of the same type</td>
+                        </tr>
+                        <tr>
+                            <td>&gt;</td>
+                            <td>Greater than</td>
+                            <td>$x &gt; $y</td>
+                            <td>True if $x is greater than $y</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;</td>
+                            <td>Less than</td>
+                            <td>$x &lt; $y</td>
+                            <td>True if $x is less than $y</td>
+                        </tr>
+                        <tr>
+                            <td>&gt;=</td>
+                            <td>Greater than or equal to</td>
+                            <td>$x &gt;= $y</td>
+                            <td>True if $x is greater than or equal to $y</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;=</td>
+                            <td>Less than or equal to</td>
+                            <td>$x &lt;= $y</td>
+                            <td>True if $x is less than or equal to $y</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;=&gt;</td>
+                            <td>Spaceship</td>
+                            <td>$x &lt;=&gt; $y</td>
+                            <td>Returns -1, 0, or 1 depending on if $x is less than, equal to, or greater than $y</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$x = 5;
+$y = "5";
+
+var_dump($x == $y);   // bool(true)
+var_dump($x === $y);  // bool(false)
+var_dump($x != $y);   // bool(false)
+var_dump($x !== $y);  // bool(true)
+var_dump($x &lt; $y);    // bool(false)
+var_dump($x &gt; $y);    // bool(false)
+var_dump($x &lt;=&gt; $y); // int(0)
+
+$y = 10;
+var_dump($x &lt;=&gt; $y); // int(-1)
+var_dump($y &lt;=&gt; $x); // int(1)
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Increment/Decrement Operators</h3>
+                <p>The PHP increment/decrement operators are used to increment/decrement a variable's value.</p>
+                
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>++$x</td>
+                            <td>Pre-increment</td>
+                            <td>Increments $x by one, then returns $x</td>
+                        </tr>
+                        <tr>
+                            <td>$x++</td>
+                            <td>Post-increment</td>
+                            <td>Returns $x, then increments $x by one</td>
+                        </tr>
+                        <tr>
+                            <td>--$x</td>
+                            <td>Pre-decrement</td>
+                            <td>Decrements $x by one, then returns $x</td>
+                        </tr>
+                        <tr>
+                            <td>$x--</td>
+                            <td>Post-decrement</td>
+                            <td>Returns $x, then decrements $x by one</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$x = 5;
+echo ++$x; // Outputs: 6
+echo $x;   // Outputs: 6
+
+$x = 5;
+echo $x++; // Outputs: 5
+echo $x;   // Outputs: 6
+
+$x = 5;
+echo --$x; // Outputs: 4
+echo $x;   // Outputs: 4
+
+$x = 5;
+echo $x--; // Outputs: 5
+echo $x;   // Outputs: 4
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Logical Operators</h3>
+                <p>The PHP logical operators are used to combine conditional statements.</p>
+                
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Name</th>
+                            <th>Example</th>
+                            <th>Result</th>
+                        </tr>
+                        <tr>
+                            <td>and</td>
+                            <td>And</td>
+                            <td>$x and $y</td>
+                            <td>True if both $x and $y are true</td>
+                        </tr>
+                        <tr>
+                            <td>or</td>
+                            <td>Or</td>
+                            <td>$x or $y</td>
+                            <td>True if either $x or $y is true</td>
+                        </tr>
+                        <tr>
+                            <td>xor</td>
+                            <td>Xor</td>
+                            <td>$x xor $y</td>
+                            <td>True if either $x or $y is true, but not both</td>
+                        </tr>
+                        <tr>
+                            <td>&&</td>
+                            <td>And</td>
+                            <td>$x && $y</td>
+                            <td>True if both $x and $y are true</td>
+                        </tr>
+                        <tr>
+                            <td>||</td>
+                            <td>Or</td>
+                            <td>$x || $y</td>
+                            <td>True if either $x or $y is true</td>
+                        </tr>
+                        <tr>
+                            <td>!</td>
+                            <td>Not</td>
+                            <td>!$x</td>
+                            <td>True if $x is not true</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$x = true;
+$y = false;
+
+var_dump($x and $y);  // bool(false)
+var_dump($x or $y);   // bool(true)
+var_dump($x xor $y);  // bool(true)
+var_dump($x && $y);   // bool(false)
+var_dump($x || $y);   // bool(true)
+var_dump(!$x);        // bool(false)
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>String Operators</h3>
+                <p>PHP has two operators that are specially designed for strings.</p>
+                
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Name</th>
+                            <th>Example</th>
+                            <th>Result</th>
+                        </tr>
+                        <tr>
+                            <td>.</td>
+                            <td>Concatenation</td>
+                            <td>$txt1 . $txt2</td>
+                            <td>Concatenation of $txt1 and $txt2</td>
+                        </tr>
+                        <tr>
+                            <td>.=</td>
+                            <td>Concatenation assignment</td>
+                            <td>$txt1 .= $txt2</td>
+                            <td>Appends $txt2 to $txt1</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$txt1 = "Hello";
+$txt2 = " World!";
+
+echo $txt1 . $txt2; // Outputs: Hello World!
+
+$txt1 .= $txt2;
+echo $txt1; // Outputs: Hello World!
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Array Operators</h3>
+                <p>The PHP array operators are used to compare arrays.</p>
+                
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Name</th>
+                            <th>Example</th>
+                            <th>Result</th>
+                        </tr>
+                        <tr>
+                            <td>+</td>
+                            <td>Union</td>
+                            <td>$x + $y</td>
+                            <td>Union of $x and $y</td>
+                        </tr>
+                        <tr>
+                            <td>==</td>
+                            <td>Equality</td>
+                            <td>$x == $y</td>
+                            <td>True if $x and $y have the same key/value pairs</td>
+                        </tr>
+                        <tr>
+                            <td>===</td>
+                            <td>Identity</td>
+                            <td>$x === $y</td>
+                            <td>True if $x and $y have the same key/value pairs in the same order and of the same types</td>
+                        </tr>
+                        <tr>
+                            <td>!=</td>
+                            <td>Inequality</td>
+                            <td>$x != $y</td>
+                            <td>True if $x is not equal to $y</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;&gt;</td>
+                            <td>Inequality</td>
+                            <td>$x &lt;&gt; $y</td>
+                            <td>True if $x is not equal to $y</td>
+                        </tr>
+                        <tr>
+                            <td>!==</td>
+                            <td>Non-identity</td>
+                            <td>$x !== $y</td>
+                            <td>True if $x is not identical to $y</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$x = array("a" => "red", "b" => "green");
+$y = array("c" => "blue", "d" => "yellow");
+
+$z = $x + $y; // Union of $x and $y
+print_r($z);
+
+$x = array("a" => "red", "b" => "green");
+$y = array("b" => "green", "a" => "red");
+
+var_dump($x == $y);   // bool(true)
+var_dump($x === $y);  // bool(false)
+var_dump($x != $y);   // bool(false)
+var_dump($x !== $y);  // bool(true)
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Conditional Assignment Operators</h3>
+                <p>The PHP conditional assignment operators are used to set a value depending on conditions.</p>
+                
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Name</th>
+                            <th>Example</th>
+                            <th>Result</th>
+                        </tr>
+                        <tr>
+                            <td>?:</td>
+                            <td>Ternary</td>
+                            <td>$x = expr1 ? expr2 : expr3</td>
+                            <td>Returns the value of $x. The value of $x is expr2 if expr1 = TRUE. The value of $x is expr3 if expr1 = FALSE</td>
+                        </tr>
+                        <tr>
+                            <td>??</td>
+                            <td>Null coalescing</td>
+                            <td>$x = expr1 ?? expr2</td>
+                            <td>Returns the value of $x. The value of $x is expr1 if expr1 exists, and is not NULL. If expr1 does not exist, or is NULL, the value of $x is expr2.</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Ternary operator
+$age = 20;
+$status = ($age >= 18) ? "Adult" : "Minor";
+echo $status; // Outputs: Adult
+
+// Null coalescing operator
+$name = $_GET['name'] ?? 'Guest';
+echo $name; // Outputs: Guest if $_GET['name'] is not set
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Operator Precedence</h3>
+                <p>Operator precedence determines the grouping of terms in an expression. This affects how an expression is evaluated.</p>
+                
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>Precedence</th>
+                            <th>Operator</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>clone new</td>
+                            <td>clone and new</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>**</td>
+                            <td>Exponentiation</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>++ -- ~ (int) (float) (string) (array) (object) (bool) @</td>
+                            <td>Increment/decrement and type casting</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>!</td>
+                            <td>Logical NOT</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>* / %</td>
+                            <td>Multiplication, division, modulus</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>+ - .</td>
+                            <td>Addition, subtraction, concatenation</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>&lt;&lt; &gt;&gt;</td>
+                            <td>Bitwise shift</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>&lt; &lt;= &gt; &gt;=</td>
+                            <td>Comparison</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>== != === !== &lt;&gt; &lt;=&gt;</td>
+                            <td>Comparison</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>&amp;</td>
+                            <td>Bitwise AND</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>^</td>
+                            <td>Bitwise XOR</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>|</td>
+                            <td>Bitwise OR</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>&amp;&amp;</td>
+                            <td>Logical AND</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>||</td>
+                            <td>Logical OR</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>??</td>
+                            <td>Null coalescing</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>?:</td>
+                            <td>Ternary</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>= += -= *= **= /= .= %= &amp;= |= ^= &lt;&lt;= &gt;&gt;=</td>
+                            <td>Assignment</td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td>and</td>
+                            <td>Logical AND</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>xor</td>
+                            <td>Logical XOR</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>or</td>
+                            <td>Logical OR</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Example showing operator precedence
+$result = 5 + 3 * 2; // Multiplication has higher precedence than addition
+echo $result; // Outputs: 11
+
+// Use parentheses to force precedence
+$result = (5 + 3) * 2;
+echo $result; // Outputs: 16
+?&gt;
+                    </code></pre>
+                </div>
+            </div>
+            
+            <div class="navigation-buttons">
+                <div class="previous-page">
+                    <a href="PHP-CONSTANTS.html">Previous: Constants</a>
+                </div>
+                <div class="next-page">
+                    <a href="PHP-CONDITIONALS.html">Next: If...Else</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Programming the Web, One Line at a Time</p>
+    </footer>
+
+</body>
+</html>

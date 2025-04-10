@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML ID Tutorial</title>
+  <link rel="stylesheet" href="website.css">
+  <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active">HOME</a></li>
+      <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+      <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+      <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+      <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+  </ul>
+</div>
+
+  <div class="main-content">
+    <div class="header">
+        <h1>WELCOME TO HTML TUTORIAL</h1>
+        <div class="header-underline"></div>
+    </div>
+    
+    <div class="tutorial-nav">
+        <a href="HTML-HOME.html">Home</a>
+        <a href="HTML-INTRO.html">Introduction</a>
+        <a href="HTML-EDITORS.html">Editors</a>
+        <a href="HTML.BASICS.html">Basics</a>
+        <a href="HTML-ELEMENTS.html">Elements</a>
+        <a href="HTML-ATTRIBUTES.html">Attributes</a>
+        <a href="HTML-HEADINGS.html">Headings</a>
+        <a href="HTML-COMMENTS.html">Comments</a>
+        <a href="HTML-COLORS.html">Colors</a>
+        <a href="HTML-LINKS.html">Links</a>
+        <a href="HTML-IMAGES.html">Images</a>
+        <a href="HTML-FAVICON.html">Favicon</a>
+        <a href="HTML-PAGE-TITLE.html">Page Title</a>
+        <a href="HTML-TABLES.html">Tables</a>
+        <a href="HTML-LISTS.html">Lists</a>
+        <a href="HTML-DIV.html">Div</a>
+        <a href="HTML-CLASSES.html">Classes</a>
+        <a href="HTML-ID.html" class="active">Id</a>
+    </div>
+    
+    <div class="content">
+      <h2>HTML ID Attribute - Creating Unique Elements in Your Web Pages</h2>
+      <p>The HTML ID attribute is a powerful way to identify specific elements on a web page. Unlike classes, which can be applied to multiple elements, IDs are meant to be unique identifiers for single elements. This tutorial covers everything you need to know about using ID attributes effectively in your HTML documents.</p>
+      
+      <div class="topic-section">
+        <div class="topic">
+          <h2>What is an HTML ID?</h2>
+          <div class="topic-content">
+            <p>The ID attribute provides a unique identifier for an HTML element. Its key characteristics include:</p>
+            <ul class="tips-list">
+              <li>Must be unique within the page (only one element per ID)</li>
+              <li>Case-sensitive (myHeader and myheader are different IDs)</li>
+              <li>Cannot start with a number</li>
+              <li>Can be used for CSS styling, JavaScript manipulation, and navigation</li>
+              <li>Should describe the element's purpose or content</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>Basic ID Syntax</h2>
+          <div class="topic-content">
+            <p>The ID attribute is added to an HTML element using the following syntax:</p>
+            <pre><code>&lt;div id="mainContent"&gt;
+  Content goes here...
+&lt;/div&gt;</code></pre>
+            <p>Unlike classes, an element should have only one ID attribute, and that ID should be used only once per page.</p>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>ID vs. Class</h2>
+          <div class="topic-content">
+            <p>While both attributes help identify elements, they serve different purposes:</p>
+            <ul class="tips-list">
+              <li><strong>ID</strong> - Identifies one specific element</li>
+              <li><strong>Class</strong> - Groups similar elements together</li>
+              <li><strong>ID</strong> - Unique per page (should appear only once)</li>
+              <li><strong>Class</strong> - Can be reused multiple times</li>
+              <li><strong>ID</strong> - Selected with hash notation (#id-name) in CSS</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="image-container">
+        <div id="img14" class="Images">
+          <h3>HTML ID Example</h3>
+          <img src="pictures/id.png" alt="HTML ID example">
+        </div>
+      </div>
+
+      <h3>Using ID with CSS</h3>
+      <p>IDs can be targeted in CSS using the hash (#) selector, which has higher specificity than class selectors:</p>
+      <pre><code>/* CSS Selector for ID */
+#mainHeader {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+#sidebarNav {
+  width: 250px;
+  float: left;
+  background-color: #f0f0f0;
+}
+
+/* IDs have higher specificity than classes */
+#specialButton {
+  /* These styles will override any class styles */
+  background-color: red;
+  color: white;
+}</code></pre>
+
+      <h3>ID Naming Conventions</h3>
+      <p>Using consistent ID naming conventions improves code readability:</p>
+      <table class="table">
+        <tr>
+          <th>Convention</th>
+          <th>Example</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td>Camel Case</td>
+          <td>id="mainNavigation"</td>
+          <td>First word lowercase, subsequent words capitalized</td>
+        </tr>
+        <tr>
+          <td>Kebab Case</td>
+          <td>id="main-navigation"</td>
+          <td>Words separated by hyphens</td>
+        </tr>
+        <tr>
+          <td>Snake Case</td>
+          <td>id="main_navigation"</td>
+          <td>Words separated by underscores</td>
+        </tr>
+        <tr>
+          <td>Hungarian Notation</td>
+          <td>id="navMainNavigation"</td>
+          <td>Prefix indicates element type or purpose</td>
+        </tr>
+        <tr>
+          <td>Semantic Names</td>
+          <td>id="site-header"</td>
+          <td>Named based on purpose rather than appearance</td>
+        </tr>
+      </table>
+
+      <h3>Using IDs with JavaScript</h3>
+      <p>One of the most common uses for IDs is to select specific elements with JavaScript:</p>
+      <pre><code>// Get element by ID (most efficient way to select a single element)
+const header = document.getElementById('mainHeader');
+
+// Changing properties
+document.getElementById('status').innerHTML = 'Online';
+
+// Adding event listeners
+document.getElementById('submitButton').addEventListener('click', function() {
+  // Handle form submission
+});
+
+// Styling with JavaScript
+document.getElementById('highlight').style.backgroundColor = 'yellow';</code></pre>
+
+      <h3>Using IDs for Page Navigation</h3>
+      <p>IDs are essential for creating internal page links (anchors) that jump to specific parts of a page:</p>
+      <pre><code>/* Creating a link to a section */
+&lt;a href="#section2"&gt;Jump to Section 2&lt;/a&gt;
+
+/* Target section */
+&lt;section id="section2"&gt;
+  &lt;h2&gt;Section 2 Content&lt;/h2&gt;
+  &lt;p&gt;This is the content of section 2...&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+
+      <p>This functionality is particularly useful for:</p>
+      <ul class="tips-list">
+        <li>Table of contents with links to document sections</li>
+        <li>"Back to top" links</li>
+        <li>FAQ pages with links to specific questions</li>
+        <li>Long-form content with section navigation</li>
+        <li>Single-page applications with anchor navigation</li>
+      </ul>
+
+      <h3>Common Use Cases for IDs</h3>
+      <ul class="tips-list">
+        <li><strong>Form elements</strong> - Connecting labels to inputs</li>
+        <li><strong>Page sections</strong> - Header, footer, main content, sidebar</li>
+        <li><strong>Navigation targets</strong> - Sections to jump to via anchors</li>
+        <li><strong>JavaScript interaction</strong> - Elements that need direct manipulation</li>
+        <li><strong>ARIA attributes</strong> - Connecting related elements for accessibility</li>
+        <li><strong>Unique components</strong> - Elements that appear only once on a page</li>
+        <li><strong>Dynamic content containers</strong> - Areas updated by JavaScript</li>
+        <li><strong>Modal dialogs</strong> - Unique overlay elements</li>
+      </ul>
+      
+      <h3>ID and Accessibility</h3>
+      <p>IDs play a crucial role in making web pages accessible:</p>
+      <table class="table">
+        <tr>
+          <th>Accessibility Feature</th>
+          <th>Example</th>
+          <th>Purpose</th>
+        </tr>
+        <tr>
+          <td>Form Labels</td>
+          <td>&lt;label for="userName"&gt;Name:&lt;/label&gt;<br>&lt;input id="userName"&gt;</td>
+          <td>Associates labels with form controls</td>
+        </tr>
+        <tr>
+          <td>ARIA Relationships</td>
+          <td>&lt;div aria-describedby="tooltip1"&gt;&lt;/div&gt;<br>&lt;div id="tooltip1"&gt;Help text&lt;/div&gt;</td>
+          <td>Creates relationships between elements</td>
+        </tr>
+        <tr>
+          <td>Skip Navigation</td>
+          <td>&lt;a href="#mainContent"&gt;Skip to content&lt;/a&gt;</td>
+          <td>Allows users to bypass repetitive navigation</td>
+        </tr>
+        <tr>
+          <td>Section Landmarks</td>
+          <td>&lt;main id="mainContent"&gt;&lt;/main&gt;</td>
+          <td>Identifies major page sections</td>
+        </tr>
+      </table>
+
+      <h3>Example: Using IDs for a Tab Interface</h3>
+      <pre><code>&lt;!-- Tab Navigation --&gt;
+&lt;div class="tabs"&gt;
+  &lt;button id="tab1Button" class="tab-button active" onclick="openTab('tab1')"&gt;Tab 1&lt;/button&gt;
+  &lt;button id="tab2Button" class="tab-button" onclick="openTab('tab2')"&gt;Tab 2&lt;/button&gt;
+  &lt;button id="tab3Button" class="tab-button" onclick="openTab('tab3')"&gt;Tab 3&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- Tab Content --&gt;
+&lt;div id="tab1" class="tab-content active"&gt;
+  &lt;h3&gt;Tab 1 Content&lt;/h3&gt;
+  &lt;p&gt;This is the content for the first tab.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="tab2" class="tab-content"&gt;
+  &lt;h3&gt;Tab 2 Content&lt;/h3&gt;
+  &lt;p&gt;This is the content for the second tab.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="tab3" class="tab-content"&gt;
+  &lt;h3&gt;Tab 3 Content&lt;/h3&gt;
+  &lt;p&gt;This is the content for the third tab.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+
+      <p>JavaScript for the tab interface:</p>
+      <pre><code>function openTab(tabId) {
+  // Hide all tab content
+  const tabContents = document.getElementsByClassName('tab-content');
+  for (let i = 0; i < tabContents.length; i++) {
+    tabContents[i].classList.remove('active');
+  }
+  
+  // Remove active class from all buttons
+  const tabButtons = document.getElementsByClassName('tab-button');
+  for (let i = 0; i < tabButtons.length; i++) {
+    tabButtons[i].classList.remove('active');
+  }
+  
+  // Show the selected tab content
+  document.getElementById(tabId).classList.add('active');
+  
+  // Add active class to the clicked button
+  document.getElementById(tabId + 'Button').classList.add('active');
+}</code></pre>
+
+      <h3>ID Specificity in CSS</h3>
+      <p>IDs have higher specificity than classes in CSS, which affects how styles are applied:</p>
+      <pre><code>/* Class selector (lower specificity) */
+.button {
+  background-color: blue;
+}
+
+/* ID selector (higher specificity) */
+#submitButton {
+  background-color: green; /* This will override the class style */
+}
+
+/* Even with multiple classes, an ID still has higher specificity */
+.button.primary.large {
+  background-color: red; /* This won't override the ID style */
+}</code></pre>
+
+      <h3>Best Practices for Using IDs</h3>
+      <ul class="tips-list">
+        <li>Use IDs sparingly and only for truly unique elements</li>
+        <li>Ensure each ID is used only once per page</li>
+        <li>Use descriptive names that reflect the element's purpose</li>
+        <li>Consider using classes instead for styling when elements share appearance</li>
+        <li>Avoid using IDs for styling whenever possible (use classes instead to reduce specificity issues)</li>
+        <li>Maintain consistent naming conventions throughout your project</li>
+        <li>Use IDs primarily for JavaScript selection and page navigation</li>
+        <li>Document your IDs in large projects to prevent duplication</li>
+      </ul>
+      
+      <h3>Common ID Mistakes to Avoid</h3>
+      <table class="table">
+        <tr>
+          <th>Mistake</th>
+          <th>Issue</th>
+          <th>Better Approach</th>
+        </tr>
+        <tr>
+          <td>Reusing IDs</td>
+          <td>Multiple elements with the same ID breaks HTML validity</td>
+          <td>Use classes for repeated elements</td>
+        </tr>
+        <tr>
+          <td>Overly generic names</td>
+          <td>Names like "content" or "header" lack specificity</td>
+          <td>Use more descriptive names like "main-article" or "site-header"</td>
+        </tr>
+        <tr>
+          <td>Starting with numbers</td>
+          <td>ID selectors starting with numbers can cause CSS issues</td>
+          <td>Always start IDs with letters or underscores</td>
+        </tr>
+        <tr>
+          <td>Relying on IDs for styling</td>
+          <td>Creates high specificity that's hard to override</td>
+          <td>Use classes for styling, IDs for JavaScript and links</td>
+        </tr>
+        <tr>
+          <td>Using spaces in IDs</td>
+          <td>Spaces in IDs break functionality</td>
+          <td>Use hyphens, underscores, or camelCase</td>
+        </tr>
+      </table>
+      
+      <h3>ID Tools & Resources</h3>
+      <div class="buttons">
+        <a href="https://www.w3schools.com/html/html_id.asp" target="_blank" class="btn">W3Schools ID Tutorial</a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id" target="_blank" class="btn">MDN ID Documentation</a>
+        <a href="https://css-tricks.com/almanac/selectors/i/id/" target="_blank" class="btn">CSS-Tricks ID Selector</a>
+      </div>
+    </div>
+    
+    <div class="previous-page">
+      <a href="HTML-CLASSES.html">&#8592; Previous</a>
+    </div>
+    <div class="next-page">
+      <a href="#">Next &#8594;</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Front-End Tutorial © 2025 | Building the Web, One Tag at a Time</p>
+  </footer>
+
+</body>
+</html>

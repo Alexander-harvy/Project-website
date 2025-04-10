@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>CSS POSITION</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="CSS-HOME.html">Home</a>
+            <a href="CSS-INTRO.html">Introduction</a>
+            <a href="CSS-SELECTORS.html">Selectors</a>
+            <a href="CSS-COLORS.html">Colors</a>
+            <a href="CSS-BACKGROUNDS.html">Backgrounds</a>
+            <a href="CSS-BORDERS.html">Borders</a>
+            <a href="CSS-MARGINS.html">Margins</a>
+            <a href="CSS-PADDING.html">Padding</a>
+            <a href="CSS-HEIGHT-WIDTH.html">Height/Width</a>
+            <a href="CSS-BOX-MODEL.html">Box Model</a>
+            <a href="CSS-TEXT.html">Text</a>
+            <a href="CSS-FONTS.html">Fonts</a>
+            <a href="CSS-DISPLAY.html">Display</a>
+            <a href="CSS-POSITION.html" class="active">Position</a>
+            <a href="CSS-FLOAT.html">Float</a>
+            <a href="CSS-FLEXBOX.html">Flexbox</a>
+            <a href="CSS-GRID.html">Grid</a>
+            <a href="CSS-RESPONSIVE.html">Responsive</a>
+        </div>
+        
+        <div class="content">
+            <h2>CSS Position Property</h2>
+            <p>The position property specifies the type of positioning method used for an element. It allows you to precisely place elements on a webpage and control how they interact with other elements.</p>
+           
+            <div class="image-container">
+              <div id="position-img1" class="Images">
+                <img src="pictures/position.jpg" alt="CSS Position">
+              </div>
+            </div>
+
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Value</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>static</td>
+                        <td>Default value. Elements are positioned according to the normal flow of the document</td>
+                    </tr>
+                    <tr>
+                        <td>relative</td>
+                        <td>Element is positioned relative to its normal position</td>
+                    </tr>
+                    <tr>
+                        <td>absolute</td>
+                        <td>Element is positioned relative to its nearest positioned ancestor</td>
+                    </tr>
+                    <tr>
+                        <td>fixed</td>
+                        <td>Element is positioned relative to the browser window</td>
+                    </tr>
+                    <tr>
+                        <td>sticky</td>
+                        <td>Element is positioned based on the user's scroll position</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h3>Position: Static</h3>
+            <p>Static positioned elements are not affected by the top, bottom, left, and right properties. This is the default position value:</p>
+            <pre>
+div {
+    position: static;
+    /* top, right, bottom, left properties have no effect */
+}
+            </pre>
+            
+            <h3>Position: Relative</h3>
+            <p>Relative positioned elements are offset relative to their normal position:</p>
+            <pre>
+.box {
+    position: relative;
+    top: 20px; /* Move down 20px from normal position */
+    left: 30px; /* Move right 30px from normal position */
+    background-color: lightblue;
+}
+            </pre>
+            <p>The element still occupies the original space in the document flow, but appears offset from that position.</p>
+            
+            <h3>Position: Absolute</h3>
+            <p>Absolute positioned elements are removed from the normal document flow and positioned relative to the nearest positioned ancestor (not static):</p>
+            <pre>
+.container {
+    position: relative; /* Creates a positioning context for absolute children */
+    width: 500px;
+    height: 300px;
+    border: 2px solid black;
+}
+
+.box {
+    position: absolute;
+    top: 50px; /* 50px from the top of the positioned parent */
+    right: 30px; /* 30px from the right of the positioned parent */
+    width: 100px;
+    height: 100px;
+    background-color: coral;
+}
+            </pre>
+            <p>If no positioned ancestor exists, it positions relative to the document body.</p>
+            
+            <h3>Position: Fixed</h3>
+            <p>Fixed positioned elements are removed from the normal document flow and positioned relative to the viewport (browser window):</p>
+            <pre>
+.header {
+    position: fixed;
+    top: 0; /* Fixed at the top of the viewport */
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    z-index: 100; /* Controls stacking order */
+}
+            </pre>
+            <p>Fixed elements remain in the same position even when the page is scrolled.</p>
+            
+            <h3>Position: Sticky</h3>
+            <p>Sticky positioned elements are positioned based on the user's scroll position:</p>
+            <pre>
+.nav {
+    position: sticky;
+    top: 0; /* Sticks to the top when scrolled to this position */
+    background-color: #f1f1f1;
+    padding: 10px;
+    z-index: 50;
+}
+            </pre>
+            <p>A sticky element toggles between relative and fixed, depending on the scroll position. It's positioned relative until a given offset position is met in the viewport, then it "sticks" in place (like position: fixed).</p>
+            
+            <h3>Z-Index</h3>
+            <p>The z-index property specifies the stack order of positioned elements (which element should be placed in front of, or behind, the others):</p>
+            <pre>
+.box1 {
+    position: absolute;
+    z-index: 2; /* Higher value appears on top */
+    /* Other properties */
+}
+
+.box2 {
+    position: absolute;
+    z-index: 1; /* Lower value appears behind */
+    /* Other properties */
+}
+            </pre>
+            <p>Z-index only works on positioned elements (position: relative, absolute, fixed, or sticky).</p>
+            
+            <div class="previous-page">
+                <a href="CSS-DISPLAY.html"> &#8592; Previous </a>
+            </div>
+            <div class="next-page">
+                <a href="CSS-FLOAT.html">Next &#8594;</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Styling the Web, One Rule at a Time</p>
+    </footer>
+</body>
+</html>

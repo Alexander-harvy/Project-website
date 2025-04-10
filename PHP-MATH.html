@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Tutorial - Math</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>WELCOME TO PHP TUTORIAL</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="PHP-HOME.html">Home</a>
+            <a href="PHP-INTRO.html">Introduction</a>
+            <a href="PHP-SYNTAX.html">Syntax</a>
+            <a href="PHP-VARIABLES.html">Variables</a>
+            <a href="PHP-ECHO.html">Echo/Print</a>
+            <a href="PHP-DATATYPES.html">Data Types</a>
+            <a href="PHP-STRINGS.html">Strings</a>
+            <a href="PHP-NUMBERS.html">Numbers</a>
+            <a href="PHP-MATH.html" class="active">Math</a>
+            <a href="PHP-CONSTANTS.html">Constants</a>
+            <a href="PHP-OPERATORS.html">Operators</a>
+            <a href="PHP-CONDITIONALS.html">If...Else</a>
+            <a href="PHP-SWITCH.html">Switch</a>
+            <a href="PHP-LOOPS.html">Loops</a>
+            <a href="PHP-FUNCTIONS.html">Functions</a>
+            <a href="PHP-ARRAYS.html">Arrays</a>
+            <a href="PHP-FORMS.html">Forms</a>
+            <a href="PHP-DATABASE.html">Database</a>
+        </div>
+        
+        <div class="content">
+            <h2>PHP Math</h2>
+            
+            <div class="intro-section">
+                <p>PHP has a set of math functions that allows you to perform mathematical tasks on numbers.</p>
+                
+                <h3>PHP pi() Function</h3>
+                <p>The pi() function returns the value of PI:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo pi(); // returns 3.1415926535898
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>PHP min() and max() Functions</h3>
+                <p>The min() and max() functions can be used to find the lowest or highest value in a list of arguments:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo min(0, 150, 30, 20, -8, -200);  // returns -200
+echo max(0, 150, 30, 20, -8, -200);  // returns 150
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>PHP abs() Function</h3>
+                <p>The abs() function returns the absolute (positive) value of a number:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo abs(-6.7);  // returns 6.7
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>PHP sqrt() Function</h3>
+                <p>The sqrt() function returns the square root of a number:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo sqrt(64);  // returns 8
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>PHP round() Function</h3>
+                <p>The round() function rounds a floating-point number to its nearest integer:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo round(0.60);  // returns 1
+echo round(0.49);  // returns 0
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Random Numbers</h3>
+                <p>The rand() function generates a random number:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo rand();           // random number between 0 and getrandmax()
+echo rand(10, 100);    // random number between 10 and 100
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Mathematical Constants</h3>
+                <p>PHP also provides several mathematical constants:</p>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo M_PI;       // Pi: 3.1415926535898
+echo M_E;        // Euler's number: 2.718281828459
+echo M_LOG2E;    // Log of e with base 2: 1.442695040889
+echo M_LN2;      // Log of 2 with base e: 0.69314718055995
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Common Math Functions</h3>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>Function</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>abs()</td>
+                            <td>Absolute value</td>
+                            <td>abs(-5) → 5</td>
+                        </tr>
+                        <tr>
+                            <td>ceil()</td>
+                            <td>Round fractions up</td>
+                            <td>ceil(3.2) → 4</td>
+                        </tr>
+                        <tr>
+                            <td>floor()</td>
+                            <td>Round fractions down</td>
+                            <td>floor(3.8) → 3</td>
+                        </tr>
+                        <tr>
+                            <td>round()</td>
+                            <td>Rounds a float</td>
+                            <td>round(3.5) → 4</td>
+                        </tr>
+                        <tr>
+                            <td>sqrt()</td>
+                            <td>Square root</td>
+                            <td>sqrt(9) → 3</td>
+                        </tr>
+                        <tr>
+                            <td>pow()</td>
+                            <td>Exponential expression</td>
+                            <td>pow(2,3) → 8</td>
+                        </tr>
+                        <tr>
+                            <td>log()</td>
+                            <td>Natural logarithm</td>
+                            <td>log(10) → 2.302585092994</td>
+                        </tr>
+                        <tr>
+                            <td>sin(), cos(), tan()</td>
+                            <td>Trigonometric functions</td>
+                            <td>sin(0) → 0</td>
+                        </tr>
+                        <tr>
+                            <td>deg2rad(), rad2deg()</td>
+                            <td>Degree/radian conversion</td>
+                            <td>deg2rad(45) → 0.785398163397</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <h3>Practical Example: Calculator</h3>
+                <p>Here's an example of a simple calculator using PHP math functions:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;PHP Calculator&lt;/title&gt;
+    &lt;style&gt;
+        .calculator {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        input, select, button {
+            margin: 5px 0;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .result {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #e9e9e9;
+            border-radius: 3px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="calculator"&gt;
+        &lt;h2&gt;PHP Calculator&lt;/h2&gt;
+        &lt;form method="post"&gt;
+            &lt;input type="number" name="num1" placeholder="Enter first number" required&gt;
+            &lt;input type="number" name="num2" placeholder="Enter second number"&gt;
+            &lt;select name="operator"&gt;
+                &lt;option value="add"&gt;Add&lt;/option&gt;
+                &lt;option value="subtract"&gt;Subtract&lt;/option&gt;
+                &lt;option value="multiply"&gt;Multiply&lt;/option&gt;
+                &lt;option value="divide"&gt;Divide&lt;/option&gt;
+                &lt;option value="power"&gt;Power&lt;/option&gt;
+                &lt;option value="sqrt"&gt;Square Root (num1 only)&lt;/option&gt;
+                &lt;option value="sin"&gt;Sine (num1 in degrees)&lt;/option&gt;
+                &lt;option value="cos"&gt;Cosine (num1 in degrees)&lt;/option&gt;
+                &lt;option value="tan"&gt;Tangent (num1 in degrees)&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;button type="submit" name="calculate"&gt;Calculate&lt;/button&gt;
+        &lt;/form&gt;
+        
+        &lt;?php
+        if (isset($_POST['calculate'])) {
+            $num1 = $_POST['num1'];
+            $num2 = $_POST['num2'];
+            $operator = $_POST['operator'];
+            $result = '';
+            
+            switch ($operator) {
+                case "add":
+                    $result = $num1 + $num2;
+                    break;
+                case "subtract":
+                    $result = $num1 - $num2;
+                    break;
+                case "multiply":
+                    $result = $num1 * $num2;
+                    break;
+                case "divide":
+                    $result = ($num2 != 0) ? $num1 / $num2 : "Cannot divide by zero";
+                    break;
+                case "power":
+                    $result = pow($num1, $num2);
+                    break;
+                case "sqrt":
+                    $result = sqrt($num1);
+                    break;
+                case "sin":
+                    $result = sin(deg2rad($num1));
+                    break;
+                case "cos":
+                    $result = cos(deg2rad($num1));
+                    break;
+                case "tan":
+                    $result = tan(deg2rad($num1));
+                    break;
+                default:
+                    $result = "Invalid operation";
+            }
+            
+            echo "&lt;div class='result'&gt;Result: &lt;strong&gt;$result&lt;/strong&gt;&lt;/div&gt;";
+        }
+        ?&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                </div>
+            </div>
+            
+            <div class="navigation-buttons">
+                <div class="previous-page">
+                    <a href="PHP-NUMBERS.html">Previous: Numbers</a>
+                </div>
+                <div class="next-page">
+                    <a href="PHP-CONSTANTS.html">Next: Constants</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Programming the Web, One Line at a Time</p>
+    </footer>
+
+</body>
+</html>

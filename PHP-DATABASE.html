@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Tutorial - Database</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>WELCOME TO PHP TUTORIAL</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="PHP-HOME.html">Home</a>
+            <a href="PHP-INTRO.html">Introduction</a>
+            <a href="PHP-SYNTAX.html">Syntax</a>
+            <a href="PHP-VARIABLES.html">Variables</a>
+            <a href="PHP-ECHO.html">Echo/Print</a>
+            <a href="PHP-DATATYPES.html">Data Types</a>
+            <a href="PHP-STRINGS.html">Strings</a>
+            <a href="PHP-NUMBERS.html">Numbers</a>
+            <a href="PHP-MATH.html">Math</a>
+            <a href="PHP-CONSTANTS.html">Constants</a>
+            <a href="PHP-OPERATORS.html">Operators</a>
+            <a href="PHP-CONDITIONALS.html">If...Else</a>
+            <a href="PHP-SWITCH.html">Switch</a>
+            <a href="PHP-LOOPS.html">Loops</a>
+            <a href="PHP-FUNCTIONS.html">Functions</a>
+            <a href="PHP-ARRAYS.html">Arrays</a>
+            <a href="PHP-FORMS.html">Forms</a>
+            <a href="PHP-DATABASE.html" class="active">Database</a>
+        </div>
+        
+        <div class="content">
+            <h2>PHP Database Connectivity</h2>
+            
+            <div class="intro-section">
+                <p>PHP provides excellent support for working with databases, making it one of the most popular choices for web applications that require data storage and retrieval. In this tutorial, we will focus on using PHP with MySQL, one of the most widely used database systems for web applications.</p>
+                
+                <h3>What is MySQL?</h3>
+                <p>MySQL is an open-source relational database management system (RDBMS) that uses Structured Query Language (SQL) for managing data. It is commonly used in web applications and is a core component of the LAMP (Linux, Apache, MySQL, PHP) stack.</p>
+                
+                <h3>Database Connection Methods in PHP</h3>
+                <p>PHP offers several methods to connect to MySQL databases:</p>
+                <ul>
+                    <li><strong>MySQLi (MySQL Improved)</strong> - an extension specifically for MySQL databases, available as procedural or object-oriented</li>
+                    <li><strong>PDO (PHP Data Objects)</strong> - a database abstraction layer that works with multiple database systems</li>
+                </ul>
+                <p>In this tutorial, we'll cover both approaches, but we recommend using PDO for new projects due to its flexibility and security features.</p>
+                
+                <h3>Connecting to MySQL with MySQLi (Procedural)</h3>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Database credentials
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected successfully";
+
+// Close connection (when done)
+mysqli_close($conn);
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Connecting to MySQL with MySQLi (Object-oriented)</h3>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Database credentials
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+
+// Close connection (when done)
+$conn->close();
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Connecting to MySQL with PDO</h3>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Database credentials
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+try {
+    // Create connection with PDO
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    
+    // Set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    echo "Connected successfully";
+} catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+
+// Connection is automatically closed when script ends
+// Or you can close it explicitly:
+// $conn = null;
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Creating a Database with PHP</h3>
+                <p>You can create a new database using PHP if your MySQL user has the necessary permissions.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Using MySQLi (Procedural)
+$servername = "localhost";
+$username = "username";
+$password = "password";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password);
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Create database
+$sql = "CREATE DATABASE myDB";
+if (mysqli_query($conn, $sql)) {
+    echo "Database created successfully";
+} else {
+    echo "Error creating database: " . mysqli_error($conn);
+}
+
+// Close connection
+mysqli_close($conn);
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Creating Tables in a Database</h3>
+                <p>After creating a database, you need to create tables to store your data.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Using PDO
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    // SQL to create table
+    $sql = "CREATE TABLE users (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(30) NOT NULL,
+    lastname VARCHAR(30) NOT NULL,
+    email VARCHAR(50),
+    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    )";
+    
+    // Execute query
+    $conn->exec($sql);
+    echo "Table users created successfully";
+} catch(PDOException $e) {
+    echo "Error creating table: " . $e->getMessage();
+}
+
+$conn = null;
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Inserting Data into a Table</h3>
+                <p>Now that we have a table, let's insert some data into it.</p>
+                
+                <h4>Single Record Insertion</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Using MySQLi (Object-oriented)
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Insert data
+$sql = "INSERT INTO users (firstname, lastname, email)
+VALUES ('John', 'Doe', 'john@example.com')";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "&lt;br&gt;" . $conn->error;
+}
+
+$conn->close();
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>Multiple Records Insertion</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Using PDO
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    // Begin transaction
+    $conn->beginTransaction();
+    
+    // Insert multiple records
+    $conn->exec("INSERT INTO users (firstname, lastname, email)
+    VALUES ('John', 'Doe', 'john@example.com')");
+    
+    $conn->exec("INSERT INTO users (firstname, lastname, email)
+    VALUES ('Jane', 'Smith', 'jane@example.com')");
+    
+    $conn->exec("INSERT INTO users (firstname, lastname, email)
+    VALUES ('Mike', 'Johnson', 'mike@example.com')");
+    
+    // Commit transaction
+    $conn->commit();
+    
+    echo "New records created successfully";
+} catch(PDOException $e) {
+    // Roll back transaction if something failed
+    $conn->rollback();
+    echo "Error: " . $e->getMessage();
+}
+
+$conn = null;
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Prepared Statements for Secure Insertion</h3>
+                <p>Prepared statements help prevent SQL injection attacks by separating the SQL query from the data.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Using PDO with prepared statements
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    // Prepare SQL statement
+    $stmt = $conn->prepare("INSERT INTO users (firstname, lastname, email)
+    VALUES (:firstname, :lastname, :email)");
+    
+    // Bind parameters
+    $stmt->bindParam(':firstname', $firstname);
+    $stmt->bindParam(':lastname', $lastname);
+    $stmt->bindParam(':email', $email);
+    
+    // Set parameter values and execute
+    $firstname = "Mary";
+    $lastname = "Wilson";
+    $email = "mary@example.com";
+    $stmt->execute();
+    
+    echo "New record created successfully";
+} catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+
+$conn = null;
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Selecting Data from a Table</h3>
+                <p>Retrieving data from the database is one of the most common operations.</p>
+                
+                <h4>Select All Records</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Using MySQLi (Procedural)
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Select all records
+$sql = "SELECT id, firstname, lastname, email FROM users";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    // Output data of each row
+    while($row = mysqli_fetch_assoc($result)) {
+        echo "ID: " . $row["id"] . " - Name: " . $row["firstname"] . " " . $row["lastname"] . " - Email: " . $row["email"] . "&lt;br&gt;";
+    }
+} else {
+    echo "0 results";
+}
+
+mysqli_close($conn);
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>Select with WHERE Clause</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Using PDO
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    // Prepare SQL statement with WHERE clause
+    $stmt = $conn->prepare("SELECT id, firstname, lastname, email FROM users WHERE lastname = :lastname");
+    $stmt->bindParam(':lastname', $lastname);
+    
+    // Set parameter value
+    $lastname = "Doe";
+    
+    // Execute query
+    $stmt->execute();
+    
+    // Set the resulting array to associative
+    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    
+    // Fetch all matching records
+    $users = $stmt->fetchAll();
+    
+    foreach($users as $user) {
+        echo "ID: " . $user["id"] . " - Name: " . $user["firstname"] . " " . $user["lastname"] . " - Email: " . $user["email"] . "&lt;br&gt;";
+    }
+} catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+
+$conn = null;
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Updating Data in a Table</h3>
+                <p>Updating existing records is another common database operation.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Using MySQLi (Object-oriented)
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Update data
+$sql = "UPDATE users SET email='john.doe@example.com' WHERE id=1";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Record updated successfully";
+} else {
+    echo "Error updating record: " . $conn->error;
+}
+
+$conn->close();
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Deleting Data from a Table</h3>
+                <p>You can remove records from your database when they are no longer needed.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Using PDO
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    // Prepare SQL statement
+    $stmt = $conn->prepare("DELETE FROM users WHERE id = :id");
+    $stmt->bindParam(':id', $id);
+    
+    // Set parameter value
+    $id = 3;
+    
+    // Execute statement
+    $stmt->execute();
+    
+    echo "Record deleted successfully";
+} catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+
+$conn = null;
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Best Practices for PHP Database Operations</h3>
+                <ul class="tips-list">
+                    <li>Always use prepared statements to prevent SQL injection attacks.</li>
+                    <li>Close database connections when they are no longer needed to free up resources.</li>
+                    <li>Use try-catch blocks to handle database errors gracefully.</li>
+                    <li>Implement proper error logging instead of displaying database errors to users.</li>
+                    <li>Consider using an ORM (Object-Relational Mapping) library for complex applications.</li>
+                    <li>Create a database configuration file to store connection details.</li>
+                    <li>Implement connection pooling for high-traffic applications.</li>
+                    <li>Regularly backup your database to prevent data loss.</li>
+                </ul>
+                
+                <h3>Complete Database Example: User Registration System</h3>
+                <p>Let's put everything together with a simple user registration system example:</p>
+                
+                <h4>Database Connection File (db_connect.php)</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Database connection file
+function connect_db() {
+    $servername = "localhost";
+    $username = "username";
+    $password = "password";
+    $dbname = "myDB";
+    
+    try {
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        return $conn;
+    } catch(PDOException $e) {
+        die("Connection failed: " . $e->getMessage());
+    }
+}
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>Registration Form (register.php)</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;User Registration&lt;/title&gt;
+    &lt;style&gt;
+        .error {color: #FF0000;}
+        form {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        input[type=text], input[type=email], input[type=password] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;User Registration Form&lt;/h2&gt;
+    
+    &lt;form method="post" action="process_registration.php"&gt;
+        &lt;label for="firstname"&gt;First Name:&lt;/label&gt;
+        &lt;input type="text" id="firstname" name="firstname" required&gt;
+        
+        &lt;label for="lastname"&gt;Last Name:&lt;/label&gt;
+        &lt;input type="text" id="lastname" name="lastname" required&gt;
+        
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email" name="email" required&gt;
+        
+        &lt;label for="password"&gt;Password:&lt;/label&gt;
+        &lt;input type="password" id="password" name="password" required&gt;
+        
+        &lt;label for="confirm_password"&gt;Confirm Password:&lt;/label&gt;
+        &lt;input type="password" id="confirm_password" name="confirm_password" required&gt;
+        
+        &lt;input type="submit" value="Register"&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>Processing Registration (process_registration.php)</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Include database connection
+require_once 'db_connect.php';
+
+// Initialize error variable
+$error = "";
+
+// Process form data when form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Validate form data
+    if (empty($_POST["firstname"]) || empty($_POST["lastname"]) || empty($_POST["email"]) || 
+        empty($_POST["password"]) || empty($_POST["confirm_password"])) {
+        $error = "All fields are required";
+    } elseif ($_POST["password"] !== $_POST["confirm_password"]) {
+        $error = "Passwords do not match";
+    } elseif (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+        $error = "Invalid email format";
+    } else {
+        // Clean and prepare data for database
+        $firstname = htmlspecialchars($_POST["firstname"]);
+        $lastname = htmlspecialchars($_POST["lastname"]);
+        $email = htmlspecialchars($_POST["email"]);
+        $password = password_hash($_POST["password"], PASSWORD_DEFAULT); // Hash password
+        
+        try {
+            // Get database connection
+            $conn = connect_db();
+            
+            // Check if email already exists
+            $stmt = $conn->prepare("SELECT id FROM users WHERE email = :email");
+            $stmt->bindParam(':email', $email);
+            $stmt->execute();
+            
+            if ($stmt->rowCount() > 0) {
+                $error = "Email already exists in our database";
+            } else {
+                // Prepare SQL statement for insertion
+                $stmt = $conn->prepare("INSERT INTO users (firstname, lastname, email, password)
+                VALUES (:firstname, :lastname, :email, :password)");
+                
+                // Bind parameters
+                $stmt->bindParam(':firstname', $firstname);
+                $stmt->bindParam(':lastname', $lastname);
+                $stmt->bindParam(':email', $email);
+                $stmt->bindParam(':password', $password);
+                
+                // Execute the statement
+                $stmt->execute();
+                
+                // Redirect to success page
+                header("Location: registration_success.php");
+                exit();
+            }
+        } catch(PDOException $e) {
+            $error = "Registration failed: " . $e->getMessage();
+        }
+        
+        $conn = null;
+    }
+}
+?&gt;
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Registration Error&lt;/title&gt;
+    &lt;style&gt;
+        .error {
+            color: #FF0000;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px;
+        }
+        .back-button {
+            display: block;
+            width: 200px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;?php if(!empty($error)): ?&gt;
+        &lt;div class="error"&gt;&lt;?php echo $error; ?&gt;&lt;/div&gt;
+        &lt;a href="register.php" class="back-button"&gt;Go Back to Registration&lt;/a&gt;
+    &lt;?php endif; ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>Registration Success Page (registration_success.php)</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Registration Success&lt;/title&gt;
+    &lt;style&gt;
+        .success {
+            color: #4CAF50;
+            font-weight: bold;
+            text-align: center;
+            margin: 20px;
+        }
+        .login-button {
+            display: block;
+            width: 200px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="success"&gt;
+        &lt;h2&gt;Registration Successful!&lt;/h2&gt;
+        &lt;p&gt;Your account has been created successfully.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;a href="login.php" class="login-button"&gt;Go to Login Page&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                </div>
+            </div>
+            
+            <div class="navigation-buttons">
+                <div class="previous-page">
+                    <a href="PHP-FORMS.html">Previous: Forms</a>
+                </div>
+                <div class="next-page">
+                    <a href="PHP-HOME.html">Next: Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Front-End Tutorial © 2025 | Programming the Web, One Line at a Time</p>
+    </footer>
+</body>
+</html>

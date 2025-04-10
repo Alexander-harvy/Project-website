@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Text</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>CSS TEXT</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="CSS-HOME.html">Home</a>
+            <a href="CSS-INTRO.html">Introduction</a>
+            <a href="CSS-SELECTORS.html">Selectors</a>
+            <a href="CSS-COLORS.html">Colors</a>
+            <a href="CSS-BACKGROUNDS.html">Backgrounds</a>
+            <a href="CSS-BORDERS.html">Borders</a>
+            <a href="CSS-MARGINS.html">Margins</a>
+            <a href="CSS-PADDING.html">Padding</a>
+            <a href="CSS-HEIGHT-WIDTH.html">Height/Width</a>
+            <a href="CSS-BOX-MODEL.html">Box Model</a>
+            <a href="CSS-TEXT.html" class="active">Text</a>
+            <a href="CSS-FONTS.html">Fonts</a>
+            <a href="CSS-DISPLAY.html">Display</a>
+            <a href="CSS-POSITION.html">Position</a>
+            <a href="CSS-FLOAT.html">Float</a>
+            <a href="CSS-FLEXBOX.html">Flexbox</a>
+            <a href="CSS-GRID.html">Grid</a>
+            <a href="CSS-RESPONSIVE.html">Responsive</a>
+        </div>
+        
+        <div class="content">
+            <h2>CSS Text Properties</h2>
+            <p>CSS provides numerous properties to control the appearance and formatting of text on a webpage. These properties allow you to customize text color, alignment, decoration, spacing, and more.</p>
+           
+            <div class="image-container">
+              <div id="text-img" class="Images">
+                <img src="pictures/text.png" alt="CSS Text">
+              </div>
+            </div>
+
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Property</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>color</td>
+                        <td>Sets the color of text</td>
+                    </tr>
+                    <tr>
+                        <td>text-align</td>
+                        <td>Specifies the horizontal alignment of text</td>
+                    </tr>
+                    <tr>
+                        <td>text-decoration</td>
+                        <td>Adds decoration to text (underline, overline, line-through)</td>
+                    </tr>
+                    <tr>
+                        <td>text-transform</td>
+                        <td>Controls text capitalization</td>
+                    </tr>
+                    <tr>
+                        <td>text-indent</td>
+                        <td>Specifies indentation of the first line of text</td>
+                    </tr>
+                    <tr>
+                        <td>line-height</td>
+                        <td>Sets the height of a line of text</td>
+                    </tr>
+                    <tr>
+                        <td>letter-spacing</td>
+                        <td>Controls the spacing between characters</td>
+                    </tr>
+                    <tr>
+                        <td>word-spacing</td>
+                        <td>Controls the spacing between words</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h3>Text Color</h3>
+            <p>The color property sets the color of text:</p>
+            <pre>
+h1 {
+    color: blue;
+}
+
+p {
+    color: #333333; /* Using hex code */
+}
+
+span {
+    color: rgb(255, 0, 0); /* Using RGB */
+}
+            </pre>
+            
+            <h3>Text Alignment</h3>
+            <p>The text-align property specifies the horizontal alignment of text:</p>
+            <pre>
+h1 {
+    text-align: center;
+}
+
+p.left {
+    text-align: left; /* Default value */
+}
+
+p.right {
+    text-align: right;
+}
+
+p.justify {
+    text-align: justify; /* Text is stretched to fit the width */
+}
+            </pre>
+            
+            <h3>Text Decoration</h3>
+            <p>The text-decoration property adds decoration to text:</p>
+            <pre>
+h1 {
+    text-decoration: underline;
+}
+
+p {
+    text-decoration: none; /* No decoration */
+}
+
+a {
+    text-decoration: none; /* Removes the default underline from links */
+}
+
+span {
+    text-decoration: line-through;
+}
+
+div {
+    text-decoration: overline;
+}
+            </pre>
+            
+            <h3>Text Transformation</h3>
+            <p>The text-transform property controls text capitalization:</p>
+            <pre>
+h1 {
+    text-transform: uppercase; /* All characters in uppercase */
+}
+
+p.lower {
+    text-transform: lowercase; /* All characters in lowercase */
+}
+
+p.capital {
+    text-transform: capitalize; /* First character of each word capitalized */
+}
+            </pre>
+            
+            <h3>Text Spacing</h3>
+            <p>CSS offers several properties to control text spacing:</p>
+            <pre>
+p {
+    line-height: 1.6; /* Controls the height of each line */
+    letter-spacing: 2px; /* Spacing between characters */
+    word-spacing: 5px; /* Spacing between words */
+    text-indent: 30px; /* Indentation of the first line */
+}
+            </pre>
+            
+            <h3>Text Shadow</h3>
+            <p>The text-shadow property adds shadow to text:</p>
+            <pre>
+h1 {
+    text-shadow: 2px 2px 5px #888888;
+    /* horizontal offset, vertical offset, blur radius, color */
+}
+            </pre>
+            
+            <div class="previous-page">
+                <a href="CSS-BOX-MODEL.html"> &#8592; Previous </a>
+            </div>
+            <div class="next-page">
+                <a href="CSS-FONTS.html">Next &#8594;</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Styling the Web, One Rule at a Time</p>
+    </footer>
+</body>
+</html>

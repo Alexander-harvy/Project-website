@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Favicon Tutorial</title>
+  <link rel="stylesheet" href="website.css">
+  <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active">HOME</a></li>
+      <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+      <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+      <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+      <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+  </ul>
+</div>
+
+  <div class="main-content">
+    <div class="header">
+        <h1>WELCOME TO HTML TUTORIAL</h1>
+        <div class="header-underline"></div>
+    </div>
+    
+    <div class="tutorial-nav">
+        <a href="HTML-HOME.html">Home</a>
+        <a href="HTML-INTRO.html">Introduction</a>
+        <a href="HTML-EDITORS.html">Editors</a>
+        <a href="HTML.BASICS.html">Basics</a>
+        <a href="HTML-ELEMENTS.html">Elements</a>
+        <a href="HTML-ATTRIBUTES.html">Attributes</a>
+        <a href="HTML-HEADINGS.html">Headings</a>
+        <a href="HTML-COMMENTS.html">Comments</a>
+        <a href="HTML-COLORS.html">Colors</a>
+        <a href="HTML-LINKS.html">Links</a>
+        <a href="HTML-IMAGES.html">Images</a>
+        <a href="HTML-FAVICON.html" class="active">Favicon</a>
+        <a href="HTML-PAGE-TITLE.html">Page Title</a>
+        <a href="HTML-TABLES.html">Tables</a>
+        <a href="HTML-LISTS.html">Lists</a>
+        <a href="HTML-DIV.html">Div</a>
+        <a href="HTML-CLASSES.html">Classes</a>
+        <a href="HTML-ID.html">Id</a>
+    </div>
+    
+    <div class="content">
+      <h2>HTML Favicons - Adding a Site Icon to Your Web Pages</h2>
+      <p>A favicon (short for "favorite icon") is a small icon associated with a website that appears in browser tabs, bookmarks, and other areas where your site is referenced. Adding a favicon to your website enhances brand recognition and provides a professional touch to your web pages.</p>
+      
+      <div class="topic-section">
+        <div class="topic">
+          <h2>What is a Favicon?</h2>
+          <div class="topic-content">
+            <p>A favicon is a small, iconic image that represents your website. It appears in several places:</p>
+            <ul class="tips-list">
+              <li>Browser tabs</li>
+              <li>Bookmarks/Favorites list</li>
+              <li>Browser history</li>
+              <li>Mobile home screen when added</li>
+              <li>Search engine results (sometimes)</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>Adding a Basic Favicon</h2>
+          <div class="topic-content">
+            <p>To add a favicon to your website, use the link element in the head section:</p>
+            <pre><code>&lt;head&gt;
+  &lt;title&gt;My Website&lt;/title&gt;
+  &lt;link rel="icon" href="favicon.ico" type="image/x-icon"&gt;
+&lt;/head&gt;</code></pre>
+            <p>The favicon file should be placed in the root directory of your website for automatic detection by some browsers.</p>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>Favicon File Formats</h2>
+          <div class="topic-content">
+            <p>Common file formats for favicons include:</p>
+            <ul class="tips-list">
+              <li>.ico - Traditional favicon format (supports multiple sizes)</li>
+              <li>.png - Standard image format with transparency</li>
+              <li>.svg - Scalable vector format for modern browsers</li>
+              <li>.jpg - Less common but supported</li>
+            </ul>
+            <p>Modern websites often use multiple formats and sizes for different devices.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="image-container">
+        <div id="img8" class="Images">
+          <h3>Favicon Examples</h3>
+          <img src="pictures/favicon.png" alt="Examples of website favicons">
+        </div>
+      </div>
+
+      <h3>Complete Favicon Implementation</h3>
+      <p>For comprehensive favicon support across all platforms, you'll need multiple icon sizes and formats:</p>
+      <pre><code>&lt;!-- Basic favicon --&gt;
+&lt;link rel="icon" href="favicon.ico" sizes="any"&gt;
+
+&lt;!-- iOS and Android icons --&gt;
+&lt;link rel="apple-touch-icon" href="apple-touch-icon.png"&gt;
+&lt;link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png"&gt;
+
+&lt;!-- Windows Tiles --&gt;
+&lt;meta name="msapplication-TileImage" content="mstile-144x144.png"&gt;
+&lt;meta name="msapplication-TileColor" content="#ffffff"&gt;
+
+&lt;!-- SVG favicon for modern browsers --&gt;
+&lt;link rel="icon" href="favicon.svg" type="image/svg+xml"&gt;</code></pre>
+      
+      <h3>Creating Favicons</h3>
+      <p>You can create a favicon using various methods:</p>
+      <ul class="tips-list">
+        <li>Design icons using graphic software like Adobe Illustrator, Photoshop, or GIMP</li>
+        <li>Use online favicon generators that create all necessary sizes and formats</li>
+        <li>Convert existing logos to appropriate favicon formats</li>
+        <li>Create a simple text-based favicon with an online generator</li>
+      </ul>
+
+      <h3>Favicon Size Recommendations</h3>
+      <table class="table">
+        <tr>
+          <th>Purpose</th>
+          <th>Size</th>
+          <th>Format</th>
+        </tr>
+        <tr>
+          <td>Basic Favicon</td>
+          <td>16x16 pixels</td>
+          <td>.ico or .png</td>
+        </tr>
+        <tr>
+          <td>Modern Browsers</td>
+          <td>32x32 pixels</td>
+          <td>.png</td>
+        </tr>
+        <tr>
+          <td>iOS Home Screen</td>
+          <td>180x180 pixels</td>
+          <td>.png</td>
+        </tr>
+        <tr>
+          <td>Android Chrome</td>
+          <td>192x192 pixels</td>
+          <td>.png</td>
+        </tr>
+        <tr>
+          <td>Windows Tiles</td>
+          <td>270x270 pixels</td>
+          <td>.png</td>
+        </tr>
+        <tr>
+          <td>Safari Pinned Tab</td>
+          <td>Any size (vector)</td>
+          <td>.svg</td>
+        </tr>
+      </table>
+      
+      <h3>Implementation Examples</h3>
+      <div class="table">
+        <table>
+          <tr>
+            <th>Approach</th>
+            <th>HTML Code</th>
+            <th>Notes</th>
+          </tr>
+          <tr>
+            <td>Minimal</td>
+            <td>&lt;link rel="icon" href="favicon.ico"&gt;</td>
+            <td>Basic implementation, limited support</td>
+          </tr>
+          <tr>
+            <td>Standard</td>
+            <td>&lt;link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"&gt;</td>
+            <td>Better clarity with size specification</td>
+          </tr>
+          <tr>
+            <td>Apple Touch</td>
+            <td>&lt;link rel="apple-touch-icon" href="apple-touch-icon.png"&gt;</td>
+            <td>For iOS devices when added to home screen</td>
+          </tr>
+          <tr>
+            <td>SVG Vector</td>
+            <td>&lt;link rel="icon" href="favicon.svg" type="image/svg+xml"&gt;</td>
+            <td>Scalable icon for modern browsers</td>
+          </tr>
+          <tr>
+            <td>Site Manifest</td>
+            <td>&lt;link rel="manifest" href="site.webmanifest"&gt;</td>
+            <td>Web app manifest for PWA support</td>
+          </tr>
+        </table>
+      </div>
+      
+      <div class="buttons">
+        <a href="https://realfavicongenerator.net/" target="_blank" class="btn">Favicon Generator</a>
+        <a href="https://www.w3.org/2005/10/howto-favicon" target="_blank" class="btn">W3C Favicon Guide</a>
+      </div>
+      
+      <h3>Best Practices for Favicons</h3>
+      <ul class="tips-list">
+        <li>Keep your favicon design simple and recognizable at small sizes</li>
+        <li>Provide multiple sizes for better display across different devices</li>
+        <li>Use transparent backgrounds for modern favicon formats (.png, .svg)</li>
+        <li>Include both .ico and .png versions for maximum compatibility</li>
+        <li>Test your favicon across different browsers and devices</li>
+        <li>Consider using color that contrasts well with browser UI themes</li>
+        <li>Make your favicon consistent with your brand identity</li>
+        <li>Use online generators to create a complete favicon package</li>
+      </ul>
+    </div>
+    
+    <div class="previous-page">
+      <a href="HTML-IMAGES.html">&#8592; Previous</a>
+    </div>
+    <div class="next-page">
+      <a href="HTML-PAGE-TITLE.html">Next &#8594;</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Front-End Tutorial © 2025 | Building the Web, One Tag at a Time</p>
+  </footer>
+
+</body>
+</html>

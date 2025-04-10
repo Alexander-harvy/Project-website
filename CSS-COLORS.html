@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Colors</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>CSS COLORS</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="CSS-HOME.html">Home</a>
+            <a href="CSS-INTRO.html">Introduction</a>
+            <a href="CSS-SELECTORS.html">Selectors</a>
+            <a href="CSS-COLORS.html" class="active">Colors</a>
+            <a href="CSS-BACKGROUNDS.html">Backgrounds</a>
+            <a href="CSS-BORDERS.html">Borders</a>
+            <a href="CSS-MARGINS.html">Margins</a>
+            <a href="CSS-PADDING.html">Padding</a>
+            <a href="CSS-HEIGHT-WIDTH.html">Height/Width</a>
+            <a href="CSS-BOX-MODEL.html">Box Model</a>
+            <a href="CSS-TEXT.html">Text</a>
+            <a href="CSS-FONTS.html">Fonts</a>
+            <a href="CSS-DISPLAY.html">Display</a>
+            <a href="CSS-POSITION.html">Position</a>
+            <a href="CSS-FLOAT.html">Float</a>
+            <a href="CSS-FLEXBOX.html">Flexbox</a>
+            <a href="CSS-GRID.html">Grid</a>
+            <a href="CSS-RESPONSIVE.html">Responsive</a>
+        </div>
+        
+        <div class="content">
+            <h2>CSS Color Properties</h2>
+            <p>Colors play a vital role in web design. CSS provides various ways to specify colors. Here are the most common color properties:</p>
+           
+            <div class="image-container">
+              <div id="css-image1" class="Images">
+                <img src="pictures/css-colors.png" alt="CSS Colors">
+              </div>
+            </div>
+
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Property</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>color</td>
+                        <td>Sets the color of text</td>
+                    </tr>
+                    <tr>
+                        <td>background-color</td>
+                        <td>Sets the background color of an element</td>
+                    </tr>
+                    <tr>
+                        <td>border-color</td>
+                        <td>Sets the color of an element's border</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h3>Color Values</h3>
+            <p>In CSS, colors can be specified in different ways:</p>
+            
+            <h4>1. Predefined Color Names</h4>
+            <p>CSS has a list of predefined color names that can be used:</p>
+            <pre>
+h1 {
+    color: red;
+}
+
+p {
+    color: blue;
+}
+
+div {
+    background-color: green;
+}
+            </pre>
+            
+            <h4>2. RGB Values</h4>
+            <p>RGB stands for Red, Green, and Blue. Each parameter defines the intensity of the color with a value between 0 and 255:</p>
+            <pre>
+h1 {
+    color: rgb(255, 0, 0); /* Red */
+}
+
+p {
+    color: rgb(0, 0, 255); /* Blue */
+}
+
+div {
+    background-color: rgb(0, 128, 0); /* Green */
+}
+            </pre>
+            
+            <h4>3. HEX Values</h4>
+            <p>Hexadecimal color values are specified with: #RRGGBB, where RR (red), GG (green) and BB (blue) are hexadecimal values between 00 and FF:</p>
+            <pre>
+h1 {
+    color: #FF0000; /* Red */
+}
+
+p {
+    color: #0000FF; /* Blue */
+}
+
+div {
+    background-color: #008000; /* Green */
+}
+            </pre>
+            
+            <h4>4. HSL Values</h4>
+            <p>HSL stands for Hue, Saturation, and Lightness:</p>
+            <pre>
+h1 {
+    color: hsl(0, 100%, 50%); /* Red */
+}
+
+p {
+    color: hsl(240, 100%, 50%); /* Blue */
+}
+
+div {
+    background-color: hsl(120, 100%, 25%); /* Green */
+}
+            </pre>
+            
+            <div class="previous-page">
+                <a href="CSS-SELECTORS.html"> &#8592; Previous </a>
+            </div>
+            <div class="next-page">
+                <a href="CSS-BACKGROUNDS.html">Next &#8594;</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Styling the Web, One Rule at a Time</p>
+    </footer>
+</body>
+</html>

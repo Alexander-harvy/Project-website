@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Lists Tutorial</title>
+  <link rel="stylesheet" href="website.css">
+  <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active">HOME</a></li>
+      <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+      <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+      <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+      <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+  </ul>
+</div>
+
+  <div class="main-content">
+    <div class="header">
+        <h1>WELCOME TO HTML TUTORIAL</h1>
+        <div class="header-underline"></div>
+    </div>
+    
+    <div class="tutorial-nav">
+        <a href="HTML-HOME.html">Home</a>
+        <a href="HTML-INTRO.html">Introduction</a>
+        <a href="HTML-EDITORS.html">Editors</a>
+        <a href="HTML.BASICS.html">Basics</a>
+        <a href="HTML-ELEMENTS.html">Elements</a>
+        <a href="HTML-ATTRIBUTES.html">Attributes</a>
+        <a href="HTML-HEADINGS.html">Headings</a>
+        <a href="HTML-COMMENTS.html">Comments</a>
+        <a href="HTML-COLORS.html">Colors</a>
+        <a href="HTML-LINKS.html">Links</a>
+        <a href="HTML-IMAGES.html">Images</a>
+        <a href="HTML-FAVICON.html">Favicon</a>
+        <a href="HTML-PAGE-TITLE.html">Page Title</a>
+        <a href="HTML-TABLES.html">Tables</a>
+        <a href="HTML-LISTS.html" class="active">Lists</a>
+        <a href="HTML-DIV.html">Div</a>
+        <a href="HTML-CLASSES.html">Classes</a>
+        <a href="HTML-ID.html">Id</a>
+    </div>
+    
+    <div class="content">
+      <h2>HTML Lists - Organizing Content with Ordered, Unordered, and Description Lists</h2>
+      <p>HTML lists are essential elements for organizing and structuring content on web pages. They help break down information into digestible chunks, making it easier for visitors to scan and understand your content. This tutorial covers the three main types of HTML lists and how to implement them effectively.</p>
+      
+      <div class="topic-section">
+        <div class="topic">
+          <h2>Unordered Lists</h2>
+          <div class="topic-content">
+            <p>Unordered lists (ul) are used when the order of items doesn't matter. Each item starts with a bullet point by default.</p>
+            <ul class="tips-list">
+              <li>Created using the &lt;ul&gt; tag</li>
+              <li>Each list item uses the &lt;li&gt; tag</li>
+              <li>Commonly used for navigation menus</li>
+              <li>Default bullet style can be changed with CSS</li>
+              <li>Can be nested inside other lists</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>Ordered Lists</h2>
+          <div class="topic-content">
+            <p>Ordered lists (ol) are used when items need to be in a specific sequence. Each item is automatically numbered.</p>
+            <ul class="tips-list">
+              <li>Created using the &lt;ol&gt; tag</li>
+              <li>Each list item uses the &lt;li&gt; tag</li>
+              <li>Perfect for instructions or step-by-step guides</li>
+              <li>Numbering styles can be modified with attributes</li>
+              <li>Can continue numbering across HTML elements</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>Description Lists</h2>
+          <div class="topic-content">
+            <p>Description lists (dl) are used for terms and their definitions, like a glossary or dictionary.</p>
+            <ul class="tips-list">
+              <li>Created using the &lt;dl&gt; tag</li>
+              <li>Terms defined with &lt;dt&gt; tags</li>
+              <li>Definitions provided with &lt;dd&gt; tags</li>
+              <li>Perfect for FAQ sections</li>
+              <li>Multiple definitions per term are allowed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="image-container">
+        <div id="img11" class="Images">
+          <h3>HTML Lists Example</h3>
+          <img src="pictures/list.jpg" alt="HTML Lists Example">
+        </div>
+      </div>
+
+      <h3>Unordered Lists in Detail</h3>
+      <p>Unordered lists are perfect for displaying items that don't follow a specific sequence. Here's how to create a basic unordered list:</p>
+      <pre><code>&lt;ul&gt;
+  &lt;li&gt;First item&lt;/li&gt;
+  &lt;li&gt;Second item&lt;/li&gt;
+  &lt;li&gt;Third item&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+      <h4>Styling Unordered Lists</h4>
+      <p>You can change the bullet style using the CSS <code>list-style-type</code> property:</p>
+      <table class="table">
+        <tr>
+          <th>Value</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+        <tr>
+          <td>disc</td>
+          <td>Filled circle (default)</td>
+          <td>● Item</td>
+        </tr>
+        <tr>
+          <td>circle</td>
+          <td>Empty circle</td>
+          <td>○ Item</td>
+        </tr>
+        <tr>
+          <td>square</td>
+          <td>Filled square</td>
+          <td>■ Item</td>
+        </tr>
+        <tr>
+          <td>none</td>
+          <td>No bullet</td>
+          <td>Item</td>
+        </tr>
+      </table>
+
+      <h3>Ordered Lists in Detail</h3>
+      <p>Ordered lists automatically number your items, making them ideal for step-by-step instructions:</p>
+      <pre><code>&lt;ol&gt;
+  &lt;li&gt;First step&lt;/li&gt;
+  &lt;li&gt;Second step&lt;/li&gt;
+  &lt;li&gt;Third step&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+      <h4>Ordered List Attributes</h4>
+      <table class="table">
+        <tr>
+          <th>Attribute</th>
+          <th>Value</th>
+          <th>Description</th>
+        </tr>
+        <tr>
+          <td rowspan="5">type</td>
+          <td>1</td>
+          <td>Numbers (default): 1, 2, 3</td>
+        </tr>
+        <tr>
+          <td>A</td>
+          <td>Uppercase letters: A, B, C</td>
+        </tr>
+        <tr>
+          <td>a</td>
+          <td>Lowercase letters: a, b, c</td>
+        </tr>
+        <tr>
+          <td>I</td>
+          <td>Uppercase Roman numerals: I, II, III</td>
+        </tr>
+        <tr>
+          <td>i</td>
+          <td>Lowercase Roman numerals: i, ii, iii</td>
+        </tr>
+        <tr>
+          <td>start</td>
+          <td>number</td>
+          <td>Specifies the start value (default is 1)</td>
+        </tr>
+        <tr>
+          <td>reversed</td>
+          <td>reversed</td>
+          <td>Reverses the counting order</td>
+        </tr>
+      </table>
+
+      <h4>Example with Attributes:</h4>
+      <pre><code>&lt;ol type="A" start="3"&gt;
+  &lt;li&gt;This will be item C&lt;/li&gt;
+  &lt;li&gt;This will be item D&lt;/li&gt;
+  &lt;li&gt;This will be item E&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+
+      <h3>Description Lists in Detail</h3>
+      <p>Description lists are perfect for displaying term-definition pairs:</p>
+      <pre><code>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;HyperText Markup Language - the standard language for creating web pages.&lt;/dd&gt;
+  
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Cascading Style Sheets - used for styling web pages.&lt;/dd&gt;
+  
+  &lt;dt&gt;JavaScript&lt;/dt&gt;
+  &lt;dd&gt;A programming language that enables interactive web pages.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+
+      <h3>Nested Lists</h3>
+      <p>Lists can be nested inside other lists to create hierarchical structures:</p>
+      <pre><code>&lt;ul&gt;
+  &lt;li&gt;Front-End Development
+    &lt;ul&gt;
+      &lt;li&gt;HTML&lt;/li&gt;
+      &lt;li&gt;CSS&lt;/li&gt;
+      &lt;li&gt;JavaScript&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Back-End Development
+    &lt;ul&gt;
+      &lt;li&gt;PHP&lt;/li&gt;
+      &lt;li&gt;Python&lt;/li&gt;
+      &lt;li&gt;Node.js&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+      <h3>Styling Lists with CSS</h3>
+      <p>Beyond the basic styling options, you can customize lists extensively with CSS:</p>
+      <table class="table">
+        <tr>
+          <th>CSS Property</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+        <tr>
+          <td>list-style-type</td>
+          <td>Sets the type of bullet or numbering</td>
+          <td>list-style-type: square;</td>
+        </tr>
+        <tr>
+          <td>list-style-position</td>
+          <td>Specifies whether bullets appear inside or outside the content flow</td>
+          <td>list-style-position: inside;</td>
+        </tr>
+        <tr>
+          <td>list-style-image</td>
+          <td>Uses an image as the bullet</td>
+          <td>list-style-image: url('bullet.png');</td>
+        </tr>
+        <tr>
+          <td>list-style</td>
+          <td>Shorthand property for all list style properties</td>
+          <td>list-style: square inside;</td>
+        </tr>
+        <tr>
+          <td>padding-left</td>
+          <td>Controls the indentation of the list</td>
+          <td>padding-left: 20px;</td>
+        </tr>
+      </table>
+
+      <h3>Common List Use Cases</h3>
+      <ul class="tips-list">
+        <li>Navigation menus (unordered lists)</li>
+        <li>Step-by-step instructions (ordered lists)</li>
+        <li>Feature lists and product benefits (unordered lists)</li>
+        <li>FAQ sections (description lists)</li>
+        <li>Site maps (nested unordered lists)</li>
+        <li>Recipe ingredients and steps (combination of lists)</li>
+        <li>Table of contents (ordered lists)</li>
+        <li>Timeline of events (ordered lists)</li>
+      </ul>
+      
+      <h3>List Accessibility Tips</h3>
+      <ul class="tips-list">
+        <li>Always use semantic HTML list elements for actual lists</li>
+        <li>Don't use lists just for indentation</li>
+        <li>Ensure sufficient color contrast for bullets and numbers</li>
+        <li>Maintain proper nesting hierarchy</li>
+        <li>Add proper spacing between list items for readability</li>
+        <li>Consider using ARIA roles when creating custom list components</li>
+      </ul>
+      
+      <h3>Common List Mistakes to Avoid</h3>
+      <ul class="tips-list">
+        <li>Using &lt;br&gt; tags and asterisks instead of proper list elements</li>
+        <li>Creating overly deep nested lists (difficult to follow)</li>
+        <li>Inconsistent capitalization and punctuation in list items</li>
+        <li>Not using proper semantic structure for lists</li>
+        <li>Overriding default list styles without considering accessibility</li>
+        <li>Using list elements for non-list content for styling purposes</li>
+      </ul>
+    </div>
+    
+    <div class="previous-page">
+      <a href="HTML-TABLES.html">&#8592; Previous</a>
+    </div>
+    <div class="next-page">
+      <a href="HTML-DIV.html">Next &#8594;</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Front-End Tutorial © 2025 | Building the Web, One Tag at a Time</p>
+  </footer>
+
+</body>
+</html>

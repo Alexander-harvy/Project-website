@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Tutorial - If...Else</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>WELCOME TO PHP TUTORIAL</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="PHP-HOME.html">Home</a>
+            <a href="PHP-INTRO.html">Introduction</a>
+            <a href="PHP-SYNTAX.html">Syntax</a>
+            <a href="PHP-VARIABLES.html">Variables</a>
+            <a href="PHP-ECHO.html">Echo/Print</a>
+            <a href="PHP-DATATYPES.html">Data Types</a>
+            <a href="PHP-STRINGS.html">Strings</a>
+            <a href="PHP-NUMBERS.html">Numbers</a>
+            <a href="PHP-MATH.html">Math</a>
+            <a href="PHP-CONSTANTS.html">Constants</a>
+            <a href="PHP-OPERATORS.html">Operators</a>
+            <a href="PHP-CONDITIONALS.html" class="active">If...Else</a>
+            <a href="PHP-SWITCH.html">Switch</a>
+            <a href="PHP-LOOPS.html">Loops</a>
+            <a href="PHP-FUNCTIONS.html">Functions</a>
+            <a href="PHP-ARRAYS.html">Arrays</a>
+            <a href="PHP-FORMS.html">Forms</a>
+            <a href="PHP-DATABASE.html">Database</a>
+        </div>
+        
+        <div class="content">
+            <h2>PHP Conditional Statements</h2>
+            
+            <div class="intro-section">
+                <p>Conditional statements are used to perform different actions based on different conditions.</p>
+                <p>In PHP, we have the following conditional statements:</p>
+                <ul>
+                    <li><strong>if statement</strong> - executes code if one condition is true</li>
+                    <li><strong>if...else statement</strong> - executes one code if a condition is true and another code if that condition is false</li>
+                    <li><strong>if...elseif...else statement</strong> - executes different codes for more than two conditions</li>
+                    <li><strong>switch statement</strong> - selects one of many blocks of code to be executed</li>
+                </ul>
+                
+                <h3>The if Statement</h3>
+                <p>The if statement executes a block of code if a specified condition is true.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Syntax
+if (condition) {
+    // code to be executed if condition is true
+}
+
+// Example
+$t = 15;
+
+if ($t < 20) {
+    echo "Have a good day!";
+}
+// Outputs: "Have a good day!"
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>The if...else Statement</h3>
+                <p>The if...else statement executes one block of code if a condition is true and another block of code if the condition is false.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Syntax
+if (condition) {
+    // code to be executed if condition is true
+} else {
+    // code to be executed if condition is false
+}
+
+// Example
+$t = 25;
+
+if ($t < 20) {
+    echo "Have a good day!";
+} else {
+    echo "Have a good night!";
+}
+// Outputs: "Have a good night!"
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>The if...elseif...else Statement</h3>
+                <p>The if...elseif...else statement executes different blocks of code for more than two conditions.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Syntax
+if (condition1) {
+    // code to be executed if condition1 is true
+} elseif (condition2) {
+    // code to be executed if condition1 is false and condition2 is true
+} else {
+    // code to be executed if both condition1 and condition2 are false
+}
+
+// Example
+$t = 22;
+
+if ($t < 10) {
+    echo "Have a good morning!";
+} elseif ($t < 20) {
+    echo "Have a good day!";
+} else {
+    echo "Have a good night!";
+}
+// Outputs: "Have a good night!"
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <p>You can have as many elseif statements as you need, for example:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$t = 13;
+
+if ($t < 10) {
+    echo "Have a good morning!";
+} elseif ($t < 15) {
+    echo "Have a good afternoon!";
+} elseif ($t < 20) {
+    echo "Have a good evening!";
+} else {
+    echo "Have a good night!";
+}
+// Outputs: "Have a good afternoon!"
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Nested if Statements</h3>
+                <p>You can place if statements inside other if statements to create more complex conditions.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$t = 25;
+$weather = "sunny";
+
+if ($t > 20) {
+    echo "It's a warm day. ";
+    
+    if ($weather == "sunny") {
+        echo "And it's sunny outside!";
+    } else {
+        echo "But it's not sunny.";
+    }
+}
+// Outputs: "It's a warm day. And it's sunny outside!"
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Short Hand If...Else (Ternary Operator)</h3>
+                <p>The ternary operator is a shorthand for the if...else statement.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Syntax
+variable = (condition) ? expressionIfTrue : expressionIfFalse;
+
+// Example
+$t = 15;
+$result = ($t < 20) ? "Good day" : "Good night";
+echo $result; // Outputs: "Good day"
+
+// Without a variable
+echo ($t < 20) ? "Good day" : "Good night";
+// Outputs: "Good day"
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Null Coalescing Operator</h3>
+                <p>The null coalescing operator (??) was introduced in PHP 7 as a shorthand for a common use case of the ternary operator. It returns the first operand if it exists and is not NULL, otherwise it returns the second operand.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Syntax
+$variable = $firstExpression ?? $secondExpression;
+
+// Example
+// Old way (ternary)
+$username = isset($_GET['user']) ? $_GET['user'] : 'Guest';
+
+// New way (null coalescing)
+$username = $_GET['user'] ?? 'Guest';
+
+// Can be chained
+$username = $_GET['user'] ?? $_POST['user'] ?? 'Guest';
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Real-World Examples</h3>
+                
+                <h4>Example 1: User Authentication</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$username = "admin";
+$password = "password123";
+
+// Check if credentials are correct
+if ($username == "admin" && $password == "password123") {
+    echo "Login successful. Welcome Admin!";
+} else {
+    echo "Invalid username or password. Please try again.";
+}
+// Outputs: "Login successful. Welcome Admin!"
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>Example 2: Grading System</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$score = 85;
+$grade = "";
+
+if ($score >= 90) {
+    $grade = "A";
+} elseif ($score >= 80) {
+    $grade = "B";
+} elseif ($score >= 70) {
+    $grade = "C";
+} elseif ($score >= 60) {
+    $grade = "D";
+} else {
+    $grade = "F";
+}
+
+echo "Your score is $score, which is grade $grade.";
+// Outputs: "Your score is 85, which is grade B."
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>Example 3: Checking Age for Different Content</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$age = 17;
+
+if ($age < 13) {
+    echo "Content for children.";
+} elseif ($age >= 13 && $age < 18) {
+    echo "Content for teenagers.";
+} else {
+    echo "Content for adults.";
+}
+// Outputs: "Content for teenagers."
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Best Practices for Conditional Statements</h3>
+                <ul class="tips-list">
+                    <li>Always use curly braces {} for if statements, even if they contain only one line of code. This improves readability and prevents errors.</li>
+                    <li>When comparing variables against values, it's recommended to use the identical operator (===) instead of the equality operator (==) when possible to avoid type conversion issues.</li>
+                    <li>Avoid deeply nested if statements as they make code hard to read and maintain. Consider refactoring with early returns or separate functions.</li>
+                    <li>Use meaningful variable names that represent what you're checking for better code self-documentation.</li>
+                    <li>For multiple complex conditions, consider storing them in separate variables with descriptive names.</li>
+                </ul>
+            </div>
+            
+            <div class="navigation-buttons">
+                <div class="previous-page">
+                    <a href="PHP-OPERATORS.html">Previous: Operators</a>
+                </div>
+                <div class="next-page">
+                    <a href="PHP-SWITCH.html">Next: Switch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Front-End Tutorial © 2025 | Programming the Web, One Line at a Time</p>
+    </footer>
+</body>
+</html>

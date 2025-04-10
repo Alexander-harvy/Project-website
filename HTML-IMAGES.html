@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Images Tutorial</title>
+  <link rel="stylesheet" href="website.css">
+  <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active">HOME</a></li>
+      <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+      <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+      <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+      <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+  </ul>
+</div>
+
+  <div class="main-content">
+    <div class="header">
+        <h1>WELCOME TO HTML TUTORIAL</h1>
+        <div class="header-underline"></div>
+    </div>
+    
+    <div class="tutorial-nav">
+        <a href="HTML-HOME.html">Home</a>
+        <a href="HTML-INTRO.html">Introduction</a>
+        <a href="HTML-EDITORS.html">Editors</a>
+        <a href="HTML.BASICS.html">Basics</a>
+        <a href="HTML-ELEMENTS.html">Elements</a>
+        <a href="HTML-ATTRIBUTES.html">Attributes</a>
+        <a href="HTML-HEADINGS.html">Headings</a>
+        <a href="HTML-COMMENTS.html">Comments</a>
+        <a href="HTML-COLORS.html">Colors</a>
+        <a href="HTML-LINKS.html">Links</a>
+        <a href="HTML-IMAGES.html" class="active">Images</a>
+        <a href="HTML-FAVICON.html">Favicon</a>
+        <a href="HTML-PAGE-TITLE.html">Page Title</a>
+        <a href="HTML-TABLES.html">Tables</a>
+        <a href="HTML-LISTS.html">Lists</a>
+        <a href="HTML-DIV.html">Div</a>
+        <a href="HTML-CLASSES.html">Classes</a>
+        <a href="HTML-ID.html">Id</a>
+    </div>
+    
+    <div class="content">
+      <h2>HTML Images - Adding Visual Content to Your Web Pages</h2>
+      <p>Images are essential elements in web design that enhance the visual appeal and user experience of your website. HTML provides a simple way to embed images through the &lt;img&gt; tag. This tutorial will guide you through the process of adding and manipulating images in your web pages.</p>
+      
+      <div class="topic-section">
+        <div class="topic">
+          <h2>Basic Image Syntax</h2>
+          <div class="topic-content">
+            <p>The HTML image tag is a self-closing tag used to embed images:</p>
+            <pre><code>&lt;img src="image.jpg" alt="Description of image"&gt;</code></pre>
+            <p>The most important attributes of the &lt;img&gt; tag are:</p>
+            <ul class="tips-list">
+              <li>src - specifies the path to the image file</li>
+              <li>alt - provides alternative text for screen readers</li>
+              <li>width/height - specifies dimensions</li>
+              <li>title - shows a tooltip when hovering</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>Image File Types</h2>
+          <div class="topic-content">
+            <p>Common image formats used on the web:</p>
+            <ul class="tips-list">
+              <li>JPEG (.jpg, .jpeg) - Best for photographs</li>
+              <li>PNG (.png) - Best for graphics with transparency</li>
+              <li>GIF (.gif) - Supports animation, limited colors</li>
+              <li>SVG (.svg) - Vector graphics that scale without quality loss</li>
+              <li>WebP (.webp) - Modern format with better compression</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>Image Size & Positioning</h2>
+          <div class="topic-content">
+            <p>Control image dimensions and alignment:</p>
+            <pre><code>&lt;!-- Setting width and height --&gt;
+&lt;img src="logo.png" alt="Logo" width="300" height="200"&gt;
+
+&lt;!-- CSS styling for images --&gt;
+&lt;img src="photo.jpg" alt="Photo" style="width:100%; max-width:500px;"&gt;
+
+&lt;!-- Centered image using CSS --&gt;
+&lt;img src="banner.jpg" alt="Banner" style="display:block; margin:0 auto;"&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+      
+      <div class="image-container">
+        <div id="img7" class="Images">
+          <h3>HTML Image Example</h3>
+          <img src="pictures/images.jpg" alt="HTML Image Structure Diagram">
+        </div>
+      </div>
+
+      <h3>Responsive Images</h3>
+      <p>Making images adapt to different screen sizes is crucial for modern web design:</p>
+      <pre><code>&lt;!-- Basic responsive image --&gt;
+&lt;img src="responsive.jpg" alt="Responsive Image" style="width:100%; height:auto;"&gt;
+
+&lt;!-- Using srcset for different resolutions --&gt;
+&lt;img src="image-small.jpg" 
+     srcset="image-small.jpg 500w,
+             image-medium.jpg 1000w,
+             image-large.jpg 1500w"
+     sizes="(max-width: 600px) 500px,
+            (max-width: 1200px) 1000px,
+            1500px"
+     alt="Responsive image with multiple sources"&gt;</code></pre>
+      
+      <h3>Image Maps</h3>
+      <p>Image maps allow you to define clickable areas on a single image:</p>
+      <pre><code>&lt;img src="workplace.jpg" alt="Workplace" usemap="#workmap"&gt;
+
+&lt;map name="workmap"&gt;
+  &lt;area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.html"&gt;
+  &lt;area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.html"&gt;
+  &lt;area shape="circle" coords="337,300,44" alt="Coffee cup" href="coffee.html"&gt;
+&lt;/map&gt;</code></pre>
+
+      <h3>Image as a Link</h3>
+      <p>You can use images as clickable links by placing them inside an anchor tag:</p>
+      <pre><code>&lt;a href="https://www.example.com"&gt;
+  &lt;img src="button.jpg" alt="Visit Example.com"&gt;
+&lt;/a&gt;</code></pre>
+
+      <h3>HTML Image Attributes</h3>
+      <table class="table">
+        <tr>
+          <th>Attribute</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+        <tr>
+          <td>src</td>
+          <td>Specifies the path to the image file</td>
+          <td>src="images/photo.jpg"</td>
+        </tr>
+        <tr>
+          <td>alt</td>
+          <td>Provides alternative text for screen readers</td>
+          <td>alt="Mountain landscape"</td>
+        </tr>
+        <tr>
+          <td>width</td>
+          <td>Specifies the width of the image (in pixels or %)</td>
+          <td>width="500" or width="100%"</td>
+        </tr>
+        <tr>
+          <td>height</td>
+          <td>Specifies the height of the image (in pixels or %)</td>
+          <td>height="300" or height="50%"</td>
+        </tr>
+        <tr>
+          <td>loading</td>
+          <td>Instructs the browser on how to load the image</td>
+          <td>loading="lazy"</td>
+        </tr>
+        <tr>
+          <td>title</td>
+          <td>Shows additional information as tooltip on hover</td>
+          <td>title="Beautiful mountain view"</td>
+        </tr>
+        <tr>
+          <td>usemap</td>
+          <td>References a map element to create an image map</td>
+          <td>usemap="#mapname"</td>
+        </tr>
+      </table>
+      
+      <h3>Image Examples</h3>
+      <div class="table">
+        <table>
+          <tr>
+            <th>Image Type</th>
+            <th>HTML Code</th>
+            <th>Use Case</th>
+          </tr>
+          <tr>
+            <td>Basic Image</td>
+            <td>&lt;img src="photo.jpg" alt="A photograph"&gt;</td>
+            <td>Simple image display</td>
+          </tr>
+          <tr>
+            <td>Styled Image</td>
+            <td>&lt;img src="icon.png" alt="Icon" style="border-radius:50%;"&gt;</td>
+            <td>Applying CSS styles to images</td>
+          </tr>
+          <tr>
+            <td>Responsive Image</td>
+            <td>&lt;img src="banner.jpg" alt="Banner" style="width:100%; height:auto;"&gt;</td>
+            <td>Adapting to screen sizes</td>
+          </tr>
+          <tr>
+            <td>Figure with Caption</td>
+            <td>&lt;figure&gt;<br>&nbsp;&nbsp;&lt;img src="chart.jpg" alt="Chart"&gt;<br>&nbsp;&nbsp;&lt;figcaption&gt;Sales Chart 2025&lt;/figcaption&gt;<br>&lt;/figure&gt;</td>
+            <td>Adding captions to images</td>
+          </tr>
+          <tr>
+            <td>Background Image</td>
+            <td>&lt;div style="background-image:url('bg.jpg');"&gt;Content&lt;/div&gt;</td>
+            <td>Using images as backgrounds</td>
+          </tr>
+        </table>
+      </div>
+      
+      <div class="buttons">
+        <a href="https://www.w3schools.com/html/html_images.asp" target="_blank" class="btn">More About Images</a>
+        <a href="https://www.w3schools.com/css/css3_images.asp" target="_blank" class="btn">Styling Images</a>
+      </div>
+      
+      <h3>Best Practices for Web Images</h3>
+      <ul class="tips-list">
+        <li>Always include descriptive alt text for accessibility</li>
+        <li>Optimize images for web to improve page load speed</li>
+        <li>Specify width and height attributes to prevent layout shifts</li>
+        <li>Use responsive images to support various screen sizes</li>
+        <li>Choose the appropriate file format for your image type</li>
+        <li>Consider lazy loading for images below the fold</li>
+        <li>Maintain aspect ratio when resizing images</li>
+        <li>Use appropriate compression to balance quality and file size</li>
+      </ul>
+    </div>
+    
+    <div class="previous-page">
+      <a href="HTML-LINKS.html">&#8592; Previous</a>
+    </div>
+    <div class="next-page">
+      <a href="HTML-FAVICON.html">Next &#8594;</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Front-End Tutorial © 2025 | Building the Web, One Tag at a Time</p>
+  </footer>
+
+</body>
+</html>

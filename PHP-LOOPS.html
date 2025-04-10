@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Tutorial - Loops</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>WELCOME TO PHP TUTORIAL</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="PHP-HOME.html">Home</a>
+            <a href="PHP-INTRO.html">Introduction</a>
+            <a href="PHP-SYNTAX.html">Syntax</a>
+            <a href="PHP-VARIABLES.html">Variables</a>
+            <a href="PHP-ECHO.html">Echo/Print</a>
+            <a href="PHP-DATATYPES.html">Data Types</a>
+            <a href="PHP-STRINGS.html">Strings</a>
+            <a href="PHP-NUMBERS.html">Numbers</a>
+            <a href="PHP-MATH.html">Math</a>
+            <a href="PHP-CONSTANTS.html">Constants</a>
+            <a href="PHP-OPERATORS.html">Operators</a>
+            <a href="PHP-CONDITIONALS.html">If...Else</a>
+            <a href="PHP-SWITCH.html">Switch</a>
+            <a href="PHP-LOOPS.html" class="active">Loops</a>
+            <a href="PHP-FUNCTIONS.html">Functions</a>
+            <a href="PHP-ARRAYS.html">Arrays</a>
+            <a href="PHP-FORMS.html">Forms</a>
+            <a href="PHP-DATABASE.html">Database</a>
+        </div>
+        
+        <div class="content">
+            <h2>PHP Loops</h2>
+            
+            <div class="intro-section">
+                <p>Loops are used to execute a block of code repeatedly. In PHP, there are four types of loops:</p>
+                <ul>
+                    <li><strong>while</strong> - loops through a block of code as long as the specified condition is true</li>
+                    <li><strong>do...while</strong> - loops through a block of code once, and then repeats the loop as long as the specified condition is true</li>
+                    <li><strong>for</strong> - loops through a block of code a specified number of times</li>
+                    <li><strong>foreach</strong> - loops through a block of code for each element in an array or object</li>
+                </ul>
+                
+                <h3>The while Loop</h3>
+                <p>The while loop executes a block of code as long as the specified condition is true.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Syntax
+while (condition) {
+    // code to be executed
+}
+
+// Example
+$x = 1;
+
+while ($x <= 5) {
+    echo "The number is: $x <br>";
+    $x++;
+}
+
+/* Output:
+The number is: 1
+The number is: 2
+The number is: 3
+The number is: 4
+The number is: 5
+*/
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>The do...while Loop</h3>
+                <p>The do...while loop will always execute the block of code once, then check the condition, and repeat the loop as long as the condition is true.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Syntax
+do {
+    // code to be executed
+} while (condition);
+
+// Example
+$x = 1;
+
+do {
+    echo "The number is: $x <br>";
+    $x++;
+} while ($x <= 5);
+
+/* Output:
+The number is: 1
+The number is: 2
+The number is: 3
+The number is: 4
+The number is: 5
+*/
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <p>The key difference between while and do...while is that do...while will always execute the code block at least once, even if the condition is false from the start.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Example showing the difference
+$x = 6;
+
+// while loop - condition is false from the start, so nothing executes
+while ($x <= 5) {
+    echo "This will not be printed (while)";
+    $x++;
+}
+
+// do...while loop - executes once even though condition is false
+do {
+    echo "This will be printed once (do...while)";
+    $x++;
+} while ($x <= 5);
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>The for Loop</h3>
+                <p>The for loop is used when you know in advance how many times you want to execute a block of code.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Syntax
+for (initialization; condition; increment) {
+    // code to be executed
+}
+
+// Example
+for ($x = 0; $x <= 10; $x += 2) {
+    echo "The number is: $x <br>";
+}
+
+/* Output:
+The number is: 0
+The number is: 2
+The number is: 4
+The number is: 6
+The number is: 8
+The number is: 10
+*/
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <p>The for loop parameters:</p>
+                <ul>
+                    <li><strong>initialization</strong> - initializes a counter variable (executed once at the beginning)</li>
+                    <li><strong>condition</strong> - evaluated for each loop iteration, if true, the loop continues; if false, the loop ends</li>
+                    <li><strong>increment</strong> - increases (or decreases) the counter value after each iteration</li>
+                </ul>
+                
+                <h3>The foreach Loop</h3>
+                <p>The foreach loop is designed to work specifically with arrays and objects. It loops through each element in an array or each property in an object.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Syntax for arrays
+foreach ($array as $value) {
+    // code to be executed
+}
+
+// Syntax for associative arrays
+foreach ($array as $key => $value) {
+    // code to be executed
+}
+
+// Example with indexed array
+$colors = array("red", "green", "blue", "yellow");
+
+foreach ($colors as $value) {
+    echo "$value <br>";
+}
+
+/* Output:
+red
+green
+blue
+yellow
+*/
+
+// Example with associative array
+$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
+
+foreach ($age as $key => $value) {
+    echo "$key is $value years old <br>";
+}
+
+/* Output:
+Peter is 35 years old
+Ben is 37 years old
+Joe is 43 years old
+*/
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Break and Continue</h3>
+                <p>The break and continue statements allow you to control the flow of loops.</p>
+                
+                <h4>The break Statement</h4>
+                <p>The break statement is used to "jump out" of a loop, stopping it from executing any further.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Example of break
+for ($x = 0; $x < 10; $x++) {
+    if ($x == 4) {
+        break;
+    }
+    echo "The number is: $x <br>";
+}
+
+/* Output:
+The number is: 0
+The number is: 1
+The number is: 2
+The number is: 3
+*/
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>The continue Statement</h4>
+                <p>The continue statement is used to "skip" the current iteration of a loop, and continue with the next iteration.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Example of continue
+for ($x = 0; $x < 10; $x++) {
+    if ($x == 4) {
+        continue;
+    }
+    echo "The number is: $x <br>";
+}
+
+/* Output:
+The number is: 0
+The number is: 1
+The number is: 2
+The number is: 3
+The number is: 5
+The number is: 6
+The number is: 7
+The number is: 8
+The number is: 9
+*/
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Nested Loops</h3>
+                <p>Loops can be nested within each other. A common use case is to iterate through multi-dimensional arrays.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Nested for loop example - creating a multiplication table
+echo "<table border='1'>";
+for ($i = 1; $i <= 5; $i++) {
+    echo "<tr>";
+    for ($j = 1; $j <= 5; $j++) {
+        echo "<td>" . ($i * $j) . "</td>";
+    }
+    echo "</tr>";
+}
+echo "</table>";
+
+/* Output:
+A 5x5 multiplication table showing products from 1x1 to 5x5
+*/
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Real-World Examples</h3>
+                
+                <h4>Example 1: Displaying data from a database</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Assuming $users contains data fetched from a database
+$users = [
+    ['id' => 1, 'name' => 'John', 'email' => 'john@example.com'],
+    ['id' => 2, 'name' => 'Jane', 'email' => 'jane@example.com'],
+    ['id' => 3, 'name' => 'Bob', 'email' => 'bob@example.com']
+];
+
+// Display users in an HTML table
+echo "<table border='1'>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>";
+
+foreach ($users as $user) {
+    echo "<tr>
+          <td>{$user['id']}</td>
+          <td>{$user['name']}</td>
+          <td>{$user['email']}</td>
+        </tr>";
+}
+
+echo "</table>";
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>Example 2: Creating a dropdown menu</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$months = ["January", "February", "March", "April", "May", "June", 
+           "July", "August", "September", "October", "November", "December"];
+$currentMonth = date('n') - 1; // Current month (0-based index)
+
+echo "<select name='month'>";
+for ($i = 0; $i < count($months); $i++) {
+    // Set the current month as selected
+    $selected = ($i == $currentMonth) ? " selected" : "";
+    echo "<option value='" . ($i + 1) . "'$selected>{$months[$i]}</option>";
+}
+echo "</select>";
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>Example 3: Generating pagination links</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$totalPages = 10;
+$currentPage = 4;
+
+echo "<div class='pagination'>";
+
+// Previous button
+if ($currentPage > 1) {
+    echo "<a href='?page=" . ($currentPage - 1) . "'>Previous</a> ";
+}
+
+// Page numbers
+for ($i = 1; $i <= $totalPages; $i++) {
+    if ($i == $currentPage) {
+        echo "<span class='current'>$i</span> ";
+    } else {
+        echo "<a href='?page=$i'>$i</a> ";
+    }
+}
+
+// Next button
+if ($currentPage < $totalPages) {
+    echo "<a href='?page=" . ($currentPage + 1) . "'>Next</a>";
+}
+
+echo "</div>";
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Best Practices for Loops</h3>
+                <ul class="tips-list">
+                    <li>Choose the right loop for the job: use for when you know the number of iterations, foreach for arrays, while for condition-based iterations.</li>
+                    <li>Avoid infinite loops by ensuring that your loop condition will eventually be false.</li>
+                    <li>Keep loop bodies as simple as possible; consider extracting complex logic into functions.</li>
+                    <li>For large datasets, be cautious about memory usage, especially when dealing with large arrays in foreach loops.</li>
+                    <li>Use the break statement to exit a loop early when a specific condition is met.</li>
+                    <li>Use the continue statement to skip iterations that don't need processing.</li>
+                    <li>When processing HTML output in loops, consider using output buffering to improve performance.</li>
+                </ul>
+            </div>
+            
+            <div class="navigation-buttons">
+                <div class="previous-page">
+                    <a href="PHP-SWITCH.html">Previous: Switch</a>
+                </div>
+                <div class="next-page">
+                    <a href="PHP-FUNCTIONS.html">Next: Functions</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Front-End Tutorial © 2025 | Programming the Web, One Line at a Time</p>
+    </footer>
+</body>
+</html>

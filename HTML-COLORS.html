@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Colors Tutorial</title>
+  <link rel="stylesheet" href="website.css">
+  <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+    </div>
+    <ul class="nav-menu">
+            <li><a href="index.html" class="active">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+</div>
+
+  <div class="main-content">
+    <div class="header">
+        <h1>WELCOME TO HTML TUTORIAL</h1>
+        <div class="header-underline"></div>
+    </div>
+    
+    <div class="tutorial-nav">
+        <a href="HTML-HOME.html">Home</a>
+        <a href="HTML-INTRO.html">Introduction</a>
+        <a href="HTML-EDITORS.html">Editors</a>
+        <a href="HTML.BASICS.html">Basics</a>
+        <a href="HTML-ELEMENTS.html">Elements</a>
+        <a href="HTML-ATTRIBUTES.html">Attributes</a>
+        <a href="HTML-HEADINGS.html">Headings</a>
+        <a href="HTML-COMMENTS.html">Comments</a>
+        <a href="HTML-COLORS.html" class="active">Colors</a>
+        <a href="HTML-LINKS.html">Links</a>
+        <a href="HTML-IMAGES.html">Images</a>
+        <a href="HTML-FAVICON.html">Favicon</a>
+        <a href="HTML-PAGE-TITLE.html">Page Title</a>
+        <a href="HTML-TABLES.html">Tables</a>
+        <a href="HTML-LISTS.html">Lists</a>
+        <a href="HTML-DIV.html">Div</a>
+        <a href="HTML-CLASSES.html">Classes</a>
+        <a href="HTML-ID.html">Id</a>
+    </div>
+    
+    <div class="content">
+      <h2>HTML Colors - Adding Life to Your Web Pages</h2>
+      <p>Colors play a crucial role in web design, enhancing the visual appeal and user experience of your website. HTML provides various ways to specify colors for different elements. Let's explore the methods to implement colors in your web pages.</p>
+      
+      <div class="topic-section">
+        <div class="topic">
+          <h2>Color Methods</h2>
+          <div class="topic-content">
+            <p>There are several ways to specify colors in HTML:</p>
+            <ul class="tips-list">
+              <li>Color names (like "red", "blue")</li>
+              <li>RGB values - rgb(red, green, blue)</li>
+              <li>HEX values - #RRGGBB</li>
+              <li>HSL values - hsl(hue, saturation, lightness)</li>
+              <li>RGBA values - rgb(red, green, blue, alpha)</li>
+              <li>HSLA values - hsla(hue, saturation, lightness, alpha)</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>Color Names</h2>
+          <div class="topic-content">
+            <p>HTML supports 140 standard color names:</p>
+            <pre><code>&lt;h1 style="color:blue;"&gt;Blue Heading&lt;/h1&gt;
+&lt;p style="color:red;"&gt;Red Paragraph&lt;/p&gt;
+&lt;div style="background-color:green;"&gt;Green Background&lt;/div&gt;</code></pre>
+            <p>Popular named colors include: red, blue, green, yellow, cyan, magenta, black, white, gray, purple, orange, etc.</p>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>RGB and HEX Colors</h2>
+          <div class="topic-content">
+            <p>RGB uses numerical values (0-255) for red, green, and blue:</p>
+            <pre><code>&lt;p style="color:rgb(255, 0, 0);"&gt;RGB Red&lt;/p&gt;
+&lt;p style="color:rgb(0, 255, 0);"&gt;RGB Green&lt;/p&gt;
+&lt;p style="color:rgb(0, 0, 255);"&gt;RGB Blue&lt;/p&gt;</code></pre>
+            <p>HEX colors use hexadecimal values (#RRGGBB):</p>
+            <pre><code>&lt;p style="color:#FF0000;"&gt;HEX Red&lt;/p&gt;
+&lt;p style="color:#00FF00;"&gt;HEX Green&lt;/p&gt;
+&lt;p style="color:#0000FF;"&gt;HEX Blue&lt;/p&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+      
+      <div class="image-container">
+        <div id="img1" class="Images">
+          <h3>HTML Color Wheel</h3>
+          <img src="pictures/colorwheel.png" alt="HTML Color Wheel">
+        </div>
+      </div>
+
+      <h3>HSL and Color Transparency</h3>
+      <p>HSL represents colors using Hue, Saturation, and Lightness values:</p>
+      <pre><code>&lt;p style="color:hsl(0, 100%, 50%);"&gt;HSL Red&lt;/p&gt;
+&lt;p style="color:hsl(120, 100%, 50%);"&gt;HSL Green&lt;/p&gt;
+&lt;p style="color:hsl(240, 100%, 50%);"&gt;HSL Blue&lt;/p&gt;</code></pre>
+      
+      <p>For transparency, use RGBA or HSLA (the "A" stands for Alpha, which defines opacity):</p>
+      <pre><code>&lt;p style="background-color:rgba(255, 0, 0, 0.5);"&gt;50% Transparent Red&lt;/p&gt;
+&lt;p style="background-color:hsla(240, 100%, 50%, 0.5);"&gt;50% Transparent Blue&lt;/p&gt;</code></pre>
+
+      <h3>Color Properties in CSS</h3>
+      <table class="table">
+        <tr>
+          <th>Property</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+        <tr>
+          <td>color</td>
+          <td>Sets the color of text</td>
+          <td>color: blue;</td>
+        </tr>
+        <tr>
+          <td>background-color</td>
+          <td>Sets the background color of an element</td>
+          <td>background-color: yellow;</td>
+        </tr>
+        <tr>
+          <td>border-color</td>
+          <td>Sets the color of an element's border</td>
+          <td>border-color: red;</td>
+        </tr>
+        <tr>
+          <td>outline-color</td>
+          <td>Sets the color of an element's outline</td>
+          <td>outline-color: green;</td>
+        </tr>
+        <tr>
+          <td>box-shadow</td>
+          <td>Sets color for element shadows</td>
+          <td>box-shadow: 5px 5px 8px blue;</td>
+        </tr>
+      </table>
+      
+      <h3>Color Examples</h3>
+      <div class="table">
+        <table>
+          <tr>
+            <th>Color Type</th>
+            <th>Example</th>
+            <th>Result</th>
+          </tr>
+          <tr>
+            <td>Named Color</td>
+            <td>&lt;p style="color:tomato;"&gt;Tomato Text&lt;/p&gt;</td>
+            <td><span style="color:tomato;">Tomato Text</span></td>
+          </tr>
+          <tr>
+            <td>RGB Color</td>
+            <td>&lt;p style="color:rgb(60, 179, 113);"&gt;Medium Sea Green&lt;/p&gt;</td>
+            <td><span style="color:rgb(60, 179, 113);">Medium Sea Green</span></td>
+          </tr>
+          <tr>
+            <td>HEX Color</td>
+            <td>&lt;p style="color:#8A2BE2;"&gt;Blue Violet&lt;/p&gt;</td>
+            <td><span style="color:#8A2BE2;">Blue Violet</span></td>
+          </tr>
+          <tr>
+            <td>HSL Color</td>
+            <td>&lt;p style="color:hsl(39, 100%, 50%);"&gt;Golden&lt;/p&gt;</td>
+            <td><span style="color:hsl(39, 100%, 50%);">Golden</span></td>
+          </tr>
+          <tr>
+            <td>RGBA Color</td>
+            <td>&lt;p style="background-color:rgba(255, 99, 71, 0.5);"&gt;Transparent Tomato&lt;/p&gt;</td>
+            <td><span style="background-color:rgba(255, 99, 71, 0.5);">Transparent Tomato</span></td>
+          </tr>
+        </table>
+      </div>
+      
+      <div class="buttons">
+        <a href="https://www.w3schools.com/colors/colors_names.asp" target="_blank" class="btn">Color Names</a>
+        <a href="https://www.w3schools.com/colors/colors_picker.asp" target="_blank" class="btn">Color Picker</a>
+      </div>
+      
+      <h3>Best Practices for Using Colors</h3>
+      <ul class="tips-list">
+        <li>Use colors consistently throughout your website</li>
+        <li>Ensure sufficient contrast between text and background for readability</li>
+        <li>Consider color accessibility for users with color blindness</li>
+        <li>Limit your color palette to 3-5 colors for a clean design</li>
+        <li>Use tools like color wheels to find complementary colors</li>
+      </ul>
+    </div>
+    
+    <div class="previous-page">
+      <a href="HTML-COMMENTS.html">&#8592; Previous</a>
+    </div>
+    <div class="next-page">
+      <a href="HTML-LINKS.html">Next &#8594;</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Front-End Tutorial © 2025 | Building the Web, One Tag at a Time</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Div Tutorial</title>
+  <link rel="stylesheet" href="website.css">
+  <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active">HOME</a></li>
+      <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+      <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+      <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+      <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+  </ul>
+</div>
+
+  <div class="main-content">
+    <div class="header">
+        <h1>WELCOME TO HTML TUTORIAL</h1>
+        <div class="header-underline"></div>
+    </div>
+    
+    <div class="tutorial-nav">
+        <a href="HTML-HOME.html">Home</a>
+        <a href="HTML-INTRO.html">Introduction</a>
+        <a href="HTML-EDITORS.html">Editors</a>
+        <a href="HTML.BASICS.html">Basics</a>
+        <a href="HTML-ELEMENTS.html">Elements</a>
+        <a href="HTML-ATTRIBUTES.html">Attributes</a>
+        <a href="HTML-HEADINGS.html">Headings</a>
+        <a href="HTML-COMMENTS.html">Comments</a>
+        <a href="HTML-COLORS.html">Colors</a>
+        <a href="HTML-LINKS.html">Links</a>
+        <a href="HTML-IMAGES.html">Images</a>
+        <a href="HTML-FAVICON.html">Favicon</a>
+        <a href="HTML-PAGE-TITLE.html">Page Title</a>
+        <a href="HTML-TABLES.html">Tables</a>
+        <a href="HTML-LISTS.html">Lists</a>
+        <a href="HTML-DIV.html" class="active">Div</a>
+        <a href="HTML-CLASSES.html">Classes</a>
+        <a href="HTML-ID.html">Id</a>
+    </div>
+    
+    <div class="content">
+      <h2>HTML Div Element - The Building Block of Modern Web Design</h2>
+      <p>The &lt;div&gt; element is one of the most important and frequently used HTML elements in web development. It serves as a container for other HTML elements, allowing developers to group content together, apply styles to multiple elements at once, and create complex layouts. This tutorial explores how to use the div element effectively in your web pages.</p>
+      
+      <div class="topic-section">
+        <div class="topic">
+          <h2>What is a Div?</h2>
+          <div class="topic-content">
+            <p>The div (division) element is a generic container that has no semantic meaning by itself. Its key characteristics include:</p>
+            <ul class="tips-list">
+              <li>Block-level element (starts on a new line)</li>
+              <li>Takes up full width available by default</li>
+              <li>Serves purely as a container for other elements</li>
+              <li>Has no visual styling without CSS</li>
+              <li>Provides structure and organization for content</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>Basic Div Syntax</h2>
+          <div class="topic-content">
+            <p>The div element uses a simple opening and closing tag structure:</p>
+            <pre><code>&lt;div&gt;
+  Content goes here...
+&lt;/div&gt;</code></pre>
+            <p>By itself, a div doesn't affect your content's appearance. Its power lies in its ability to be styled with CSS and to organize content.</p>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>Div vs. Semantic Elements</h2>
+          <div class="topic-content">
+            <p>While divs are versatile, HTML5 introduced semantic elements that should be used when appropriate:</p>
+            <ul class="tips-list">
+              <li>&lt;header&gt; - For page or section headers</li>
+              <li>&lt;nav&gt; - For navigation menus</li>
+              <li>&lt;main&gt; - For main content</li>
+              <li>&lt;section&gt; - For thematic grouping</li>
+              <li>&lt;article&gt; - For self-contained content</li>
+              <li>&lt;footer&gt; - For page or section footers</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="image-container">
+        <div id="img12" class="Images">
+          <h3>HTML Div Structure Example</h3>
+          <img src="pictures/div.png" alt="HTML Div structure example">
+        </div>
+      </div>
+
+      <h3>Using Divs for Layout</h3>
+      <p>One of the primary purposes of the div element is to create page layouts. Here's a basic example of using divs to create a simple two-column layout:</p>
+      <pre><code>&lt;div class="container"&gt;
+  &lt;div class="left-column"&gt;
+    &lt;h2&gt;Left Column Content&lt;/h2&gt;
+    &lt;p&gt;This content appears in the left column.&lt;/p&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="right-column"&gt;
+    &lt;h2&gt;Right Column Content&lt;/h2&gt;
+    &lt;p&gt;This content appears in the right column.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+      <p>With CSS, you can style these divs to create the layout you want:</p>
+      <pre><code>.container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.left-column {
+  width: 50%;
+  float: left;
+}
+
+.right-column {
+  width: 50%;
+  float: right;
+}</code></pre>
+
+      <h3>Div Attributes</h3>
+      <p>While divs can accept global attributes like all HTML elements, the most commonly used attributes with divs are:</p>
+      <table class="table">
+        <tr>
+          <th>Attribute</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+        <tr>
+          <td>class</td>
+          <td>Specifies one or more class names for styling</td>
+          <td>&lt;div class="container blue-bg"&gt;</td>
+        </tr>
+        <tr>
+          <td>id</td>
+          <td>Specifies a unique id for the element</td>
+          <td>&lt;div id="main-content"&gt;</td>
+        </tr>
+        <tr>
+          <td>style</td>
+          <td>Specifies inline CSS styles</td>
+          <td>&lt;div style="background-color: blue;"&gt;</td>
+        </tr>
+        <tr>
+          <td>title</td>
+          <td>Provides additional information (tooltip)</td>
+          <td>&lt;div title="Main container"&gt;</td>
+        </tr>
+        <tr>
+          <td>data-*</td>
+          <td>Custom data attributes for JavaScript</td>
+          <td>&lt;div data-role="container"&gt;</td>
+        </tr>
+      </table>
+
+      <h3>Nesting Divs</h3>
+      <p>Divs can be nested inside each other to create complex layouts and hierarchical structures:</p>
+      <pre><code>&lt;div class="wrapper"&gt;
+  &lt;div class="header"&gt;
+    &lt;h1&gt;Website Title&lt;/h1&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="content"&gt;
+    &lt;div class="sidebar"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Menu Item 1&lt;/li&gt;
+        &lt;li&gt;Menu Item 2&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="main-area"&gt;
+      &lt;p&gt;Main content goes here.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="footer"&gt;
+    &lt;p&gt;Copyright 2025&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+      <h3>Common Div Use Cases</h3>
+      <ul class="tips-list">
+        <li><strong>Layout containers</strong> - Creating columns, grids, and overall page structure</li>
+        <li><strong>Card components</strong> - Containing image, title, and text in a cohesive unit</li>
+        <li><strong>Content wrappers</strong> - Setting max-width and centering content</li>
+        <li><strong>Modal dialogs</strong> - Creating popup windows for alerts or forms</li>
+        <li><strong>Tab interfaces</strong> - Organizing content into tabbed sections</li>
+        <li><strong>Accordions</strong> - Creating expandable/collapsible content panels</li>
+        <li><strong>Image galleries</strong> - Organizing images in a grid or slider</li>
+        <li><strong>Form sections</strong> - Grouping related form fields together</li>
+      </ul>
+      
+      <h3>Modern Layout Methods</h3>
+      <p>While divs with floats were traditionally used for layouts, modern CSS offers better approaches:</p>
+      <table class="table">
+        <tr>
+          <th>Layout Method</th>
+          <th>Description</th>
+          <th>Best For</th>
+        </tr>
+        <tr>
+          <td>Flexbox</td>
+          <td>One-dimensional layout model for rows or columns</td>
+          <td>Navigation menus, card layouts, centering content</td>
+        </tr>
+        <tr>
+          <td>CSS Grid</td>
+          <td>Two-dimensional layout model for complex arrangements</td>
+          <td>Page layouts, photo galleries, form layouts</td>
+        </tr>
+        <tr>
+          <td>CSS Multi-column</td>
+          <td>Newspaper-style columns for text</td>
+          <td>Text-heavy content that needs to flow across columns</td>
+        </tr>
+      </table>
+
+      <h3>Example: Flexbox Layout with Divs</h3>
+      <pre><code>&lt;div class="flex-container"&gt;
+  &lt;div class="flex-item"&gt;Item 1&lt;/div&gt;
+  &lt;div class="flex-item"&gt;Item 2&lt;/div&gt;
+  &lt;div class="flex-item"&gt;Item 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+      <p>CSS for the flexbox layout:</p>
+      <pre><code>.flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.flex-item {
+  flex: 1 0 200px;
+  margin: 10px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+}</code></pre>
+
+      <h3>Example: CSS Grid Layout with Divs</h3>
+      <pre><code>&lt;div class="grid-container"&gt;
+  &lt;div class="grid-item header"&gt;Header&lt;/div&gt;
+  &lt;div class="grid-item sidebar"&gt;Sidebar&lt;/div&gt;
+  &lt;div class="grid-item main"&gt;Main Content&lt;/div&gt;
+  &lt;div class="grid-item footer"&gt;Footer&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+      <p>CSS for the grid layout:</p>
+      <pre><code>.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 10px;
+}
+
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }</code></pre>
+
+      <h3>Best Practices for Using Divs</h3>
+      <ul class="tips-list">
+        <li>Use semantic HTML elements when appropriate instead of divs</li>
+        <li>Keep nesting levels to a minimum for better readability</li>
+        <li>Use meaningful class names that describe purpose, not appearance</li>
+        <li>Avoid excessive use of divs ("div soup") when simpler markup would suffice</li>
+        <li>Separate structure (HTML) from presentation (CSS)</li>
+        <li>Consider accessibility implications when creating complex layouts</li>
+        <li>Use comments to mark the closing tags of major divs in complex structures</li>
+        <li>Consider using CSS frameworks like Bootstrap or Tailwind for consistent layouts</li>
+      </ul>
+      
+      <h3>Div vs. Span</h3>
+      <p>While divs are block-level elements, spans are their inline counterparts:</p>
+      <table class="table">
+        <tr>
+          <th>Feature</th>
+          <th>Div</th>
+          <th>Span</th>
+        </tr>
+        <tr>
+          <td>Display type</td>
+          <td>Block (starts on new line)</td>
+          <td>Inline (flows within text)</td>
+        </tr>
+        <tr>
+          <td>Width behavior</td>
+          <td>Takes full width available</td>
+          <td>Takes only necessary width</td>
+        </tr>
+        <tr>
+          <td>Typical use</td>
+          <td>Grouping block-level elements</td>
+          <td>Styling parts of text</td>
+        </tr>
+        <tr>
+          <td>Example</td>
+          <td>&lt;div class="section"&gt;...&lt;/div&gt;</td>
+          <td>Text with &lt;span class="highlight"&gt;highlighted&lt;/span&gt; words</td>
+        </tr>
+      </table>
+      
+      <h3>Div Styling Tools & Resources</h3>
+      <div class="buttons">
+        <a href="https://flexboxfroggy.com/" target="_blank" class="btn">Flexbox Froggy</a>
+        <a href="https://cssgridgarden.com/" target="_blank" class="btn">Grid Garden</a>
+        <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" class="btn">Flexbox Guide</a>
+      </div>
+    </div>
+    
+    <div class="previous-page">
+      <a href="HTML-LISTS.html">&#8592; Previous</a>
+    </div>
+    <div class="next-page">
+      <a href="HTML-CLASSES.html">Next &#8594;</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Front-End Tutorial © 2025 | Building the Web, One Tag at a Time</p>
+  </footer>
+
+</body>
+</html>

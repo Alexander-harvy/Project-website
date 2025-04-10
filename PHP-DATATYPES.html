@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Tutorial - Data Types</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>WELCOME TO PHP TUTORIAL</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="PHP-HOME.html">Home</a>
+            <a href="PHP-INTRO.html">Introduction</a>
+            <a href="PHP-SYNTAX.html">Syntax</a>
+            <a href="PHP-VARIABLES.html">Variables</a>
+            <a href="PHP-ECHO.html">Echo/Print</a>
+            <a href="PHP-DATATYPES.html" class="active">Data Types</a>
+            <a href="PHP-STRINGS.html">Strings</a>
+            <a href="PHP-NUMBERS.html">Numbers</a>
+            <a href="PHP-MATH.html">Math</a>
+            <a href="PHP-CONSTANTS.html">Constants</a>
+            <a href="PHP-OPERATORS.html">Operators</a>
+            <a href="PHP-CONDITIONALS.html">If...Else</a>
+            <a href="PHP-SWITCH.html">Switch</a>
+            <a href="PHP-LOOPS.html">Loops</a>
+            <a href="PHP-FUNCTIONS.html">Functions</a>
+            <a href="PHP-ARRAYS.html">Arrays</a>
+            <a href="PHP-FORMS.html">Forms</a>
+            <a href="PHP-DATABASE.html">Database</a>
+        </div>
+        
+        <div class="content">
+            <h2>PHP Data Types</h2>
+            
+            <div class="intro-section">
+                <p>Variables can store data of different types, and different data types can do different things. PHP supports the following data types:</p>
+                <ul>
+                    <li>String</li>
+                    <li>Integer</li>
+                    <li>Float (floating point numbers - also called double)</li>
+                    <li>Boolean</li>
+                    <li>Array</li>
+                    <li>Object</li>
+                    <li>NULL</li>
+                    <li>Resource</li>
+                </ul>
+                
+                <h3>PHP String</h3>
+                <p>A string is a sequence of characters, like "Hello world!". A string can be any text inside quotes. You can use single or double quotes:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$x = "Hello world!";
+$y = 'Hello world!';
+
+echo $x;
+echo "&lt;br&gt;";
+echo $y;
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>PHP Integer</h3>
+                <p>An integer data type is a non-decimal number between -2,147,483,648 and 2,147,483,647.</p>
+                <p>Rules for integers:</p>
+                <ul>
+                    <li>An integer must have at least one digit</li>
+                    <li>An integer must not have a decimal point</li>
+                    <li>An integer can be either positive or negative</li>
+                    <li>Integers can be specified in three formats: decimal (10-based), hexadecimal (16-based - prefixed with 0x), or octal (8-based - prefixed with 0)</li>
+                </ul>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$x = 5985;
+var_dump($x);
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>PHP Float</h3>
+                <p>A float (floating point number) is a number with a decimal point or a number in exponential form.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$x = 10.365;
+var_dump($x);
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>PHP Boolean</h3>
+                <p>A Boolean represents two possible states: TRUE or FALSE.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$x = true;
+$y = false;
+
+var_dump($x);
+var_dump($y);
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>PHP Array</h3>
+                <p>An array stores multiple values in one single variable.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$cars = array("Volvo", "BMW", "Toyota");
+var_dump($cars);
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>PHP Object</h3>
+                <p>An object is a data type which stores data and information on how to process that data. In PHP, an object must be explicitly declared.</p>
+                <p>First we must declare a class of object. For this, we use the class keyword. A class is a structure that can contain properties and methods:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+class Car {
+    public $color;
+    public $model;
+    public function __construct($color, $model) {
+        $this->color = $color;
+        $this->model = $model;
+    }
+    public function message() {
+        return "My car is a " . $this->color . " " . $this->model . "!";
+    }
+}
+
+$myCar = new Car("black", "Volvo");
+echo $myCar->message();
+echo "&lt;br&gt;";
+$myCar = new Car("red", "Toyota");
+echo $myCar->message();
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>PHP NULL Value</h3>
+                <p>Null is a special data type which can have only one value: NULL. A variable of data type NULL is a variable that has no value assigned to it.</p>
+                <p>Variables can also be emptied by setting the value to NULL:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$x = "Hello world!";
+$x = null;
+var_dump($x);
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>PHP Resource</h3>
+                <p>The special resource type is not an actual data type. It is the storing of a reference to functions and resources external to PHP.</p>
+                <p>A common example of using the resource data type is a database call.</p>
+                
+                <h3>Data Type Summary</h3>
+                <div class="table">
+                    <table>
+                        <tr>
+                            <th>Type</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>String</td>
+                            <td>Sequence of characters</td>
+                            <td>"Hello world!"</td>
+                        </tr>
+                        <tr>
+                            <td>Integer</td>
+                            <td>Whole numbers</td>
+                            <td>5985</td>
+                        </tr>
+                        <tr>
+                            <td>Float</td>
+                            <td>Numbers with decimal points</td>
+                            <td>10.365</td>
+                        </tr>
+                        <tr>
+                            <td>Boolean</td>
+                            <td>True or false</td>
+                            <td>true, false</td>
+                        </tr>
+                        <tr>
+                            <td>Array</td>
+                            <td>Collection of values</td>
+                            <td>array("Volvo", "BMW", "Toyota")</td>
+                        </tr>
+                        <tr>
+                            <td>Object</td>
+                            <td>Instance of a class</td>
+                            <td>new Car("red", "Toyota")</td>
+                        </tr>
+                        <tr>
+                            <td>NULL</td>
+                            <td>Variable with no value</td>
+                            <td>null</td>
+                        </tr>
+                        <tr>
+                            <td>Resource</td>
+                            <td>External resource reference</td>
+                            <td>Database connection</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <h3>Checking Data Types</h3>
+                <p>To check the data type of a variable, use the var_dump() function. The var_dump() function returns the data type and the value:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$x = 5;
+var_dump($x);
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <p>You can also use the following functions to check if a variable is of a certain type:</p>
+                <ul>
+                    <li>is_string()</li>
+                    <li>is_int()</li>
+                    <li>is_float()</li>
+                    <li>is_bool()</li>
+                    <li>is_array()</li>
+                    <li>is_object()</li>
+                    <li>is_null()</li>
+                    <li>is_resource()</li>
+                </ul>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$a = "Hello";
+$b = 15;
+$c = 20.5;
+$d = array("apple", "banana", "orange");
+$e = true;
+$f = null;
+
+echo is_string($a);  // Returns 1 (true)
+echo "&lt;br&gt;";
+echo is_int($b);     // Returns 1 (true)
+echo "&lt;br&gt;";
+echo is_float($c);   // Returns 1 (true)
+echo "&lt;br&gt;";
+echo is_array($d);   // Returns 1 (true)
+echo "&lt;br&gt;";
+echo is_bool($e);    // Returns 1 (true)
+echo "&lt;br&gt;";
+echo is_null($f);    // Returns 1 (true)
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Type Casting</h3>
+                <p>Type casting allows you to change the data type of a variable to another data type.</p>
+                <p>The allowed casts are:</p>
+                <ul>
+                    <li>(int), (integer) - cast to integer</li>
+                    <li>(bool), (boolean) - cast to boolean</li>
+                    <li>(float), (double), (real) - cast to float</li>
+                    <li>(string) - cast to string</li>
+                    <li>(array) - cast to array</li>
+                    <li>(object) - cast to object</li>
+                    <li>(unset) - cast to NULL (deprecated in PHP 7.2+)</li>
+                </ul>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Cast to integer
+$x = 5.7;
+$int_cast = (int)$x;
+echo $int_cast; // Outputs 5
+
+// Cast to float
+$y = "15.5";
+$float_cast = (float)$y;
+echo $float_cast; // Outputs 15.5
+
+// Cast to string
+$z = 123;
+$string_cast = (string)$z;
+echo $string_cast; // Outputs "123"
+
+// Cast to boolean
+$a = 1;
+$bool_cast = (bool)$a;
+echo $bool_cast; // Outputs 1 (true)
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Practical Example: Form Input Handling</h3>
+                <p>Here's an example of how data types are important when handling form input:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Form Data Types&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form method="post" action=""&gt;
+        Name: &lt;input type="text" name="name"&gt;&lt;br&gt;
+        Age: &lt;input type="text" name="age"&gt;&lt;br&gt;
+        Salary: &lt;input type="text" name="salary"&gt;&lt;br&gt;
+        &lt;input type="submit" name="submit" value="Submit"&gt;
+    &lt;/form&gt;
+
+    &lt;?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = $_POST['name'];       // String
+        $age = (int)$_POST['age'];    // Integer
+        $salary = (float)$_POST['salary']; // Float
+        
+        echo "&lt;h3&gt;Form Data:&lt;/h3&gt;";
+        echo "Name: " . $name . " (" . gettype($name) . ")&lt;br&gt;";
+        echo "Age: " . $age . " (" . gettype($age) . ")&lt;br&gt;";
+        echo "Salary: " . $salary . " (" . gettype($salary) . ")&lt;br&gt;";
+        
+        // Database operation would go here with properly typed values
+    }
+    ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                </div>
+            </div>
+            
+            <div class="navigation-buttons">
+                <div class="previous-page">
+                    <a href="PHP-ECHO.html">Previous: Echo/Print</a>
+                </div>
+                <div class="next-page">
+                    <a href="PHP-STRINGS.html">Next: Strings</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Programming the Web, One Line at a Time</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Display</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>CSS DISPLAY</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="CSS-HOME.html">Home</a>
+            <a href="CSS-INTRO.html">Introduction</a>
+            <a href="CSS-SELECTORS.html">Selectors</a>
+            <a href="CSS-COLORS.html">Colors</a>
+            <a href="CSS-BACKGROUNDS.html">Backgrounds</a>
+            <a href="CSS-BORDERS.html">Borders</a>
+            <a href="CSS-MARGINS.html">Margins</a>
+            <a href="CSS-PADDING.html">Padding</a>
+            <a href="CSS-HEIGHT-WIDTH.html">Height/Width</a>
+            <a href="CSS-BOX-MODEL.html">Box Model</a>
+            <a href="CSS-TEXT.html">Text</a>
+            <a href="CSS-FONTS.html">Fonts</a>
+            <a href="CSS-DISPLAY.html" class="active">Display</a>
+            <a href="CSS-POSITION.html">Position</a>
+            <a href="CSS-FLOAT.html">Float</a>
+            <a href="CSS-FLEXBOX.html">Flexbox</a>
+            <a href="CSS-GRID.html">Grid</a>
+            <a href="CSS-RESPONSIVE.html">Responsive</a>
+        </div>
+        
+        <div class="content">
+            <h2>CSS Display Property</h2>
+            <p>The CSS display property specifies how an element is displayed on a webpage. It is one of the most important properties for controlling layout and determining how elements interact with each other.</p>
+           
+            <div class="image-container">
+              <div id="css-image1" class="Images">
+                <img src="pictures/display.png" alt="CSS Display">
+              </div>
+            </div>
+
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Value</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>block</td>
+                        <td>Displays an element as a block element (starts on a new line and takes up the full width)</td>
+                    </tr>
+                    <tr>
+                        <td>inline</td>
+                        <td>Displays an element as an inline element (on the same line, taking only necessary width)</td>
+                    </tr>
+                    <tr>
+                        <td>inline-block</td>
+                        <td>Displays an element as an inline-level block container</td>
+                    </tr>
+                    <tr>
+                        <td>flex</td>
+                        <td>Displays an element as a block-level flex container</td>
+                    </tr>
+                    <tr>
+                        <td>grid</td>
+                        <td>Displays an element as a block-level grid container</td>
+                    </tr>
+                    <tr>
+                        <td>none</td>
+                        <td>The element is completely removed from the page</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h3>Display: Block</h3>
+            <p>Block-level elements start on a new line and take up the full width available:</p>
+            <pre>
+div {
+    display: block; /* Default for div elements */
+    width: 300px; /* Will respect width property */
+    height: 100px; /* Will respect height property */
+    margin: auto; /* Can be centered using margin: auto */
+    background-color: lightblue;
+}
+
+span {
+    display: block; /* Changes inline span to block */
+    width: 50%; /* Width can be set */
+}
+            </pre>
+            <p>Examples of elements that are block-level by default: div, h1-h6, p, form, header, footer, section.</p>
+            
+            <h3>Display: Inline</h3>
+            <p>Inline elements do not start on a new line and only take up as much width as necessary:</p>
+            <pre>
+span {
+    display: inline; /* Default for span elements */
+    width: 300px; /* Width property has no effect */
+    height: 100px; /* Height property has no effect */
+    margin-top: 50px; /* Top and bottom margins have no effect */
+    background-color: lightgreen;
+}
+
+div {
+    display: inline; /* Changes block div to inline */
+}
+            </pre>
+            <p>Examples of elements that are inline by default: span, a, img, em, strong, i, small, code.</p>
+            
+            <h3>Display: Inline-Block</h3>
+            <p>Inline-block elements are placed inline (on the same line) but behave as block elements:</p>
+            <pre>
+span {
+    display: inline-block;
+    width: 100px; /* Width is respected */
+    height: 100px; /* Height is respected */
+    margin: 10px; /* All margins are respected */
+    background-color: lightcoral;
+}
+
+.nav-item {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 5px;
+    background-color: #f1f1f1;
+}
+            </pre>
+            
+            <h3>Display: None</h3>
+            <p>Elements with display: none are completely removed from the page layout:</p>
+            <pre>
+.hidden {
+    display: none; /* Element will not be displayed and does not take up space */
+}
+
+/* Different from visibility: hidden, which hides the element but still takes up space */
+.invisible {
+    visibility: hidden;
+}
+            </pre>
+            
+            <h3>Display: Flex</h3>
+            <p>Flex containers enable a flexible layout without using float or positioning:</p>
+            <pre>
+.container {
+    display: flex;
+    justify-content: space-between; /* Horizontal alignment */
+    align-items: center; /* Vertical alignment */
+}
+            </pre>
+            <p>See the Flexbox page for more details on flex containers and flex items.</p>
+            
+            <h3>Display: Grid</h3>
+            <p>Grid containers enable grid-based layouts:</p>
+            <pre>
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+    grid-gap: 20px; /* Gap between grid items */
+}
+            </pre>
+            <p>See the Grid page for more details on grid containers and grid items.</p>
+            
+            <div class="previous-page">
+                <a href="CSS-FONTS.html"> &#8592; Previous </a>
+            </div>
+            <div class="next-page">
+                <a href="CSS-POSITION.html">Next &#8594;</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Styling the Web, One Rule at a Time</p>
+    </footer>
+</body>
+</html>

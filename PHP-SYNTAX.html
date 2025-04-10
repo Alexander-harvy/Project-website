@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Tutorial - Syntax</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>WELCOME TO PHP TUTORIAL</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="PHP-HOME.html">Home</a>
+            <a href="PHP-INTRO.html">Introduction</a>
+            <a href="PHP-SYNTAX.html" class="active">Syntax</a>
+            <a href="PHP-VARIABLES.html">Variables</a>
+            <a href="PHP-ECHO.html">Echo/Print</a>
+            <a href="PHP-DATATYPES.html">Data Types</a>
+            <a href="PHP-STRINGS.html">Strings</a>
+            <a href="PHP-NUMBERS.html">Numbers</a>
+            <a href="PHP-MATH.html">Math</a>
+            <a href="PHP-CONSTANTS.html">Constants</a>
+            <a href="PHP-OPERATORS.html">Operators</a>
+            <a href="PHP-CONDITIONALS.html">If...Else</a>
+            <a href="PHP-SWITCH.html">Switch</a>
+            <a href="PHP-LOOPS.html">Loops</a>
+            <a href="PHP-FUNCTIONS.html">Functions</a>
+            <a href="PHP-ARRAYS.html">Arrays</a>
+            <a href="PHP-FORMS.html">Forms</a>
+            <a href="PHP-DATABASE.html">Database</a>
+        </div>
+        
+        <div class="content">
+            <h2>PHP Syntax</h2>
+            
+            <div class="intro-section">
+                <h3>Basic PHP Syntax</h3>
+                <p>A PHP script can be placed anywhere in the document. A PHP script starts with <code>&lt;?php</code> and ends with <code>?&gt;</code>:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Your PHP code goes here
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <p>The default file extension for PHP files is "<strong>.php</strong>".</p>
+                <p>A PHP file normally contains HTML tags and some PHP scripting code.</p>
+                
+                <h3>PHP Case Sensitivity</h3>
+                <p>In PHP, keywords (like if, else, while, echo, etc.), classes, functions, and user-defined functions are not case-sensitive.</p>
+                <p>However, all variable names are case-sensitive!</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// These are all equivalent
+ECHO "Hello World!&lt;br&gt;";
+echo "Hello World!&lt;br&gt;";
+EcHo "Hello World!&lt;br&gt;";
+
+// But these are different variables
+$color = "red";
+echo "My car is " . $color . "&lt;br&gt;";
+echo "My house is " . $COLOR . "&lt;br&gt;"; // Undefined variable $COLOR
+echo "My boat is " . $coLOR . "&lt;br&gt;"; // Undefined variable $coLOR
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>PHP Statements</h3>
+                <p>In PHP, each code statement must end with a semicolon (;). The semicolon is a statement terminator.</p>
+                
+                <div class="image-container">
+                <div class="Images">
+                    <img src="pictures/syntax.png" alt="PHP Statements Example">
+                </div>
+                </div>
+
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+echo "Hello World!";
+echo "This is a PHP tutorial";
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>PHP Comments</h3>
+                <p>Comments in PHP are lines that are not executed as part of the program. Their purpose is to make the code more readable and to leave notes for yourself or other developers.</p>
+                <p>PHP supports several ways to comment:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// This is a single-line comment
+
+# This is also a single-line comment
+
+/*
+This is a multiple-lines comment block
+that spans over multiple
+lines
+*/
+
+// You can also use comments to leave out parts of code
+// echo "This line will not be executed";
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>PHP in HTML</h3>
+                <p>PHP can be embedded directly within HTML, which is what makes it so powerful for web development. You can switch between HTML and PHP modes:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1&gt;My First PHP Page&lt;/h1&gt;
+
+&lt;?php
+echo "Hello World!";
+?&gt;
+
+&lt;p&gt;This is HTML content after the PHP section.&lt;/p&gt;
+
+&lt;?php
+echo "Another PHP section!";
+?&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>PHP Output Functions</h3>
+                <p>PHP provides several ways to output data to the browser:</p>
+                <ul>
+                    <li><code>echo</code> - Can output one or more strings</li>
+                    <li><code>print</code> - Can output one string</li>
+                    <li><code>print_r()</code> - Used to print human-readable information about a variable</li>
+                    <li><code>var_dump()</code> - Outputs more detailed information including data type and length</li>
+                </ul>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Using echo
+echo "Hello World!";
+echo "Multiple", " strings", " can", " be", " outputted";
+
+// Using print
+print "Hello World!";
+
+// Using print_r() for arrays
+$colors = array("red", "green", "blue");
+print_r($colors);
+
+// Using var_dump()
+$x = 5;
+var_dump($x);
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>PHP Short Tags</h3>
+                <p>Short opening tags are an alternative syntax for PHP's standard opening tags. Instead of <code>&lt;?php</code>, you can use <code>&lt;?</code>. However, this is not recommended for compatibility reasons.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;? 
+echo "This is a short tag (not recommended)"; 
+?&gt;
+
+&lt;?php
+echo "This is the standard tag (recommended)";
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <p><strong>Note:</strong> The short tag format may be disabled in some server configurations. For maximum compatibility, always use the standard <code>&lt;?php</code> opening tag.</p>
+            </div>
+            
+            <div class="php-example">
+                <h3>Practical Example: A Simple PHP Script</h3>
+                <p>Let's create a simple PHP script that displays the current date and time:</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Date and Time Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;The current date and time is:&lt;/h1&gt;
+    
+    &lt;?php
+    // Get and display the current date/time
+    echo date("Y-m-d H:i:s");
+    ?&gt;
+    
+    &lt;p&gt;This time is generated by PHP's date() function.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                </div>
+                
+                <p>Save this code in a file named "datetime.php" and place it in your web server's document root. When accessed via a browser, it will display the current server date and time.</p>
+            </div>
+            
+            <div class="navigation-buttons">
+                <div class="previous-page">
+                    <a href="PHP-INTRO.html">Previous: Introduction</a>
+                </div>
+                <div class="next-page">
+                    <a href="PHP-VARIABLES.html">Next: PHP Variables</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Programming the Web, One Line at a Time</p>
+    </footer>
+
+</body>
+</html>

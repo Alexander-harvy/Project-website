@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Links Tutorial</title>
+  <link rel="stylesheet" href="website.css">
+  <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active">HOME</a></li>
+      <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+      <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+      <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+      <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+  </ul>
+</div>
+
+  <div class="main-content">
+    <div class="header">
+        <h1>WELCOME TO HTML TUTORIAL</h1>
+        <div class="header-underline"></div>
+    </div>
+    
+    <div class="tutorial-nav">
+        <a href="HTML-HOME.html">Home</a>
+        <a href="HTML-INTRO.html">Introduction</a>
+        <a href="HTML-EDITORS.html">Editors</a>
+        <a href="HTML.BASICS.html">Basics</a>
+        <a href="HTML-ELEMENTS.html">Elements</a>
+        <a href="HTML-ATTRIBUTES.html">Attributes</a>
+        <a href="HTML-HEADINGS.html">Headings</a>
+        <a href="HTML-COMMENTS.html">Comments</a>
+        <a href="HTML-COLORS.html">Colors</a>
+        <a href="HTML-LINKS.html" class="active">Links</a>
+        <a href="HTML-IMAGES.html">Images</a>
+        <a href="HTML-FAVICON.html">Favicon</a>
+        <a href="HTML-PAGE-TITLE.html">Page Title</a>
+        <a href="HTML-TABLES.html">Tables</a>
+        <a href="HTML-LISTS.html">Lists</a>
+        <a href="HTML-DIV.html">Div</a>
+        <a href="HTML-CLASSES.html">Classes</a>
+        <a href="HTML-ID.html">Id</a>
+    </div>
+    
+    <div class="content">
+      <h2>HTML Links - Connecting Your Web Pages</h2>
+      <p>Links are an essential part of the web, allowing users to navigate between web pages and resources. They are the foundation of what makes the web a "web" - a network of interconnected documents and media. In HTML, links are created using the &lt;a&gt; (anchor) tag.</p>
+      
+      <div class="topic-section">
+        <div class="topic">
+          <h2>Basic Link Syntax</h2>
+          <div class="topic-content">
+            <p>The HTML anchor tag is used to create hyperlinks:</p>
+            <pre><code>&lt;a href="url"&gt;Link Text&lt;/a&gt;</code></pre>
+            <p>The most important attributes of the &lt;a&gt; tag are:</p>
+            <ul class="tips-list">
+              <li>href - specifies the destination URL</li>
+              <li>target - specifies where to open the link</li>
+              <li>title - provides additional information about the link</li>
+              <li>rel - specifies the relationship to the target</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>Link Targets</h2>
+          <div class="topic-content">
+            <p>The target attribute specifies where to open the linked document:</p>
+            <pre><code>
+&lt;a href="https://www.example.com" target="_blank"&gt;
+Opens in new tab&lt;/a&gt;
+
+&lt;a href="about.html" target="_self"&gt;
+Opens in same frame (default)&lt;/a&gt;
+
+&lt;a href="services.html" target="_parent"&gt;
+Opens in parent frame&lt;/a&gt;
+
+&lt;a href="contact.html" target="_top"&gt;
+Opens in full body of window&lt;/a&gt;</code></pre>
+          </div>
+        </div>
+        
+        <div class="topic">
+          <h2>Link Types</h2>
+          <div class="topic-content">
+            <p>Various types of links you can create:</p>
+            <pre><code>&lt;!-- Absolute URLs --&gt;
+&lt;a href="https://www.example.com"&gt;Website&lt;/a&gt;
+
+&lt;!-- Relative URLs --&gt;
+&lt;a href="about.html"&gt;About Page&lt;/a&gt;
+
+&lt;!-- Email Links --&gt;
+&lt;a href="mailto:info@example.com"&gt;Send Email&lt;/a&gt;
+
+&lt;!-- Phone Links --&gt;
+&lt;a href="tel:+1234567890"&gt;Call Us&lt;/a&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+      
+      <div class="image-container">
+        <div id="img6" class="Images">
+          <h3>HTML Links Visualization</h3>
+          <img src="pictures/link.png" alt="HTML Links Diagram">
+        </div>
+      </div>
+
+      <h3>Link States and Styling</h3>
+      <p>Links can have different states, which can be styled using CSS:</p>
+      <pre><code>/* Unvisited link */
+a:link {
+  color: blue;
+}
+
+/* Visited link */
+a:visited {
+  color: purple;
+}
+
+/* Mouse over link */
+a:hover {
+  color: red;
+}
+
+/* Selected link */
+a:active {
+  color: green;
+}</code></pre>
+      
+      <h3>Page Bookmarks (Fragment Identifiers)</h3>
+      <p>You can create links to specific sections within the same page using ID attributes:</p>
+      <pre><code>&lt;!-- Creating a bookmark --&gt;
+&lt;h2 id="section1"&gt;Section 1&lt;/h2&gt;
+
+&lt;!-- Link to the bookmark --&gt;
+&lt;a href="#section1"&gt;Go to Section 1&lt;/a&gt;
+
+&lt;!-- Link to a bookmark on another page --&gt;
+&lt;a href="otherpage.html#section2"&gt;Go to Section 2 on another page&lt;/a&gt;</code></pre>
+
+      <h3>HTML Link Attributes</h3>
+      <table class="table">
+        <tr>
+          <th>Attribute</th>
+          <th>Description</th>
+          <th>Example</th>
+        </tr>
+        <tr>
+          <td>href</td>
+          <td>Specifies the URL of the page the link goes to</td>
+          <td>href="https://www.example.com"</td>
+        </tr>
+        <tr>
+          <td>target</td>
+          <td>Specifies where to open the linked document</td>
+          <td>target="_blank"</td>
+        </tr>
+        <tr>
+          <td>rel</td>
+          <td>Specifies the relationship between current and linked document</td>
+          <td>rel="nofollow"</td>
+        </tr>
+        <tr>
+          <td>title</td>
+          <td>Provides extra information about the link</td>
+          <td>title="Visit our homepage"</td>
+        </tr>
+        <tr>
+          <td>download</td>
+          <td>Specifies that the target will be downloaded</td>
+          <td>download="filename.pdf"</td>
+        </tr>
+      </table>
+      
+      <h3>Link Examples</h3>
+      <div class="table">
+        <table>
+          <tr>
+            <th>Link Type</th>
+            <th>HTML Code</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>External Link</td>
+            <td>&lt;a href="https://www.example.com"&gt;Example Website&lt;/a&gt;</td>
+            <td>Links to an external website</td>
+          </tr>
+          <tr>
+            <td>Internal Link</td>
+            <td>&lt;a href="contact.html"&gt;Contact Us&lt;/a&gt;</td>
+            <td>Links to another page on the same website</td>
+          </tr>
+          <tr>
+            <td>Email Link</td>
+            <td>&lt;a href="mailto:info@example.com"&gt;Send Email&lt;/a&gt;</td>
+            <td>Opens the user's email client</td>
+          </tr>
+          <tr>
+            <td>Phone Link</td>
+            <td>&lt;a href="tel:+1234567890"&gt;Call Us&lt;/a&gt;</td>
+            <td>Initiates a phone call on mobile devices</td>
+          </tr>
+          <tr>
+            <td>Download Link</td>
+            <td>&lt;a href="files/document.pdf" download&gt;Download PDF&lt;/a&gt;</td>
+            <td>Downloads a file when clicked</td>
+          </tr>
+        </table>
+      </div>
+      
+      <div class="buttons">
+        <a href="https://www.w3schools.com/html/html_links.asp" target="_blank" class="btn">More About Links</a>
+        <a href="https://www.w3schools.com/css/css_link.asp" target="_blank" class="btn">Styling Links</a>
+      </div>
+      
+      <h3>Best Practices for Using Links</h3>
+      <ul class="tips-list">
+        <li>Use descriptive link text that clearly indicates where the link leads</li>
+        <li>Avoid using "click here" or "read more" as link text</li>
+        <li>Use the title attribute to provide additional information</li>
+        <li>Consider accessibility when creating links</li>
+        <li>Use target="_blank" for external links, but include rel="noopener noreferrer" for security</li>
+        <li>Keep link text concise but descriptive</li>
+        <li>Ensure links are visually distinguishable from regular text</li>
+      </ul>
+    </div>
+    
+    <div class="previous-page">
+      <a href="HTML-COLORS.html">&#8592; Previous</a>
+    </div>
+    <div class="next-page">
+      <a href="HTML-IMAGES.html">Next &#8594;</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Front-End Tutorial © 2025 | Building the Web, One Tag at a Time</p>
+  </footer>
+
+</body>
+</html>

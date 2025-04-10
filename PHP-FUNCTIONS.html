@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Tutorial - Functions</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>WELCOME TO PHP TUTORIAL</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="PHP-HOME.html">Home</a>
+            <a href="PHP-INTRO.html">Introduction</a>
+            <a href="PHP-SYNTAX.html">Syntax</a>
+            <a href="PHP-VARIABLES.html">Variables</a>
+            <a href="PHP-ECHO.html">Echo/Print</a>
+            <a href="PHP-DATATYPES.html">Data Types</a>
+            <a href="PHP-STRINGS.html">Strings</a>
+            <a href="PHP-NUMBERS.html">Numbers</a>
+            <a href="PHP-MATH.html">Math</a>
+            <a href="PHP-CONSTANTS.html">Constants</a>
+            <a href="PHP-OPERATORS.html">Operators</a>
+            <a href="PHP-CONDITIONALS.html">If...Else</a>
+            <a href="PHP-SWITCH.html">Switch</a>
+            <a href="PHP-LOOPS.html">Loops</a>
+            <a href="PHP-FUNCTIONS.html" class="active">Functions</a>
+            <a href="PHP-ARRAYS.html">Arrays</a>
+            <a href="PHP-FORMS.html">Forms</a>
+            <a href="PHP-DATABASE.html">Database</a>
+        </div>
+        
+        <div class="content">
+            <h2>PHP Functions</h2>
+            
+            <div class="intro-section">
+                <p>Functions are blocks of code that can be reused throughout your application. PHP has over 1,000 built-in functions, and you can also create your own custom functions to perform specific tasks.</p>
+                
+                <h3>Creating a PHP Function</h3>
+                <p>In PHP, a function is created with the <code>function</code> keyword, followed by the function name and parentheses. Function names follow the same rules as variable names in PHP.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Syntax
+function functionName() {
+    // code to be executed
+}
+
+// Example of a simple function
+function sayHello() {
+    echo "Hello, World!";
+}
+
+// Calling the function
+sayHello(); // Outputs: Hello, World!
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Function Parameters</h3>
+                <p>Parameters allow you to pass information to a function. You can specify as many parameters as you want, separated by commas.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Function with parameters
+function greet($name) {
+    echo "Hello, $name!";
+}
+
+// Calling the function with an argument
+greet("John"); // Outputs: Hello, John!
+
+// Function with multiple parameters
+function greetWithTime($name, $time) {
+    echo "Good $time, $name!";
+}
+
+greetWithTime("John", "morning"); // Outputs: Good morning, John!
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Default Parameter Values</h3>
+                <p>PHP allows you to define default values for function parameters. If a function is called without passing a value for a parameter with a default value, the default value will be used.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Function with default parameter value
+function setHeight($height = 50) {
+    echo "The height is: $height";
+}
+
+setHeight(80); // Outputs: The height is: 80
+setHeight();   // Outputs: The height is: 50 (default value is used)
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Returning Values</h3>
+                <p>Functions can return values using the <code>return</code> statement. Once a return statement is executed, the function stops running.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Function that returns a value
+function sum($a, $b) {
+    return $a + $b;
+}
+
+// Store the returned value in a variable
+$result = sum(5, 10);
+echo "The sum is: $result"; // Outputs: The sum is: 15
+
+// Use the returned value directly
+echo "The sum is: " . sum(5, 10); // Outputs: The sum is: 15
+
+// Function with early return
+function checkNumber($num) {
+    if ($num <= 0) {
+        return "Number must be positive";
+    }
+    return "Number is positive: $num";
+}
+
+echo checkNumber(-5); // Outputs: Number must be positive
+echo checkNumber(10); // Outputs: Number is positive: 10
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Function Scope</h3>
+                <p>Variables declared inside a function are local to that function and can only be accessed within it. To access global variables inside a function, you need to use the <code>global</code> keyword.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Global variable
+$x = 10;
+
+function localScope() {
+    // Local variable
+    $y = 5;
+    echo "Local variable y: $y<br>"; // Accessible
+    
+    // Trying to access global variable (won't work)
+    echo "Trying to access x: $x<br>"; // Will output an empty value or warning
+}
+
+localScope();
+
+// Using the global keyword
+function globalScope() {
+    global $x;
+    echo "Global variable x: $x<br>"; // Now accessible: 10
+}
+
+globalScope();
+
+// Using the $GLOBALS array
+function globalsArray() {
+    echo "Global variable x using \$GLOBALS: " . $GLOBALS['x'] . "<br>"; // Accessible: 10
+}
+
+globalsArray();
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Static Variables</h3>
+                <p>Static variables retain their value between function calls. They are declared using the <code>static</code> keyword.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+function counter() {
+    static $count = 0;
+    $count++;
+    echo "Function called $count time(s)<br>";
+}
+
+counter(); // Outputs: Function called 1 time(s)
+counter(); // Outputs: Function called 2 time(s)
+counter(); // Outputs: Function called 3 time(s)
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Passing Arguments by Reference</h3>
+                <p>By default, function arguments are passed by value (which means a copy of the value is passed). To pass by reference (which means passing the variable itself), use an ampersand (&) before the parameter name.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Passing by value (default)
+function addFive($num) {
+    $num += 5;
+}
+
+$origNum = 10;
+addFive($origNum);
+echo "Original number: $origNum<br>"; // Still 10, not affected
+
+// Passing by reference
+function addTen(&$num) {
+    $num += 10;
+}
+
+$origNum = 10;
+addTen($origNum);
+echo "Original number after reference function: $origNum<br>"; // Now 20, has been modified
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Anonymous Functions (Closures)</h3>
+                <p>PHP supports anonymous functions (also known as closures), which are functions without names that can be assigned to variables or passed as arguments to other functions.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Anonymous function assigned to a variable
+$greet = function($name) {
+    echo "Hello, $name!";
+};
+
+// Calling the anonymous function
+$greet("John"); // Outputs: Hello, John!
+
+// Anonymous function as an argument to another function
+$numbers = [1, 2, 3, 4, 5];
+$squaredNumbers = array_map(function($n) {
+    return $n * $n;
+}, $numbers);
+
+print_r($squaredNumbers);
+// Outputs: Array ( [0] => 1 [1] => 4 [2] => 9 [3] => 16 [4] => 25 )
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Arrow Functions (PHP 7.4+)</h3>
+                <p>PHP 7.4 introduced arrow functions, which provide a shorter syntax for simple functions. They are especially useful for short callbacks.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Traditional anonymous function
+$numbers = [1, 2, 3, 4, 5];
+$squaredTraditional = array_map(function($n) {
+    return $n * $n;
+}, $numbers);
+
+// Arrow function equivalent (PHP 7.4+)
+$squaredArrow = array_map(fn($n) => $n * $n, $numbers);
+
+print_r($squaredArrow);
+// Outputs: Array ( [0] => 1 [1] => 4 [2] => 9 [3] => 16 [4] => 25 )
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Recursive Functions</h3>
+                <p>A recursive function is a function that calls itself. Recursive functions can be useful for tasks like calculating factorials or traversing tree-like structures.</p>
+                
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Recursive function to calculate factorial
+function factorial($n) {
+    if ($n <= 1) {
+        return 1;
+    } else {
+        return $n * factorial($n - 1);
+    }
+}
+
+echo "Factorial of 5: " . factorial(5) . "<br>"; // Outputs: 120
+// How it works: 5 * factorial(4) = 5 * 24 = 120
+// factorial(4) = 4 * factorial(3) = 4 * 6 = 24
+// factorial(3) = 3 * factorial(2) = 3 * 2 = 6
+// factorial(2) = 2 * factorial(1) = 2 * 1 = 2
+// factorial(1) = 1
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Built-in PHP Functions</h3>
+                <p>PHP has many built-in functions for various tasks. Here are some commonly used categories:</p>
+                
+                <h4>String Functions</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$str = "Hello, World!";
+
+// Getting the length of a string
+echo strlen($str) . "<br>"; // Outputs: 13
+
+// Counting words in a string
+echo str_word_count($str) . "<br>"; // Outputs: 2
+
+// Reversing a string
+echo strrev($str) . "<br>"; // Outputs: !dlroW ,olleH
+
+// Finding text within a string
+echo strpos($str, "World") . "<br>"; // Outputs: 7 (position of "World")
+
+// Replacing text within a string
+echo str_replace("World", "PHP", $str) . "<br>"; // Outputs: Hello, PHP!
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>Array Functions</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+$fruits = ["apple", "banana", "orange"];
+
+// Count elements in an array
+echo count($fruits) . "<br>"; // Outputs: 3
+
+// Adding elements to an array
+array_push($fruits, "mango");
+print_r($fruits); // Adds "mango" to the end
+
+// Removing the last element
+$last = array_pop($fruits);
+echo "Removed: $last<br>"; // Outputs: Removed: mango
+
+// Sorting arrays
+sort($fruits);
+print_r($fruits); // Sorts alphabetically
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>Date and Time Functions</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Current timestamp
+echo time() . "<br>"; // Unix timestamp (seconds since Jan 1 1970)
+
+// Formatting a date
+echo date("Y-m-d H:i:s") . "<br>"; // Outputs: 2025-04-10 10:15:30 (example)
+
+// Get day of the week
+echo date("l") . "<br>"; // Outputs: Thursday (for current date of Thursday, April 10, 2025)
+
+// Create a date from a string
+$date = strtotime("next Sunday");
+echo date("Y-m-d", $date) . "<br>"; // Outputs: 2025-04-13 (next Sunday from April 10, 2025)
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Real-World Examples</h3>
+                
+                <h4>Example 1: Form Validation Function</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+function validateEmail($email) {
+    // Remove whitespace
+    $email = trim($email);
+    
+    // Check if it's empty
+    if (empty($email)) {
+        return "Email is required";
+    }
+    
+    // Validate email format
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        return "Invalid email format";
+    }
+    
+    return true; // Email is valid
+}
+
+// Usage
+$email = "user@example.com";
+$validation = validateEmail($email);
+
+if ($validation === true) {
+    echo "Email is valid";
+} else {
+    echo "Error: " . $validation;
+}
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>Example 2: Database Connection Function</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+function connectToDatabase() {
+    $host = "localhost";
+    $user = "username";
+    $pass = "password";
+    $dbname = "mydb";
+    
+    // Create connection
+    $conn = new mysqli($host, $user, $pass, $dbname);
+    
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    
+    return $conn;
+}
+
+// Usage
+$conn = connectToDatabase();
+echo "Connected successfully";
+
+// Don't forget to close the connection when done
+$conn->close();
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h4>Example 3: Utility Functions for a Blog</h4>
+                <div class="code-example">
+                    <pre><code>
+&lt;?php
+// Format dates in a user-friendly way
+function formatDate($dateString) {
+    $date = new DateTime($dateString);
+    return $date->format('F j, Y'); // e.g., April 10, 2025
+}
+
+// Create URL-friendly slugs from titles
+function createSlug($title) {
+    // Remove special characters
+    $slug = preg_replace('/[^A-Za-z0-9-]+/', '-', $title);
+    // Convert to lowercase
+    $slug = strtolower($slug);
+    // Remove hyphens from beginning and end
+    $slug = trim($slug, '-');
+    return $slug;
+}
+
+// Truncate text to a specific length with ellipsis
+function truncateText($text, $length = 100) {
+    if (strlen($text) <= $length) {
+        return $text;
+    }
+    
+    // Truncate to the specified length
+    $text = substr($text, 0, $length);
+    // Make sure we don't cut off in the middle of a word
+    $text = substr($text, 0, strrpos($text, ' '));
+    return $text . '...';
+}
+
+// Example usage
+$postTitle = "How to Use PHP Functions Effectively in Your Projects";
+$postDate = "2025-04-10";
+$postContent = "PHP functions are an essential part of creating maintainable and reusable code. They allow developers to encapsulate logic that can be called multiple times throughout an application...";
+
+echo "Date: " . formatDate($postDate) . "<br>";
+echo "Slug: " . createSlug($postTitle) . "<br>";
+echo "Preview: " . truncateText($postContent, 50) . "<br>";
+
+/* Output:
+Date: April 10, 2025
+Slug: how-to-use-php-functions-effectively-in-your-projects
+Preview: PHP functions are an essential part of creating...
+*/
+?&gt;
+                    </code></pre>
+                </div>
+                
+                <h3>Best Practices for PHP Functions</h3>
+                <ul class="tips-list">
+                    <li>Give your functions meaningful, descriptive names that explain what they do.</li>
+                    <li>Keep functions small and focused on a single task (single responsibility principle).</li>
+                    <li>Document your functions with comments, especially for complex logic.</li>
+                    <li>Always validate function parameters to ensure they meet expected criteria.</li>
+                    <li>Use type hints (PHP 7+) to specify parameter and return types for better code quality.</li>
+                    <li>Return values instead of echoing them directly, to make functions more reusable.</li>
+                    <li>Avoid using global variables inside functions when possible; pass parameters instead.</li>
+                    <li>Group related functions into classes or modules for better organization.</li>
+                    <li>Test your functions to ensure they work correctly in all scenarios.</li>
+                </ul>
+            </div>
+            
+            <div class="navigation-buttons">
+                <div class="previous-page">
+                    <a href="PHP-LOOPS.html">Previous: Loops</a>
+                </div>
+                <div class="next-page">
+                    <a href="PHP-ARRAYS.html">Next: Arrays</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Front-End Tutorial © 2025 | Programming the Web, One Line at a Time</p>
+    </footer>
+</body>
+</html>

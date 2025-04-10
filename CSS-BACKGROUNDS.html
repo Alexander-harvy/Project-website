@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Backgrounds</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="icon" href="pictures/jrcc.ico">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+          <img src="pictures/Jrcc-manila-logo.png" alt="Tutorial Logo">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="SIDE-ABOUT-US.html">ABOUT US</a></li>
+            <li><a href="SIDE-SERVICES.html">SERVICES</a></li>
+            <li><a href="SIDE-GALLERY.html">GALLERY</a></li>
+            <li><a href="SIDE-CONTACT-US.html">CONTACT US</a></li>
+        </ul>
+    </div>
+    
+    <div class="main-content">
+        <div class="header">
+            <h1>CSS BACKGROUNDS</h1>
+            <div class="header-underline"></div>
+        </div>
+        
+        <div class="tutorial-nav">
+            <a href="CSS-HOME.html">Home</a>
+            <a href="CSS-INTRO.html">Introduction</a>
+            <a href="CSS-SELECTORS.html">Selectors</a>
+            <a href="CSS-COLORS.html">Colors</a>
+            <a href="CSS-BACKGROUNDS.html" class="active">Backgrounds</a>
+            <a href="CSS-BORDERS.html">Borders</a>
+            <a href="CSS-MARGINS.html">Margins</a>
+            <a href="CSS-PADDING.html">Padding</a>
+            <a href="CSS-HEIGHT-WIDTH.html">Height/Width</a>
+            <a href="CSS-BOX-MODEL.html">Box Model</a>
+            <a href="CSS-TEXT.html">Text</a>
+            <a href="CSS-FONTS.html">Fonts</a>
+            <a href="CSS-DISPLAY.html">Display</a>
+            <a href="CSS-POSITION.html">Position</a>
+            <a href="CSS-FLOAT.html">Float</a>
+            <a href="CSS-FLEXBOX.html">Flexbox</a>
+            <a href="CSS-GRID.html">Grid</a>
+            <a href="CSS-RESPONSIVE.html">Responsive</a>
+        </div>
+        
+        <div class="content">
+            <h2>CSS Background Properties</h2>
+            <p>CSS backgrounds allow you to add visual effects to elements. You can control the background color, image, position, and more.</p>
+           
+            <div class="image-container">
+              <div id="css-image1" class="Images">
+                <img src="pictures/bakground.png" alt="CSS Backgrounds">
+              </div>
+            </div>
+
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Property</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>background-color</td>
+                        <td>Sets the background color of an element</td>
+                    </tr>
+                    <tr>
+                        <td>background-image</td>
+                        <td>Sets an image as the background</td>
+                    </tr>
+                    <tr>
+                        <td>background-repeat</td>
+                        <td>Controls how a background image is repeated</td>
+                    </tr>
+                    <tr>
+                        <td>background-position</td>
+                        <td>Sets the starting position of a background image</td>
+                    </tr>
+                    <tr>
+                        <td>background-attachment</td>
+                        <td>Determines whether the background image scrolls with the content</td>
+                    </tr>
+                    <tr>
+                        <td>background</td>
+                        <td>Shorthand property for setting all background properties in one declaration</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <h3>Background Color</h3>
+            <p>The background-color property specifies the background color of an element:</p>
+            <pre>
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    background-color: #f1f1f1;
+}
+
+div {
+    background-color: rgb(255, 0, 0);
+}
+            </pre>
+            
+            <h3>Background Image</h3>
+            <p>The background-image property sets an image as the background:</p>
+            <pre>
+body {
+    background-image: url("paper.gif");
+}
+            </pre>
+            
+            <h3>Background Repeat</h3>
+            <p>By default, a background image repeats both horizontally and vertically. The background-repeat property controls this behavior:</p>
+            <pre>
+body {
+    background-image: url("tree.png");
+    background-repeat: no-repeat; /* Options: repeat, repeat-x, repeat-y, no-repeat */
+}
+            </pre>
+            
+            <h3>Background Position</h3>
+            <p>The background-position property specifies the position of a background image:</p>
+            <pre>
+body {
+    background-image: url("tree.png");
+    background-repeat: no-repeat;
+    background-position: right top; /* Can use values like center, left, right, top, bottom, or exact pixels */
+}
+            </pre>
+            
+            <h3>Background Shorthand</h3>
+            <p>The background property is a shorthand property for setting all background properties at once:</p>
+            <pre>
+body {
+    background: #f1f1f1 url("tree.png") no-repeat right top;
+    /* Order: color image repeat position attachment */
+}
+            </pre>
+            
+            <div class="previous-page">
+                <a href="CSS-COLORS.html"> &#8592; Previous </a>
+            </div>
+            <div class="next-page">
+                <a href="CSS-BORDERS.html">Next &#8594;</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Front-End Tutorial © 2025 | Styling the Web, One Rule at a Time</p>
+    </footer>
+</body>
+</html>
